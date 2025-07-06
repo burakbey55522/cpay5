@@ -209,61 +209,61 @@ const Hero: React.FC = () => {
               </div>
 
               {/* Example Task Cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 pt-6 lg:pt-8">
+              <div className="grid grid-cols-3 sm:grid-cols-3 gap-2 sm:gap-4 lg:gap-6 pt-6 lg:pt-8">
                 <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group cursor-pointer">
-                  <div className="aspect-square bg-gradient-to-br from-green-400 to-green-600 relative overflow-hidden">
+                  <div className="aspect-square bg-gradient-to-br from-green-400 to-green-600 relative overflow-hidden h-20 sm:h-auto">
                     <img 
                       src="https://www.coinpayu.com/static/newImg/index/offer2.jpg" 
                       alt="Monopoly Go Task"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
-                    <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-full">
+                    <div className="absolute top-1 right-1 sm:top-3 sm:right-3 bg-white/90 backdrop-blur-sm px-1 py-0.5 sm:px-2 sm:py-1 rounded-full">
                       <span className="text-xs font-black text-green-600">HOT</span>
                     </div>
                   </div>
-                  <div className="p-3 lg:p-4">
-                    <h3 className="font-black text-gray-900 mb-1 text-xs sm:text-sm lg:text-base">Monopoly Go!</h3>
-                    <p className="text-lg sm:text-xl lg:text-2xl font-black text-emerald-600">$150</p>
-                    <p className="text-xs text-gray-500 font-medium">Gaming Task</p>
+                  <div className="p-1.5 sm:p-3 lg:p-4">
+                    <h3 className="font-black text-gray-900 mb-0.5 sm:mb-1 text-xs sm:text-sm lg:text-base truncate">Monopoly Go!</h3>
+                    <p className="text-sm sm:text-lg lg:text-2xl font-black text-emerald-600">$150</p>
+                    <p className="text-xs text-gray-500 font-medium hidden sm:block">Gaming Task</p>
                   </div>
                 </div>
 
                 <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group cursor-pointer">
-                  <div className="aspect-square bg-gradient-to-br from-pink-400 to-purple-600 relative overflow-hidden">
+                  <div className="aspect-square bg-gradient-to-br from-pink-400 to-purple-600 relative overflow-hidden h-20 sm:h-auto">
                     <img 
                       src="https://www.coinpayu.com/static/newImg/index/offer3.png" 
                       alt="TikTok Install Task"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
-                    <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-full">
+                    <div className="absolute top-1 right-1 sm:top-3 sm:right-3 bg-white/90 backdrop-blur-sm px-1 py-0.5 sm:px-2 sm:py-1 rounded-full">
                       <span className="text-xs font-black text-pink-600">NEW</span>
                     </div>
                   </div>
-                  <div className="p-3 lg:p-4">
-                    <h3 className="font-black text-gray-900 mb-1 text-xs sm:text-sm lg:text-base">TikTok Install</h3>
-                    <p className="text-lg sm:text-xl lg:text-2xl font-black text-emerald-600">$2</p>
-                    <p className="text-xs text-gray-500 font-medium">App Install</p>
+                  <div className="p-1.5 sm:p-3 lg:p-4">
+                    <h3 className="font-black text-gray-900 mb-0.5 sm:mb-1 text-xs sm:text-sm lg:text-base truncate">TikTok Install</h3>
+                    <p className="text-sm sm:text-lg lg:text-2xl font-black text-emerald-600">$2</p>
+                    <p className="text-xs text-gray-500 font-medium hidden sm:block">App Install</p>
                   </div>
                 </div>
 
                 <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group cursor-pointer">
-                  <div className="aspect-square bg-gradient-to-br from-gray-600 to-gray-800 relative overflow-hidden">
+                  <div className="aspect-square bg-gradient-to-br from-gray-600 to-gray-800 relative overflow-hidden h-20 sm:h-auto">
                     <img 
                       src="https://www.coinpayu.com/static/newImg/index/offer1.jpg" 
                       alt="Warpath Game Task"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
-                    <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-full">
+                    <div className="absolute top-1 right-1 sm:top-3 sm:right-3 bg-white/90 backdrop-blur-sm px-1 py-0.5 sm:px-2 sm:py-1 rounded-full">
                       <span className="text-xs font-black text-orange-600">TOP</span>
                     </div>
                   </div>
-                  <div className="p-3 lg:p-4">
-                    <h3 className="font-black text-gray-900 mb-1 text-xs sm:text-sm lg:text-base">Warpath: Ace...</h3>
-                    <p className="text-lg sm:text-xl lg:text-2xl font-black text-emerald-600">$85</p>
-                    <p className="text-xs text-gray-500 font-medium">Strategy Game</p>
+                  <div className="p-1.5 sm:p-3 lg:p-4">
+                    <h3 className="font-black text-gray-900 mb-0.5 sm:mb-1 text-xs sm:text-sm lg:text-base truncate">Warpath: Ace...</h3>
+                    <p className="text-sm sm:text-lg lg:text-2xl font-black text-emerald-600">$85</p>
+                    <p className="text-xs text-gray-500 font-medium hidden sm:block">Strategy Game</p>
                   </div>
                 </div>
               </div>
