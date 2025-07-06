@@ -81,37 +81,74 @@ const FAQ: React.FC = () => {
         </div>
 
         {/* FAQ Items */}
-        <div className="grid md:grid-cols-2 gap-8">
-          {faqData.map((item) => (
-            <div
-              key={item.id}
-              className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300 h-fit"
-            >
-              <button
-                onClick={() => toggleItem(item.id)}
-                className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+        <div className="flex flex-col md:flex-row gap-8">
+          {/* Left Column */}
+          <div className="flex-1 space-y-6">
+            {faqData.filter((_, index) => index % 2 === 0).map((item) => (
+              <div
+                key={item.id}
+                className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300"
               >
-                <h3 className="text-lg font-semibold text-gray-900 pr-4">
-                  {item.question}
-                </h3>
-                <div className="flex-shrink-0">
-                  {openItem === item.id ? (
-                    <ChevronUp className="h-5 w-5 text-gray-500" />
-                  ) : (
-                    <ChevronDown className="h-5 w-5 text-gray-500" />
-                  )}
-                </div>
-              </button>
-              
-              {openItem === item.id && (
-                <div className="px-6 pb-6 animate-in slide-in-from-top-2 duration-200">
-                  <p className="text-gray-700 leading-relaxed">
-                    {item.answer}
-                  </p>
-                </div>
-              )}
-            </div>
-          ))}
+                <button
+                  onClick={() => toggleItem(item.id)}
+                  className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                >
+                  <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                    {item.question}
+                  </h3>
+                  <div className="flex-shrink-0">
+                    {openItem === item.id ? (
+                      <ChevronUp className="h-5 w-5 text-gray-500" />
+                    ) : (
+                      <ChevronDown className="h-5 w-5 text-gray-500" />
+                    )}
+                  </div>
+                </button>
+                
+                {openItem === item.id && (
+                  <div className="px-6 pb-6 animate-in slide-in-from-top-2 duration-200">
+                    <p className="text-gray-700 leading-relaxed">
+                      {item.answer}
+                    </p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Right Column */}
+          <div className="flex-1 space-y-6">
+            {faqData.filter((_, index) => index % 2 === 1).map((item) => (
+              <div
+                key={item.id}
+                className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300"
+              >
+                <button
+                  onClick={() => toggleItem(item.id)}
+                  className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                >
+                  <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                    {item.question}
+                  </h3>
+                  <div className="flex-shrink-0">
+                    {openItem === item.id ? (
+                      <ChevronUp className="h-5 w-5 text-gray-500" />
+                    ) : (
+                      <ChevronDown className="h-5 w-5 text-gray-500" />
+                    )}
+                  </div>
+                </button>
+                
+                {openItem === item.id && (
+                  <div className="px-6 pb-6 animate-in slide-in-from-top-2 duration-200">
+                    <p className="text-gray-700 leading-relaxed">
+                      {item.answer}
+                    </p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
