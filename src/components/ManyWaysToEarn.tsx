@@ -1,10 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Globe, Gamepad2 } from 'lucide-react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
-
-// Import Swiper styles
-import 'swiper/css';
 
 interface GameTask {
   id: number;
@@ -14,12 +9,14 @@ interface GameTask {
 }
 
 const ManyWaysToEarn: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   const gameTasks: GameTask[] = [
     {
       id: 1,
       title: 'Mafia City',
       image: 'https://www.coinpayu.com/static/newImg/index/offer1.jpg',
-      reward: '$22'
+      reward: '$422'
     },
     {
       id: 2,
@@ -47,26 +44,31 @@ const ManyWaysToEarn: React.FC = () => {
     },
     {
       id: 6,
-      title: 'War Path',
+      title: 'AFK Journey',
       image: 'https://www.coinpayu.com/static/newImg/index/offer3.png',
-      reward: '$89'
-    },
-    {
-      id: 7,
-      title: 'Coin Master',
-      image: 'https://www.coinpayu.com/static/newImg/index/offer1.jpg',
-      reward: '$156'
-    },
-    {
-      id: 8,
-      title: 'Puzzle Game',
-      image: 'https://www.coinpayu.com/static/newImg/index/offer2.jpg',
-      reward: '$67'
+      reward: '$504'
     }
   ];
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % gameTasks.length);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [gameTasks.length]);
+
+  const getVisibleGames = () => {
+    const visible = [];
+    for (let i = 0; i < 5; i++) {
+      const index = (currentIndex + i) % gameTasks.length;
+      visible.push(gameTasks[index]);
+    }
+    return visible;
+  };
+
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50">
+    <section className="py-20 bg-gradient-to-br from-orange-50 via-white to-purple-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -79,31 +81,36 @@ const ManyWaysToEarn: React.FC = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left Side - Browser Mockup */}
             <div className="order-2 lg:order-1">
-              <div className="bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden transform hover:scale-105 transition-all duration-300">
+              <div className="bg-white rounded-3xl shadow-2xl border-4 border-gray-800 overflow-hidden max-w-md mx-auto">
                 {/* Browser Header */}
-                <div className="bg-gray-100 px-6 py-4 border-b border-gray-200">
-                  <div className="flex items-center space-x-3">
-                    <div className="flex space-x-2">
-                      <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                      <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                      <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                <div className="bg-gray-200 px-4 py-3 border-b-2 border-gray-800">
+                  <div className="flex items-center space-x-2">
+                    <div className="flex space-x-1">
+                      <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                     </div>
-                    <div className="flex-1 bg-white rounded-lg px-4 py-2 ml-4">
-                      <span className="text-sm text-gray-500">taskearn.com/browse</span>
+                    <div className="flex-1 bg-white rounded px-3 py-1 ml-3">
+                      <span className="text-xs text-gray-600">coinpayu.com</span>
                     </div>
                   </div>
                 </div>
                 
                 {/* Browser Content */}
-                <div className="p-16 text-center bg-gradient-to-br from-emerald-500 to-blue-600 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-black/10"></div>
-                  <div className="relative z-10">
-                    <h4 className="text-4xl font-black text-white mb-4">Browse Now</h4>
-                    <p className="text-emerald-100 text-lg font-medium">Click ads and earn instantly</p>
-                    <div className="mt-6 inline-flex items-center space-x-3 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full">
-                      <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                      <span className="text-white font-bold">120+ Live Ads Available</span>
+                <div className="bg-white p-8 text-center min-h-[300px] flex flex-col justify-center">
+                  <div className="mb-6">
+                    <div className="text-orange-500 text-2xl mb-2">🦊</div>
+                    <div className="text-orange-500 font-bold text-lg">0 coins</div>
+                  </div>
+                  
+                  <div className="mb-8">
+                    <div className="w-16 h-16 bg-yellow-200 rounded-full mx-auto flex items-center justify-center mb-4">
+                      <div className="text-2xl">💰</div>
                     </div>
+                  </div>
+                  
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-gray-800 mb-2">Browse Now</div>
                   </div>
                 </div>
               </div>
@@ -112,24 +119,15 @@ const ManyWaysToEarn: React.FC = () => {
             {/* Right Side - Browsing Info */}
             <div className="order-1 lg:order-2 space-y-8">
               <div>
-                <div className="flex items-center space-x-4 mb-6">
-                  <div className="bg-emerald-100 p-4 rounded-2xl">
-                    <Globe className="h-8 w-8 text-emerald-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-3xl font-bold text-gray-900">Browsing</h3>
-                    <p className="text-gray-600 text-lg">Earn coins by browsing various websites.</p>
-                  </div>
-                </div>
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">Browsing</h3>
+                <p className="text-gray-600 text-lg mb-8">Earn coins by browsing various websites.</p>
 
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="bg-white rounded-2xl p-6 border border-emerald-200 text-center shadow-lg hover:shadow-xl transition-shadow">
-                    <div className="text-3xl font-black text-emerald-600 mb-2">120+</div>
-                    <div className="text-emerald-700 font-bold">ads online</div>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-4">
+                    <span className="text-orange-500 font-bold">120+ ads online</span>
                   </div>
-                  <div className="bg-white rounded-2xl p-6 border border-emerald-200 text-center shadow-lg hover:shadow-xl transition-shadow">
-                    <div className="text-3xl font-black text-emerald-600 mb-2">Earn up to $0.03 per click</div>
-                    <div className="text-emerald-700 font-bold">per click</div>
+                  <div className="flex items-center space-x-4">
+                    <span className="text-orange-500 font-bold">Earn up to $0.03 per click</span>
                   </div>
                 </div>
               </div>
@@ -138,78 +136,52 @@ const ManyWaysToEarn: React.FC = () => {
 
           {/* Gaming Section */}
           <div className="space-y-8">
-            <div className="flex items-center space-x-4 mb-8">
-              <div className="bg-blue-100 p-4 rounded-2xl">
-                <Gamepad2 className="h-8 w-8 text-blue-600" />
-              </div>
-              <div>
-                <h3 className="text-3xl font-bold text-gray-900">Gaming</h3>
-                <p className="text-gray-600 text-lg">Play free games on your phone and get coins for completing various in-game steps.</p>
+            <div className="mb-8">
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">Gaming</h3>
+              <p className="text-gray-600 text-lg mb-6">
+                Play free games on your phone and get coins for completing various in-game steps.
+              </p>
+              <div className="inline-block">
+                <span className="text-orange-500 font-bold">50+ online games available</span>
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-blue-100 to-purple-100 px-6 py-3 rounded-full inline-block mb-8">
-              <span className="text-blue-700 font-bold text-lg">50+ online games available</span>
-            </div>
-
-            {/* Game Cards Swiper */}
-            <div className="relative">
-              <Swiper
-                modules={[Autoplay]}
-                spaceBetween={20}
-                slidesPerView={5}
-                autoplay={{
-                  delay: 1000,
-                  disableOnInteraction: false,
+            {/* Game Cards Slider */}
+            <div className="relative overflow-hidden">
+              <div 
+                className="flex transition-transform duration-1000 ease-in-out"
+                style={{ 
+                  transform: `translateX(-${currentIndex * (100 / 5)}%)`,
+                  width: `${(gameTasks.length * 100) / 5}%`
                 }}
-                loop={true}
-                speed={1000}
-                breakpoints={{
-                  320: {
-                    slidesPerView: 2,
-                    spaceBetween: 16,
-                  },
-                  640: {
-                    slidesPerView: 3,
-                    spaceBetween: 18,
-                  },
-                  768: {
-                    slidesPerView: 4,
-                    spaceBetween: 20,
-                  },
-                  1024: {
-                    slidesPerView: 5,
-                    spaceBetween: 20,
-                  },
-                }}
-                className="gaming-swiper pb-4"
               >
-                {gameTasks.map((game) => (
-                  <SwiperSlide key={game.id}>
-                    <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group cursor-pointer">
+                {gameTasks.map((game, index) => (
+                  <div 
+                    key={game.id} 
+                    className="flex-none px-2"
+                    style={{ width: `${100 / gameTasks.length}%` }}
+                  >
+                    <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group cursor-pointer">
                       <div className="aspect-square relative overflow-hidden">
                         <img
                           src={game.image}
                           alt={game.title}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-full">
-                          <span className="text-xs font-black text-emerald-600">HOT</span>
-                        </div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                       </div>
-                      <div className="p-4">
-                        <h5 className="font-black text-gray-900 text-sm mb-2 truncate">
+                      <div className="p-4 text-center">
+                        <h5 className="font-bold text-gray-900 text-sm mb-2 truncate">
                           {game.title}
                         </h5>
-                        <p className="text-emerald-600 font-black text-xl">
+                        <p className="text-gray-900 font-bold text-lg">
                           {game.reward}
                         </p>
                       </div>
                     </div>
-                  </SwiperSlide>
+                  </div>
                 ))}
-              </Swiper>
+              </div>
             </div>
           </div>
         </div>
