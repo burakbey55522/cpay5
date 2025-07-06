@@ -1,7 +1,5 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
 import { 
   Globe, 
@@ -16,10 +14,6 @@ import {
   Users,
   TrendingUp
 } from 'lucide-react';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/autoplay';
 
 // Import Swiper styles
 import 'swiper/css';
