@@ -211,7 +211,7 @@ const Hero: React.FC = () => {
               {/* Example Task Cards */}
               <div className="grid grid-cols-3 sm:grid-cols-3 gap-2 sm:gap-4 lg:gap-6 pt-6 lg:pt-8">
                 <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group cursor-pointer">
-                  <div className="aspect-square bg-gradient-to-br from-green-400 to-green-600 relative overflow-hidden h-20 sm:h-auto">
+                  <div className="aspect-square bg-gradient-to-br from-green-400 to-green-600 relative overflow-hidden">
                     <img 
                       src="https://www.coinpayu.com/static/newImg/index/offer2.jpg" 
                       alt="Monopoly Go Task"
@@ -230,7 +230,7 @@ const Hero: React.FC = () => {
                 </div>
 
                 <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group cursor-pointer">
-                  <div className="aspect-square bg-gradient-to-br from-pink-400 to-purple-600 relative overflow-hidden h-20 sm:h-auto">
+                  <div className="aspect-square bg-gradient-to-br from-pink-400 to-purple-600 relative overflow-hidden">
                     <img 
                       src="https://www.coinpayu.com/static/newImg/index/offer3.png" 
                       alt="TikTok Install Task"
@@ -249,7 +249,7 @@ const Hero: React.FC = () => {
                 </div>
 
                 <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group cursor-pointer">
-                  <div className="aspect-square bg-gradient-to-br from-gray-600 to-gray-800 relative overflow-hidden h-20 sm:h-auto">
+                  <div className="aspect-square bg-gradient-to-br from-gray-600 to-gray-800 relative overflow-hidden">
                     <img 
                       src="https://www.coinpayu.com/static/newImg/index/offer1.jpg" 
                       alt="Warpath Game Task"
