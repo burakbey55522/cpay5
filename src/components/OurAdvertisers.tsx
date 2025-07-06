@@ -84,27 +84,6 @@ const OurAdvertisers: React.FC = () => {
           </div>
         </div>
 
-        {/* Stats */}
-        <div className="mt-12 text-center">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-200">
-              <div className="text-2xl font-bold text-emerald-600 mb-1">200+</div>
-              <div className="text-sm text-gray-600">Global Partners</div>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-200">
-              <div className="text-2xl font-bold text-blue-600 mb-1">190+</div>
-              <div className="text-sm text-gray-600">Countries</div>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-200">
-              <div className="text-2xl font-bold text-purple-600 mb-1">$1.8M</div>
-              <div className="text-sm text-gray-600">Monthly Ad Spend</div>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-200">
-              <div className="text-2xl font-bold text-orange-600 mb-1">99.9%</div>
-              <div className="text-sm text-gray-600">Uptime</div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

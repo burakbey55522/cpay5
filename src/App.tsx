@@ -6,6 +6,7 @@ import ManyWaysToEarn from './components/ManyWaysToEarn';
 import SocialMediaTasks from './components/SocialMediaTasks';
 import UserReviews from './components/UserReviews';
 import OurAdvertisers from './components/OurAdvertisers';
+import FAQ from './components/FAQ';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,6 +20,7 @@ function App() {
       <SocialMediaTasks />
       <UserReviews />
       <OurAdvertisers />
+      <FAQ />
     </div>
   );
 }
