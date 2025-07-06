@@ -1,5 +1,7 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
 import { 
   Globe, 
@@ -14,6 +16,10 @@ import {
   Users,
   TrendingUp
 } from 'lucide-react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/autoplay';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -86,6 +92,26 @@ const ManyWaysToEarn: React.FC = () => {
       name: 'Campaign',
       image: 'https://www.coinpayu.com/static/newImg/index/trying_campaign.png',
       reward: '$20'
+    },
+    {
+      name: 'Netflix',
+      image: 'https://logos-world.net/wp-content/uploads/2020/04/Netflix-Logo.png',
+      reward: '$30'
+    },
+    {
+      name: 'Spotify',
+      image: 'https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_Green.png',
+      reward: '$18'
+    },
+    {
+      name: 'Instagram',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/600px-Instagram_icon.png',
+      reward: '$22'
+    },
+    {
+      name: 'WhatsApp',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/512px-WhatsApp.svg.png',
+      reward: '$28'
     }
   ];
 
@@ -254,30 +280,61 @@ const ManyWaysToEarn: React.FC = () => {
         <div className="mb-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
-              <div className="grid grid-cols-2 gap-4">
-                {appOffers.map((app, index) => (
-                  <div key={index} className="group cursor-pointer">
-                    <div className="relative bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300">
-                      <div className="aspect-square relative">
-                        <img 
-                          src={app.image} 
-                          alt={app.name}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
-                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
-                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <div className="bg-white/90 backdrop-blur-sm rounded-full p-3">
-                            <Download className="h-6 w-6 text-gray-700" />
+              {/* Animated App Logos */}
+              <div className="relative">
+                {/* Background Circle */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-80 h-80 bg-gradient-to-br from-blue-50 to-purple-50 rounded-full opacity-60"></div>
+                </div>
+                
+                {/* Rotating App Icons */}
+                <div className="relative w-80 h-80 mx-auto">
+                  <Swiper
+                    modules={[Autoplay]}
+                    spaceBetween={20}
+                    slidesPerView={4}
+                    centeredSlides={true}
+                    autoplay={{
+                      delay: 1500,
+                      disableOnInteraction: false,
+                    }}
+                    loop={true}
+                    className="app-testing-swiper h-full"
+                  >
+                    {appOffers.map((app, index) => (
+                      <SwiperSlide key={index}>
+                        <div className="group cursor-pointer h-full flex items-center justify-center">
+                          <div className="relative bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 w-16 h-16 sm:w-20 sm:h-20">
+                            <div className="w-full h-full relative">
+                              <img 
+                                src={app.image} 
+                                alt={app.name}
+                                className="w-full h-full object-contain p-2 group-hover:scale-110 transition-transform duration-300"
+                              />
+                              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 rounded-2xl"></div>
+                              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div className="bg-white/90 backdrop-blur-sm rounded-full p-1">
+                                  <Download className="h-3 w-3 text-gray-700" />
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div className="p-3 text-center">
-                        <div className="font-bold text-gray-900 text-sm mb-1">{app.name}</div>
-                        <div className="text-emerald-600 font-bold">{app.reward}</div>
-                      </div>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                </div>
+                
+                {/* Center Content */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-200">
+                    <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mx-auto mb-3">
+                      <Download className="h-6 w-6 text-white" />
                     </div>
+                    <div className="text-lg font-bold text-gray-900 mb-1">Test & Earn</div>
+                    <div className="text-sm text-gray-600">Up to $50 per app</div>
                   </div>
-                ))}
+                </div>
               </div>
             </div>
             
