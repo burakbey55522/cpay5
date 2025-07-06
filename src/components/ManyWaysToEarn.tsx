@@ -286,20 +286,16 @@ const ManyWaysToEarn: React.FC = () => {
                   {appOffers.slice(0, 4).map((app, index) => (
                     <div 
                       key={index}
-                      className="group cursor-pointer animate-pulse"
-                      style={{
-                        animationDelay: `${index * 0.5}s`,
-                        animationDuration: '2s'
-                      }}
+                      className="group cursor-pointer"
                     >
-                      <div className="relative bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 w-32 h-32 mx-auto group-hover:scale-110">
-                        <div className="w-full h-full relative">
+                      <div className="relative bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 w-40 h-40 mx-auto group-hover:scale-105">
+                        <div className="w-full h-full relative p-6">
                           <img 
                             src={app.image} 
                             alt={app.name}
-                            className="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-300"
+                            className="w-full h-full object-contain"
                           />
-                          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90">
                             <div className="bg-white/90 backdrop-blur-sm rounded-full p-2">
                               <Download className="h-5 w-5 text-gray-700" />
                             </div>
