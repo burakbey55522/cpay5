@@ -1,5 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Globe, Gamepad2 } from 'lucide-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
 
 interface GameTask {
   id: number;
@@ -9,8 +14,6 @@ interface GameTask {
 }
 
 const ManyWaysToEarn: React.FC = () => {
-  const [currentGameIndex, setCurrentGameIndex] = useState(0);
-
   const gameTasks: GameTask[] = [
     {
       id: 1,
@@ -61,23 +64,6 @@ const ManyWaysToEarn: React.FC = () => {
       reward: '$67'
     }
   ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentGameIndex((prev) => (prev + 1) % gameTasks.length);
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, [gameTasks.length]);
-
-  const getVisibleGames = () => {
-    const visible = [];
-    for (let i = 0; i < 5; i++) {
-      const index = (currentGameIndex + i) % gameTasks.length;
-      visible.push({ ...gameTasks[index], displayIndex: i });
-    }
-    return visible;
-  };
 
   return (
     <section className="py-20 bg-white">
@@ -159,20 +145,40 @@ const ManyWaysToEarn: React.FC = () => {
                 <span className="text-blue-700 font-bold">50+ online games available</span>
               </div>
 
-              {/* Game Cards Container */}
-              <div className="relative overflow-hidden">
-                <div 
-                  className="flex transition-transform duration-1000 ease-in-out"
-                  style={{ 
-                    transform: `translateX(-${(currentGameIndex * 20)}%)`,
-                    width: `${gameTasks.length * 20}%`
+              {/* Game Cards Swiper */}
+              <div className="relative">
+                <Swiper
+                  modules={[Autoplay]}
+                  spaceBetween={16}
+                  slidesPerView={5}
+                  autoplay={{
+                    delay: 1000,
+                    disableOnInteraction: false,
                   }}
+                  loop={true}
+                  speed={1000}
+                  breakpoints={{
+                    320: {
+                      slidesPerView: 2,
+                      spaceBetween: 12,
+                    },
+                    640: {
+                      slidesPerView: 3,
+                      spaceBetween: 14,
+                    },
+                    768: {
+                      slidesPerView: 4,
+                      spaceBetween: 16,
+                    },
+                    1024: {
+                      slidesPerView: 5,
+                      spaceBetween: 16,
+                    },
+                  }}
+                  className="gaming-swiper"
                 >
-                  {gameTasks.map((game, index) => (
-                    <div
-                      key={game.id}
-                      className="w-1/5 px-2 flex-shrink-0"
-                    >
+                  {gameTasks.map((game) => (
+                    <SwiperSlide key={game.id}>
                       <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group">
                         <div className="aspect-square relative overflow-hidden">
                           <img
@@ -191,9 +197,9 @@ const ManyWaysToEarn: React.FC = () => {
                           </p>
                         </div>
                       </div>
-                    </div>
+                    </SwiperSlide>
                   ))}
-                </div>
+                </Swiper>
               </div>
 
               {/* Gaming Stats */}

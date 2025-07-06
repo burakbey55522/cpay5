@@ -63,3 +63,16 @@ a:focus-visible {
   outline: 2px solid #10b981;
   outline-offset: 2px;
 }
+
+/* Swiper custom styles */
+.gaming-swiper {
+  overflow: visible;
+}
+
+.gaming-swiper .swiper-slide {
+  height: auto;
+}
+
+.gaming-swiper .swiper-wrapper {
+  align-items: stretch;
+}
