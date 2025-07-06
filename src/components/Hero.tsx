@@ -31,21 +31,25 @@ interface Cashout {
   username: string;
   amount: string;
   country: string;
-  flag: string;
+  countryCode: string;
   time: string;
 }
 
 const Hero: React.FC = () => {
   const [currentTaskIndex, setCurrentTaskIndex] = useState(0);
   const [cashouts, setCashouts] = useState<Cashout[]>([
-    { id: 1, username: 'alex_m', amount: '$12.45', country: 'USA', flag: '🇺🇸', time: '2m ago' },
-    { id: 2, username: 'sarah_k', amount: '$8.90', country: 'UK', flag: '🇬🇧', time: '3m ago' },
-    { id: 3, username: 'carlos_r', amount: '$15.30', country: 'Spain', flag: '🇪🇸', time: '5m ago' },
-    { id: 4, username: 'maria_s', amount: '$7.25', country: 'Brazil', flag: '🇧🇷', time: '6m ago' },
-    { id: 5, username: 'yuki_t', amount: '$22.10', country: 'Japan', flag: '🇯🇵', time: '8m ago' },
-    { id: 6, username: 'ahmed_h', amount: '$9.75', country: 'UAE', flag: '🇦🇪', time: '10m ago' },
-    { id: 7, username: 'lisa_w', amount: '$11.60', country: 'Germany', flag: '🇩🇪', time: '12m ago' },
-    { id: 8, username: 'raj_p', amount: '$6.40', country: 'India', flag: '🇮🇳', time: '14m ago' },
+    { id: 1, username: 'alex_m', amount: '$12.45', country: 'USA', countryCode: 'us', time: '2m ago' },
+    { id: 2, username: 'sarah_k', amount: '$8.90', country: 'UK', countryCode: 'gb', time: '3m ago' },
+    { id: 3, username: 'carlos_r', amount: '$15.30', country: 'Spain', countryCode: 'es', time: '5m ago' },
+    { id: 4, username: 'maria_s', amount: '$7.25', country: 'Brazil', countryCode: 'br', time: '6m ago' },
+    { id: 5, username: 'yuki_t', amount: '$22.10', country: 'Japan', countryCode: 'jp', time: '8m ago' },
+    { id: 6, username: 'ahmed_h', amount: '$9.75', country: 'UAE', countryCode: 'ae', time: '10m ago' },
+    { id: 7, username: 'lisa_w', amount: '$11.60', country: 'Germany', countryCode: 'de', time: '12m ago' },
+    { id: 8, username: 'raj_p', amount: '$6.40', country: 'India', countryCode: 'in', time: '14m ago' },
+    { id: 9, username: 'pierre_l', amount: '$18.95', country: 'France', countryCode: 'fr', time: '16m ago' },
+    { id: 10, username: 'anna_k', amount: '$13.20', country: 'Poland', countryCode: 'pl', time: '18m ago' },
+    { id: 11, username: 'mehmet_y', amount: '$11.85', country: 'Turkey', countryCode: 'tr', time: '20m ago' },
+    { id: 12, username: 'sofia_m', amount: '$9.30', country: 'Bulgaria', countryCode: 'bg', time: '22m ago' },
   ]);
 
   const tasks: Task[] = [
@@ -112,6 +116,28 @@ const Hero: React.FC = () => {
 
     return () => clearInterval(interval);
   }, [tasks.length]);
+
+  const getFlagUrl = (countryCode: string) => {
+    return `https://upload.wikimedia.org/wikipedia/commons/thumb/${getFlagPath(countryCode)}`;
+  };
+
+  const getFlagPath = (countryCode: string) => {
+    const flagPaths: { [key: string]: string } = {
+      'us': 'a/a4/Flag_of_the_United_States.svg/320px-Flag_of_the_United_States.svg.png',
+      'gb': '8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/320px-Flag_of_the_United_Kingdom_%283-5%29.svg.png',
+      'es': '9/9a/Flag_of_Spain.svg/320px-Flag_of_Spain.svg.png',
+      'br': '0/05/Flag_of_Brazil.svg/320px-Flag_of_Brazil.svg.png',
+      'jp': '9/9e/Flag_of_Japan.svg/320px-Flag_of_Japan.svg.png',
+      'ae': 'c/cb/Flag_of_the_United_Arab_Emirates.svg/320px-Flag_of_the_United_Arab_Emirates.svg.png',
+      'de': 'b/ba/Flag_of_Germany.svg/320px-Flag_of_Germany.svg.png',
+      'in': '4/41/Flag_of_India.svg/320px-Flag_of_India.svg.png',
+      'fr': 'c/c3/Flag_of_France.svg/320px-Flag_of_France.svg.png',
+      'pl': '1/12/Flag_of_Poland.svg/320px-Flag_of_Poland.svg.png',
+      'tr': 'b/b4/Flag_of_Turkey.svg/320px-Flag_of_Turkey.svg.png',
+      'bg': '9/9a/Flag_of_Bulgaria.svg/320px-Flag_of_Bulgaria.svg.png',
+    };
+    return flagPaths[countryCode] || 'a/a4/Flag_of_the_United_States.svg/320px-Flag_of_the_United_States.svg.png';
+  };
 
   return (
     <>
@@ -313,56 +339,37 @@ const Hero: React.FC = () => {
         </div>
       </section>
 
-      {/* Live Cashout Section */}
-      <section className="py-8 bg-gradient-to-r from-emerald-500 to-blue-600 relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-6">
-            <div className="flex items-center justify-center space-x-3 mb-2">
-              <div className="w-4 h-4 bg-yellow-400 rounded-full animate-pulse"></div>
-              <h2 className="text-2xl font-black text-white">Live Cashouts</h2>
-              <TrendingUp className="h-6 w-6 text-yellow-400" />
+      {/* Live Cashout Section - Compact Ticker Style */}
+      <section className="py-3 bg-white border-y border-gray-200 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-emerald-50/50 to-blue-50/50"></div>
+        <div className="relative z-10">
+          <div className="flex items-center justify-center mb-2">
+            <div className="flex items-center space-x-2">
+              <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+              <span className="text-sm font-bold text-gray-700">Live Cashout</span>
+              <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
             </div>
-            <p className="text-white/80 font-medium">Real payments happening right now</p>
           </div>
 
           <div className="overflow-hidden">
-            <div className="flex space-x-4 animate-slide">
+            <div className="flex space-x-8 animate-slide">
               {[...cashouts, ...cashouts].map((cashout, index) => (
                 <div
                   key={`${cashout.id}-${index}`}
-                  className="flex-none w-80 bg-white/90 backdrop-blur-sm p-4 rounded-xl border border-white/20 shadow-lg"
+                  className="flex-none flex items-center space-x-3 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-200 shadow-sm"
                 >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-gradient-to-r from-emerald-500 to-blue-600 rounded-full flex items-center justify-center">
-                        <DollarSign className="h-5 w-5 text-white" />
-                      </div>
-                      <div>
-                        <div className="font-black text-gray-900">{cashout.username}</div>
-                        <div className="flex items-center space-x-1 text-sm text-gray-600">
-                          <span>{cashout.flag}</span>
-                          <span className="font-medium">{cashout.country}</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-xl font-black text-emerald-600">{cashout.amount}</div>
-                      <div className="text-sm text-gray-500 font-medium">{cashout.time}</div>
-                    </div>
+                  <div className="w-6 h-6 rounded-full overflow-hidden border border-gray-200">
+                    <img 
+                      src={getFlagUrl(cashout.countryCode)}
+                      alt={`${cashout.country} Flag`}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
+                  <span className="text-sm font-medium text-gray-700">{cashout.username}</span>
+                  <span className="text-sm font-bold text-emerald-600">{cashout.amount}</span>
+                  <span className="text-xs text-gray-500">{cashout.time}</span>
                 </div>
               ))}
-            </div>
-          </div>
-
-          <div className="text-center mt-6">
-            <div className="inline-flex items-center space-x-4 text-white/90 font-medium">
-              <span>💰 $847,392 paid this month</span>
-              <span>•</span>
-              <span>⚡ Next payout in 2 minutes</span>
-              <span>•</span>
-              <span>🌍 Available in 190+ countries</span>
             </div>
           </div>
         </div>
