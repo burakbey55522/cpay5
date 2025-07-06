@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import HowItWorks from './components/HowItWorks';
 import ManyWaysToEarn from './components/ManyWaysToEarn';
+import SocialMediaTasks from './components/SocialMediaTasks';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,6 +14,7 @@ function App() {
       <Hero />
       <HowItWorks />
       <ManyWaysToEarn />
+      <SocialMediaTasks />
     </div>
   );
 }

@@ -401,26 +401,6 @@ const ManyWaysToEarn: React.FC = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center bg-gradient-to-r from-emerald-500 to-blue-600 rounded-3xl p-12 text-white">
-          <h3 className="text-3xl font-bold mb-4">Ready to Start Earning?</h3>
-          <p className="text-xl mb-8 text-emerald-50">Join thousands of users earning money daily</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-white text-emerald-600 px-8 py-4 rounded-xl font-bold hover:bg-gray-50 transition-colors flex items-center space-x-2">
-              <span>Get Started Now</span>
-              <ArrowRight className="h-5 w-5" />
-            </button>
-            <div className="flex items-center space-x-4 text-emerald-100">
-              <div className="flex items-center space-x-2">
-                <Users className="h-5 w-5" />
-                <span>2.1M+ Users</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <TrendingUp className="h-5 w-5" />
-                <span>$2.5M+ Paid</span>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
