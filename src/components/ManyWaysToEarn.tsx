@@ -210,24 +210,24 @@ const ManyWaysToEarn: React.FC = () => {
             <div className="relative">
               <Swiper
                 modules={[Autoplay, Navigation]}
-                spaceBetween={8}
-                slidesPerView={2.5}
+                spaceBetween={20}
+                slidesPerView={4.2}
                 breakpoints={{
                   320: {
-                    slidesPerView: 2.5,
-                    spaceBetween: 8
+                    slidesPerView: 1.2,
+                    spaceBetween: 15
                   },
                   480: {
-                    slidesPerView: 3.2,
-                    spaceBetween: 10
+                    slidesPerView: 1.8,
+                    spaceBetween: 15
                   },
                   640: {
-                    slidesPerView: 3.8,
-                    spaceBetween: 12
+                    slidesPerView: 2.5,
+                    spaceBetween: 15
                   },
                   768: {
-                    slidesPerView: 4.2,
-                    spaceBetween: 15
+                    slidesPerView: 3.2,
+                    spaceBetween: 20
                   },
                   1024: {
                     slidesPerView: 4.2,
@@ -244,8 +244,8 @@ const ManyWaysToEarn: React.FC = () => {
                 {gameOffers.map((game) => (
                   <SwiperSlide key={game.id}>
                     <div className="group cursor-pointer">
-                      <div className="relative bg-white rounded-lg sm:rounded-xl shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300">
-                        <div className="relative aspect-square w-full max-w-[120px] sm:max-w-none mx-auto">
+                      <div className="relative bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300">
+                        <div className="relative aspect-square w-full">
                           <img 
                             src={game.image} 
                             alt={game.title}
@@ -257,13 +257,13 @@ const ManyWaysToEarn: React.FC = () => {
                               <Play className="h-4 w-4 text-gray-700" />
                             </div>
                           </div>
-                          <div className="absolute top-1 right-1 sm:top-2 sm:right-2 bg-blue-500 text-white px-1 py-0.5 sm:px-1.5 sm:py-0.5 rounded text-xs font-bold">
+                          <div className="absolute top-2 right-2 bg-blue-500 text-white px-1.5 py-0.5 rounded text-xs font-bold">
                             {game.category}
                           </div>
                         </div>
-                        <div className="p-2 sm:p-3">
-                          <h4 className="font-bold text-gray-900 mb-0.5 sm:mb-1 truncate text-xs sm:text-sm">{game.title}</h4>
-                          <div className="text-sm sm:text-base font-bold text-emerald-600">{game.reward}</div>
+                        <div className="p-3">
+                          <h4 className="font-bold text-gray-900 mb-1 truncate text-sm">{game.title}</h4>
+                          <div className="text-base font-bold text-emerald-600">{game.reward}</div>
                         </div>
                       </div>
                     </div>
