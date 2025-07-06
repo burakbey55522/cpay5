@@ -190,8 +190,8 @@ const ManyWaysToEarn: React.FC = () => {
 
         {/* Gaming Section */}
         <div className="mb-20">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div className="space-y-4 lg:space-y-6">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="space-y-4 lg:space-y-6 order-1 lg:order-1">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center">
                   <Gamepad2 className="h-6 w-6 text-white" />
@@ -207,26 +207,26 @@ const ManyWaysToEarn: React.FC = () => {
               </div>
             </div>
             
-            <div className="relative">
+            <div className="relative order-2 lg:order-2 w-full">
               <Swiper
                 modules={[Autoplay, Navigation]}
                 spaceBetween={20}
                 slidesPerView={4.2}
                 breakpoints={{
                   320: {
-                    slidesPerView: 1.2,
-                    spaceBetween: 15
+                    slidesPerView: 2.2,
+                    spaceBetween: 12
                   },
                   480: {
-                    slidesPerView: 1.8,
-                    spaceBetween: 15
-                  },
-                  640: {
                     slidesPerView: 2.5,
                     spaceBetween: 15
                   },
-                  768: {
+                  640: {
                     slidesPerView: 3.2,
+                    spaceBetween: 15
+                  },
+                  768: {
+                    slidesPerView: 3.5,
                     spaceBetween: 20
                   },
                   1024: {
@@ -244,8 +244,8 @@ const ManyWaysToEarn: React.FC = () => {
                 {gameOffers.map((game) => (
                   <SwiperSlide key={game.id}>
                     <div className="group cursor-pointer">
-                      <div className="relative bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300">
-                        <div className="relative aspect-square w-full">
+                      <div className="relative bg-white rounded-lg sm:rounded-xl shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300">
+                        <div className="relative aspect-square w-full max-w-[120px] sm:max-w-none mx-auto">
                           <img 
                             src={game.image} 
                             alt={game.title}
@@ -257,13 +257,13 @@ const ManyWaysToEarn: React.FC = () => {
                               <Play className="h-4 w-4 text-gray-700" />
                             </div>
                           </div>
-                          <div className="absolute top-2 right-2 bg-blue-500 text-white px-1.5 py-0.5 rounded text-xs font-bold">
+                          <div className="absolute top-1 right-1 sm:top-2 sm:right-2 bg-blue-500 text-white px-1 py-0.5 sm:px-1.5 sm:py-0.5 rounded text-xs font-bold">
                             {game.category}
                           </div>
                         </div>
-                        <div className="p-3">
-                          <h4 className="font-bold text-gray-900 mb-1 truncate text-sm">{game.title}</h4>
-                          <div className="text-base font-bold text-emerald-600">{game.reward}</div>
+                        <div className="p-2 sm:p-3">
+                          <h4 className="font-bold text-gray-900 mb-0.5 sm:mb-1 truncate text-xs sm:text-sm">{game.title}</h4>
+                          <div className="text-sm sm:text-base font-bold text-emerald-600">{game.reward}</div>
                         </div>
                       </div>
                     </div>
@@ -276,8 +276,8 @@ const ManyWaysToEarn: React.FC = () => {
 
         {/* App Testing Section */}
         <div className="mb-20">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div className="order-2 lg:order-1">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="order-2 lg:order-1 w-full">
               {/* Static App Testing Grid with Background Circle */}
               <div className="relative max-w-md mx-auto">
                 {/* Background Circle */}
@@ -286,14 +286,14 @@ const ManyWaysToEarn: React.FC = () => {
                 </div>
                 
                 {/* App Icons Grid */}
-                <div className="relative z-10 grid grid-cols-2 gap-4 lg:gap-6 p-6 lg:p-8">
+                <div className="relative z-10 grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6 p-4 sm:p-6 lg:p-8">
                   {appOffers.slice(0, 4).map((app, index) => (
                     <div 
                       key={index}
                       className="group cursor-pointer"
                     >
                       <div className="relative bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 w-32 h-32 lg:w-40 lg:h-40 mx-auto group-hover:scale-105">
-                        <div className="w-full h-full relative p-4 lg:p-6">
+                        <div className="w-full h-full relative p-3 sm:p-4 lg:p-6">
                           <img 
                             src={app.image} 
                             alt={app.name}
@@ -312,7 +312,7 @@ const ManyWaysToEarn: React.FC = () => {
               </div>
             </div>
             
-            <div className="order-1 lg:order-2 space-y-4 lg:space-y-6">
+            <div className="order-1 lg:order-2 space-y-4 lg:space-y-6 w-full">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center">
                   <Download className="h-6 w-6 text-white" />
@@ -338,8 +338,8 @@ const ManyWaysToEarn: React.FC = () => {
 
         {/* Surveys Section */}
         <div className="mb-12">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div className="space-y-4 lg:space-y-6">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="space-y-4 lg:space-y-6 order-1 lg:order-1 w-full">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-12 h-12 bg-indigo-500 rounded-xl flex items-center justify-center">
                   <MessageSquare className="h-6 w-6 text-white" />
@@ -355,7 +355,7 @@ const ManyWaysToEarn: React.FC = () => {
               </div>
             </div>
             
-            <div className="bg-white rounded-3xl shadow-xl border border-gray-200 p-6 lg:p-8">
+            <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl border border-gray-200 p-4 sm:p-6 lg:p-8 order-2 lg:order-2 w-full">
               <div className="mb-6">
                 <h4 className="font-bold text-gray-900 mb-4">Sample Survey Question:</h4>
                 <p className="text-gray-700 mb-4">Which social media platform do you use most frequently?</p>
