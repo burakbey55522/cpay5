@@ -1,97 +1,11 @@
 import React from 'react';
-import { DollarSign, Facebook, Twitter, Instagram, Youtube, Linkedin } from 'lucide-react';
+import { DollarSign, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Youtube, Linkedin } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gradient-to-br from-gray-800 via-gray-900 to-black text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-16">
-        
-        {/* Mobile Layout */}
-        <div className="block md:hidden">
-          {/* Links Grid - Mobile */}
-          <div className="grid grid-cols-3 gap-x-8 gap-y-4 mb-8">
-            {/* About Column */}
-            <div>
-              <h3 className="text-sm font-semibold text-white mb-3">About</h3>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-xs text-gray-300 hover:text-orange-400 transition-colors">FAQ</a></li>
-                <li><a href="#" className="text-xs text-gray-300 hover:text-orange-400 transition-colors">Support</a></li>
-                <li><a href="#" className="text-xs text-gray-300 hover:text-orange-400 transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="text-xs text-gray-300 hover:text-orange-400 transition-colors">Terms of Service</a></li>
-              </ul>
-            </div>
-
-            {/* Services Column */}
-            <div>
-              <h3 className="text-sm font-semibold text-white mb-3">Services</h3>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-xs text-gray-300 hover:text-orange-400 transition-colors">Advertise</a></li>
-                <li><a href="#" className="text-xs text-gray-300 hover:text-orange-400 transition-colors">Leaderboard</a></li>
-                <li><a href="#" className="text-xs text-gray-300 hover:text-orange-400 transition-colors">Affiliate</a></li>
-              </ul>
-            </div>
-
-            {/* Info Column */}
-            <div>
-              <h3 className="text-sm font-semibold text-white mb-3">Info</h3>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-xs text-gray-300 hover:text-orange-400 transition-colors">Forum</a></li>
-                <li><a href="#" className="text-xs text-gray-300 hover:text-orange-400 transition-colors">Testimonials</a></li>
-                <li><a href="#" className="text-xs text-gray-300 hover:text-orange-400 transition-colors">Live Cashout</a></li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Logo Section - Mobile */}
-          <div className="text-center mb-6">
-            <div className="flex items-center justify-center space-x-2 mb-4">
-              <div className="bg-gradient-to-br from-orange-400 to-orange-600 p-2 rounded-xl">
-                <DollarSign className="h-6 w-6 text-white" />
-              </div>
-              <span className="text-xl font-bold text-white">coinpayu</span>
-            </div>
-          </div>
-
-          {/* Social Media Icons - Mobile */}
-          <div className="flex justify-center space-x-3 mb-6">
-            <a href="#" className="w-10 h-10 bg-gray-700 rounded-lg flex items-center justify-center hover:bg-orange-500 transition-all duration-300">
-              <span className="text-white text-sm">💬</span>
-            </a>
-            <a href="#" className="w-10 h-10 bg-gray-700 rounded-lg flex items-center justify-center hover:bg-orange-500 transition-all duration-300">
-              <Twitter className="h-4 w-4 text-white" />
-            </a>
-            <a href="#" className="w-10 h-10 bg-gray-700 rounded-lg flex items-center justify-center hover:bg-orange-500 transition-all duration-300">
-              <span className="text-white text-sm">📱</span>
-            </a>
-            <a href="#" className="w-10 h-10 bg-gray-700 rounded-lg flex items-center justify-center hover:bg-orange-500 transition-all duration-300">
-              <Facebook className="h-4 w-4 text-white" />
-            </a>
-            <a href="#" className="w-10 h-10 bg-gray-700 rounded-lg flex items-center justify-center hover:bg-orange-500 transition-all duration-300">
-              <Youtube className="h-4 w-4 text-white" />
-            </a>
-          </div>
-
-          {/* App Download - Mobile */}
-          <div className="text-center mb-6">
-            <a href="#" className="inline-block hover:opacity-80 transition-opacity">
-              <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/512px-Google_Play_Store_badge_EN.svg.png" 
-                alt="Get it on Google Play" 
-                className="h-10"
-              />
-            </a>
-          </div>
-
-          {/* Copyright - Mobile */}
-          <div className="text-center">
-            <p className="text-xs text-gray-400">
-              © 2019-2025 Agrand Limited. All rights reserved.
-            </p>
-          </div>
-        </div>
-
-        {/* Desktop Layout */}
-        <div className="hidden md:grid lg:grid-cols-4 md:grid-cols-2 gap-8">
+    <footer className="bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 text-gray-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
           {/* Company Info */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
@@ -123,6 +37,7 @@ const Footer: React.FC = () => {
                 <Linkedin className="h-5 w-5 text-white" />
               </a>
             </div>
+
           </div>
 
           {/* About Links */}
@@ -162,8 +77,8 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom Section - Desktop */}
-        <div className="hidden md:block border-t border-gray-400 mt-12 pt-8">
+        {/* Bottom Section */}
+        <div className="border-t border-gray-400 mt-12 pt-8">
           <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
             {/* Copyright */}
             <div className="text-gray-700 text-sm font-medium">
