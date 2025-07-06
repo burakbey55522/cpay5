@@ -234,17 +234,22 @@ const SocialMediaTasks: React.FC = () => {
       case 'youtube':
         return (
           <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
-            <div className="bg-black aspect-video flex items-center justify-center">
-              <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center">
-                <div className="w-0 h-0 border-l-[12px] border-l-white border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent ml-1"></div>
-              </div>
+            <div className="aspect-video">
+              <iframe
+                src="https://www.youtube.com/embed/HzYCZ1hc8OA"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="w-full h-full"
+              ></iframe>
             </div>
             <div className="p-4">
-              <h4 className="font-semibold text-gray-900 mb-2">{task.mockup.content.title}</h4>
-              <p className="text-sm text-gray-600 mb-2">{task.mockup.content.channel}</p>
+              <h4 className="font-semibold text-gray-900 mb-2">Sample Task Video</h4>
+              <p className="text-sm text-gray-600 mb-2">TaskEarn Official</p>
               <div className="flex items-center space-x-4 text-sm text-gray-500 mb-4">
-                <span>{task.mockup.content.views}</span>
-                <span>{task.mockup.content.likes} likes</span>
+                <span>Watch and engage</span>
+                <span>Earn money for actions</span>
               </div>
               <div className="flex items-center space-x-4">
                 <button className="flex items-center space-x-2 bg-red-600 text-white px-3 py-1 rounded-full text-sm">
