@@ -91,25 +91,6 @@ const HowItWorks: React.FC = () => {
             <ArrowRight className="h-6 w-6" />
           </button>
         </div>
-
-        {/* Additional Info */}
-        <div className="grid md:grid-cols-3 gap-8 mt-16 pt-16 border-t border-gray-200">
-          <div className="text-center">
-            <div className="text-3xl mb-2">⚡</div>
-            <h4 className="font-bold text-gray-900 mb-2">Instant Setup</h4>
-            <p className="text-gray-600 text-sm">Create your account in under 2 minutes</p>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl mb-2">🎯</div>
-            <h4 className="font-bold text-gray-900 mb-2">Easy Tasks</h4>
-            <p className="text-gray-600 text-sm">Simple activities anyone can complete</p>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl mb-2">💳</div>
-            <h4 className="font-bold text-gray-900 mb-2">Fast Payouts</h4>
-            <p className="text-gray-600 text-sm">Get paid instantly to your preferred method</p>
-          </div>
-        </div>
       </div>
     </section>
   );
