@@ -7,7 +7,7 @@ const HowItWorks: React.FC = () => {
       id: 1,
       title: 'Login',
       description: 'Sign up a free account and login.',
-      icon: <UserPlus className="h-12 w-12" />,
+      icon: <UserPlus className="h-6 w-6 md:h-8 md:w-8 lg:h-12 lg:w-12" />,
       color: 'from-blue-400 to-blue-600',
       bgColor: 'bg-blue-50',
       illustration: '👤'
@@ -16,7 +16,7 @@ const HowItWorks: React.FC = () => {
       id: 2,
       title: 'Earn',
       description: 'Earn coins by browsing, gaming, trying out and sharing options.',
-      icon: <Coins className="h-12 w-12" />,
+      icon: <Coins className="h-6 w-6 md:h-8 md:w-8 lg:h-12 lg:w-12" />,
       color: 'from-orange-400 to-orange-600',
       bgColor: 'bg-orange-50',
       illustration: '🎯'
@@ -25,7 +25,7 @@ const HowItWorks: React.FC = () => {
       id: 3,
       title: 'Cashout',
       description: 'Exchange collected coins for cash or a variety of gift cards.',
-      icon: <CreditCard className="h-12 w-12" />,
+      icon: <CreditCard className="h-6 w-6 md:h-8 md:w-8 lg:h-12 lg:w-12" />,
       color: 'from-emerald-400 to-emerald-600',
       bgColor: 'bg-emerald-50',
       illustration: '💰'
@@ -33,51 +33,51 @@ const HowItWorks: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-12 md:py-16 lg:py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-8 md:mb-12 lg:mb-16">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
             Getting started is easy
           </h2>
-          <p className="text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
             Start earning money in just three simple steps. No experience required, 
             no hidden fees, and instant payouts.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-12 mb-8 md:mb-12 lg:mb-16">
           {steps.map((step, index) => (
             <div key={step.id} className="relative">
               {/* Step Card */}
               <div className="text-center group">
-                {/* Icon Container */}
-                <div className={`${step.bgColor} rounded-3xl p-6 lg:p-8 mb-6 mx-auto w-28 h-28 lg:w-32 lg:h-32 flex items-center justify-center relative group-hover:scale-105 transition-transform duration-300`}>
-                  <div className={`bg-gradient-to-r ${step.color} rounded-2xl p-4 text-white shadow-lg`}>
+                {/* Icon Container - Mobile Optimized */}
+                <div className={`${step.bgColor} rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8 mb-4 md:mb-6 mx-auto w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 flex items-center justify-center relative group-hover:scale-105 transition-transform duration-300`}>
+                  <div className={`bg-gradient-to-r ${step.color} rounded-xl md:rounded-2xl p-2 md:p-3 lg:p-4 text-white shadow-lg`}>
                     {step.icon}
                   </div>
-                  {/* Illustration Overlay */}
-                  <div className="absolute -top-2 -right-2 text-2xl lg:text-3xl">
+                  {/* Illustration Overlay - Hidden on mobile for cleaner look */}
+                  <div className="hidden md:block absolute -top-1 -right-1 md:-top-2 md:-right-2 text-lg md:text-2xl lg:text-3xl">
                     {step.illustration}
                   </div>
                   {/* Step Number */}
-                  <div className="absolute -top-2 -left-2 lg:-top-3 lg:-left-3 w-6 h-6 lg:w-8 lg:h-8 bg-white rounded-full border-2 lg:border-4 border-gray-200 flex items-center justify-center">
-                    <span className="text-sm font-bold text-gray-700">{step.id}</span>
+                  <div className="absolute -top-1 -left-1 md:-top-2 md:-left-2 lg:-top-3 lg:-left-3 w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 bg-white rounded-full border-2 md:border-2 lg:border-4 border-gray-200 flex items-center justify-center">
+                    <span className="text-xs md:text-sm font-bold text-gray-700">{step.id}</span>
                   </div>
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4">
+                <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-2 md:mb-4">
                   {step.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed max-w-sm mx-auto">
+                <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-sm mx-auto px-2 md:px-0">
                   {step.description}
                 </p>
               </div>
 
-              {/* Arrow Between Steps */}
-              {index < steps.length - 1 && index !== 1 && (
-                <div className="hidden md:block absolute top-16 -right-6 lg:-right-8">
-                  <ArrowRight className="h-8 w-8 text-gray-300" />
+              {/* Arrow Between Steps - Only show on desktop */}
+              {index < steps.length - 1 && (
+                <div className="hidden md:block absolute top-8 md:top-16 -right-4 md:-right-6 lg:-right-8">
+                  <ArrowRight className="h-6 w-6 md:h-8 md:w-8 text-gray-300" />
                 </div>
               )}
             </div>
@@ -86,9 +86,9 @@ const HowItWorks: React.FC = () => {
 
         {/* CTA Button */}
         <div className="text-center">
-          <button className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-3 lg:px-12 lg:py-4 rounded-2xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 font-bold text-lg lg:text-xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center space-x-3 mx-auto">
-            <span>Get start now</span>
-            <ArrowRight className="h-6 w-6" />
+          <button className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 md:px-8 md:py-3 lg:px-12 lg:py-4 rounded-2xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 font-bold text-base md:text-lg lg:text-xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center space-x-2 md:space-x-3 mx-auto">
+            <span>Get started now</span>
+            <ArrowRight className="h-5 w-5 md:h-6 md:w-6" />
           </button>
         </div>
       </div>
