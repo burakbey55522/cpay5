@@ -37,10 +37,10 @@ const OurAdvertisers: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
             Our <span className="text-emerald-600">Advertisers</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
             Trusted by leading global brands and companies worldwide
           </p>
         </div>
@@ -48,21 +48,21 @@ const OurAdvertisers: React.FC = () => {
         {/* Infinite Scrolling Logos */}
         <div className="relative">
           {/* Gradient overlays for smooth fade effect */}
-          <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-gray-50 to-transparent z-10"></div>
-          <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-gray-50 to-transparent z-10"></div>
+          <div className="absolute left-0 top-0 w-10 lg:w-20 h-full bg-gradient-to-r from-gray-50 to-transparent z-10"></div>
+          <div className="absolute right-0 top-0 w-10 lg:w-20 h-full bg-gradient-to-l from-gray-50 to-transparent z-10"></div>
           
           <div className="flex overflow-hidden">
-            <div className="flex animate-scroll-left space-x-16 items-center">
+            <div className="flex animate-scroll-left space-x-8 lg:space-x-16 items-center">
               {/* First set of logos */}
               {advertisers.map((advertiser, index) => (
                 <div
                   key={`first-${index}`}
-                  className="flex-shrink-0 w-48 h-24 flex items-center justify-center bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-all duration-300 group hover:scale-105"
+                  className="flex-shrink-0 w-32 h-16 lg:w-48 lg:h-24 flex items-center justify-center bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-all duration-300 group hover:scale-105"
                 >
                   <img
                     src={advertiser.logo}
                     alt={`${advertiser.name} logo`}
-                    className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 p-4"
+                    className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 p-2 lg:p-4"
                   />
                 </div>
               ))}
@@ -71,12 +71,12 @@ const OurAdvertisers: React.FC = () => {
               {advertisers.map((advertiser, index) => (
                 <div
                   key={`second-${index}`}
-                  className="flex-shrink-0 w-48 h-24 flex items-center justify-center bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-all duration-300 group hover:scale-105"
+                  className="flex-shrink-0 w-32 h-16 lg:w-48 lg:h-24 flex items-center justify-center bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-all duration-300 group hover:scale-105"
                 >
                   <img
                     src={advertiser.logo}
                     alt={`${advertiser.name} logo`}
-                    className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 p-4"
+                    className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 p-2 lg:p-4"
                   />
                 </div>
               ))}

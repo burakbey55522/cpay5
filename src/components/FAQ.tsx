@@ -72,16 +72,16 @@ const FAQ: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             Frequently Asked <span className="text-blue-600">Questions</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
             Everything you need to know about earning money with TaskEarn
           </p>
         </div>
 
         {/* FAQ Items */}
-        <div className="flex flex-col md:flex-row gap-8">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
           {/* Left Column */}
           <div className="flex-1 space-y-6">
             {faqData.filter((_, index) => index % 2 === 0).map((item) => (
@@ -91,9 +91,9 @@ const FAQ: React.FC = () => {
               >
                 <button
                   onClick={() => toggleItem(item.id)}
-                  className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                  className="w-full px-4 py-4 lg:px-6 lg:py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
                 >
-                  <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                  <h3 className="text-base lg:text-lg font-semibold text-gray-900 pr-4">
                     {item.question}
                   </h3>
                   <div className="flex-shrink-0">
@@ -106,8 +106,8 @@ const FAQ: React.FC = () => {
                 </button>
                 
                 {openItem === item.id && (
-                  <div className="px-6 pb-6 animate-in slide-in-from-top-2 duration-200">
-                    <p className="text-gray-700 leading-relaxed">
+                  <div className="px-4 pb-4 lg:px-6 lg:pb-6 animate-in slide-in-from-top-2 duration-200">
+                    <p className="text-gray-700 leading-relaxed text-sm lg:text-base">
                       {item.answer}
                     </p>
                   </div>
@@ -117,7 +117,7 @@ const FAQ: React.FC = () => {
           </div>
 
           {/* Right Column */}
-          <div className="flex-1 space-y-6">
+          <div className="flex-1 space-y-6 hidden lg:block">
             {faqData.filter((_, index) => index % 2 === 1).map((item) => (
               <div
                 key={item.id}
@@ -125,9 +125,9 @@ const FAQ: React.FC = () => {
               >
                 <button
                   onClick={() => toggleItem(item.id)}
-                  className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                  className="w-full px-4 py-4 lg:px-6 lg:py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
                 >
-                  <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                  <h3 className="text-base lg:text-lg font-semibold text-gray-900 pr-4">
                     {item.question}
                   </h3>
                   <div className="flex-shrink-0">
@@ -140,8 +140,42 @@ const FAQ: React.FC = () => {
                 </button>
                 
                 {openItem === item.id && (
-                  <div className="px-6 pb-6 animate-in slide-in-from-top-2 duration-200">
-                    <p className="text-gray-700 leading-relaxed">
+                  <div className="px-4 pb-4 lg:px-6 lg:pb-6 animate-in slide-in-from-top-2 duration-200">
+                    <p className="text-gray-700 leading-relaxed text-sm lg:text-base">
+                      {item.answer}
+                    </p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+          
+          {/* Mobile: Show all FAQ items in single column */}
+          <div className="lg:hidden space-y-6">
+            {faqData.filter((_, index) => index % 2 === 1).map((item) => (
+              <div
+                key={item.id}
+                className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300"
+              >
+                <button
+                  onClick={() => toggleItem(item.id)}
+                  className="w-full px-4 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                >
+                  <h3 className="text-base font-semibold text-gray-900 pr-4">
+                    {item.question}
+                  </h3>
+                  <div className="flex-shrink-0">
+                    {openItem === item.id ? (
+                      <ChevronUp className="h-5 w-5 text-gray-500" />
+                    ) : (
+                      <ChevronDown className="h-5 w-5 text-gray-500" />
+                    )}
+                  </div>
+                </button>
+                
+                {openItem === item.id && (
+                  <div className="px-4 pb-4 animate-in slide-in-from-top-2 duration-200">
+                    <p className="text-gray-700 leading-relaxed text-sm">
                       {item.answer}
                     </p>
                   </div>

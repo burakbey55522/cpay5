@@ -85,7 +85,7 @@ const UserReviews: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             See what our <span className="text-orange-500">members say</span>
           </h2>
           
@@ -101,15 +101,15 @@ const UserReviews: React.FC = () => {
             <span className="text-gray-600">7,228 Reviews</span>
           </div>
 
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
             Join thousands of satisfied users earning money daily with TaskEarn
           </p>
         </div>
 
         {/* Reviews Grid - 6 Reviews */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
           {reviews.map((review) => (
-            <div key={review.id} className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div key={review.id} className="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 lg:p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
               {/* Review Header */}
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center space-x-3">
@@ -122,12 +122,12 @@ const UserReviews: React.FC = () => {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900">{review.username}</div>
-                    <div className="text-sm text-gray-500">{review.country}</div>
+                    <div className="text-xs lg:text-sm text-gray-500">{review.country}</div>
                   </div>
                 </div>
                 
                 {review.verified && (
-                  <div className="flex items-center space-x-1 bg-green-100 px-2 py-1 rounded-full">
+                  <div className="flex items-center space-x-1 bg-green-100 px-1.5 py-0.5 lg:px-2 lg:py-1 rounded-full">
                     <Shield className="h-4 w-4 text-green-600" />
                     <span className="text-xs font-medium text-green-600">Verified</span>
                   </div>
@@ -148,7 +148,7 @@ const UserReviews: React.FC = () => {
               </div>
 
               {/* Review Text */}
-              <p className="text-gray-700 leading-relaxed text-sm">
+              <p className="text-gray-700 leading-relaxed text-sm lg:text-base">
                 {review.review}
               </p>
             </div>

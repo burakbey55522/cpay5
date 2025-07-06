@@ -20,8 +20,8 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
               <div className="absolute -top-1 -right-1 w-4 h-4 bg-yellow-400 rounded-full animate-pulse"></div>
             </div>
             <div>
-              <span className="text-3xl font-black text-gray-900 tracking-tight">TaskEarn</span>
-              <div className="flex items-center space-x-2 mt-1">
+              <span className="text-2xl lg:text-3xl font-black text-gray-900 tracking-tight">TaskEarn</span>
+              <div className="hidden sm:flex items-center space-x-2 mt-1">
                 <div className="flex items-center space-x-1 bg-emerald-50 px-2 py-1 rounded-full">
                   <Globe className="h-3 w-3 text-emerald-600" />
                   <span className="text-xs font-bold text-emerald-600">GLOBAL</span>
@@ -35,18 +35,18 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
           </div>
 
           {/* Desktop Auth Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-4">
             <button className="text-gray-700 hover:text-emerald-600 transition-colors font-semibold">
               Sign In
             </button>
-            <button className="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-8 py-3 rounded-xl hover:from-emerald-600 hover:to-emerald-700 transition-all duration-200 font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            <button className="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-6 py-2.5 lg:px-8 lg:py-3 rounded-xl hover:from-emerald-600 hover:to-emerald-700 transition-all duration-200 font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1">
               Start Earning
             </button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
+            className="lg:hidden p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -56,7 +56,7 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200">
+        <div className="lg:hidden bg-white/95 backdrop-blur-md border-t border-gray-200">
           <div className="px-4 py-4 space-y-3">
             <button className="block w-full text-left px-3 py-2 text-gray-700 hover:text-emerald-600 font-semibold">
               Sign In

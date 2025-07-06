@@ -323,32 +323,32 @@ const SocialMediaTasks: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             Social Media <span className="text-indigo-600">Tasks</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
             Earn money by engaging with social media content across popular platforms. 
             Help businesses grow their online presence while earning real cash.
           </p>
         </div>
 
         {/* Tasks Grid */}
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
           {socialTasks.map((task, index) => (
-            <div key={task.id} className="space-y-8">
+            <div key={task.id} className="space-y-6 lg:space-y-8">
               {/* Task Info */}
-              <div className={`${task.bgColor} rounded-2xl p-8 border-2 ${task.borderColor}`}>
+              <div className={`${task.bgColor} rounded-2xl p-6 lg:p-8 border-2 ${task.borderColor}`}>
                 <div className="flex items-center space-x-4 mb-6">
                   <div className={`bg-gradient-to-r ${task.color} p-4 rounded-2xl text-white`}>
                     {task.icon}
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900">{task.platform}</h3>
+                    <h3 className="text-xl lg:text-2xl font-bold text-gray-900">{task.platform}</h3>
                     <p className="text-gray-600">{task.description}</p>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 mb-6">
+                <div className="grid grid-cols-2 gap-3 lg:gap-4 mb-6">
                   <div className="bg-white rounded-xl p-4 border border-gray-200">
                     <div className="flex items-center space-x-2 mb-2">
                       <DollarSign className="h-5 w-5 text-emerald-500" />
@@ -367,7 +367,7 @@ const SocialMediaTasks: React.FC = () => {
 
                 <div className="mb-6">
                   <h4 className="font-semibold text-gray-900 mb-3">Available Tasks:</h4>
-                  <div className="grid grid-cols-2 gap-2">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {task.tasks.map((taskType, idx) => (
                       <div key={idx} className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
@@ -377,7 +377,7 @@ const SocialMediaTasks: React.FC = () => {
                   </div>
                 </div>
 
-                <button className={`w-full bg-gradient-to-r ${task.color} text-white py-3 px-6 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2`}>
+                <button className={`w-full bg-gradient-to-r ${task.color} text-white py-3 px-4 lg:px-6 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2`}>
                   <span>Start {task.platform} Tasks</span>
                   <ArrowRight className="h-5 w-5" />
                 </button>

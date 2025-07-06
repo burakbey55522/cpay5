@@ -114,17 +114,17 @@ const ManyWaysToEarn: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             Multiple Ways to <span className="text-emerald-600">Earn Money</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
             Choose from various earning methods that fit your lifestyle and preferences
           </p>
         </div>
 
         {/* Browsing Section */}
         <div className="mb-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="order-2 lg:order-1">
               <div className="bg-white rounded-3xl shadow-xl border border-gray-200 overflow-hidden max-w-md mx-auto">
                 {/* Browser Header */}
@@ -142,7 +142,7 @@ const ManyWaysToEarn: React.FC = () => {
                 </div>
                 
                 {/* Browser Content */}
-                <div className="p-8 text-center min-h-[280px] flex flex-col justify-center">
+                <div className="p-6 lg:p-8 text-center min-h-[280px] flex flex-col justify-center">
                   <div className="mb-6">
                     <div className="w-16 h-16 bg-emerald-100 rounded-full mx-auto flex items-center justify-center mb-3">
                       <Globe className="h-8 w-8 text-emerald-600" />
@@ -159,28 +159,28 @@ const ManyWaysToEarn: React.FC = () => {
                   <button className="bg-emerald-500 text-white px-6 py-3 rounded-xl font-semibold hover:bg-emerald-600 transition-colors mb-3">
                     Start Browsing
                   </button>
-                  <p className="text-gray-500 text-sm">Browse websites to earn up to $0.05 per visit</p>
+                  <p className="text-gray-500 text-xs lg:text-sm">Browse websites to earn up to $0.05 per visit</p>
                 </div>
               </div>
             </div>
             
-            <div className="order-1 lg:order-2 space-y-6">
+            <div className="order-1 lg:order-2 space-y-4 lg:space-y-6">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-12 h-12 bg-emerald-500 rounded-xl flex items-center justify-center">
                   <Globe className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-3xl font-bold text-gray-900">Website Browsing</h3>
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900">Website Browsing</h3>
               </div>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-base lg:text-lg text-gray-600 leading-relaxed">
                 Earn money by visiting and browsing various websites. Simple, quick, and profitable.
               </p>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3 lg:gap-4">
                 <div className="bg-white rounded-xl p-4 border border-gray-200">
-                  <div className="text-2xl font-bold text-emerald-600 mb-1">150+</div>
+                  <div className="text-xl lg:text-2xl font-bold text-emerald-600 mb-1">150+</div>
                   <div className="text-sm text-gray-600">Active websites</div>
                 </div>
                 <div className="bg-white rounded-xl p-4 border border-gray-200">
-                  <div className="text-2xl font-bold text-emerald-600 mb-1">$0.05</div>
+                  <div className="text-xl lg:text-2xl font-bold text-emerald-600 mb-1">$0.05</div>
                   <div className="text-sm text-gray-600">Per website visit</div>
                 </div>
               </div>
@@ -190,19 +190,19 @@ const ManyWaysToEarn: React.FC = () => {
 
         {/* Gaming Section */}
         <div className="mb-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="space-y-4 lg:space-y-6">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center">
                   <Gamepad2 className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-3xl font-bold text-gray-900">Mobile Gaming</h3>
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900">Mobile Gaming</h3>
               </div>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-base lg:text-lg text-gray-600 leading-relaxed">
                 Play engaging mobile games and earn money by completing in-game objectives and milestones.
               </p>
               <div className="bg-white rounded-xl p-4 border border-gray-200">
-                <div className="text-2xl font-bold text-blue-600 mb-1">60+</div>
+                <div className="text-xl lg:text-2xl font-bold text-blue-600 mb-1">60+</div>
                 <div className="text-sm text-gray-600">Games available across all genres</div>
               </div>
             </div>
@@ -214,6 +214,10 @@ const ManyWaysToEarn: React.FC = () => {
                 slidesPerView={4.2}
                 breakpoints={{
                   320: {
+                    slidesPerView: 1.5,
+                    spaceBetween: 15
+                  },
+                  480: {
                     slidesPerView: 2.2,
                     spaceBetween: 15
                   },
@@ -272,24 +276,24 @@ const ManyWaysToEarn: React.FC = () => {
 
         {/* App Testing Section */}
         <div className="mb-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="order-2 lg:order-1">
               {/* Static App Testing Grid with Background Circle */}
               <div className="relative max-w-md mx-auto">
                 {/* Background Circle */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-80 h-80 bg-gradient-to-br from-blue-50 to-purple-50 rounded-full"></div>
+                  <div className="w-64 h-64 lg:w-80 lg:h-80 bg-gradient-to-br from-blue-50 to-purple-50 rounded-full"></div>
                 </div>
                 
                 {/* App Icons Grid */}
-                <div className="relative z-10 grid grid-cols-2 gap-6 p-8">
+                <div className="relative z-10 grid grid-cols-2 gap-4 lg:gap-6 p-6 lg:p-8">
                   {appOffers.slice(0, 4).map((app, index) => (
                     <div 
                       key={index}
                       className="group cursor-pointer"
                     >
-                      <div className="relative bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 w-40 h-40 mx-auto group-hover:scale-105">
-                        <div className="w-full h-full relative p-6">
+                      <div className="relative bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 w-32 h-32 lg:w-40 lg:h-40 mx-auto group-hover:scale-105">
+                        <div className="w-full h-full relative p-4 lg:p-6">
                           <img 
                             src={app.image} 
                             alt={app.name}
@@ -308,23 +312,23 @@ const ManyWaysToEarn: React.FC = () => {
               </div>
             </div>
             
-            <div className="order-1 lg:order-2 space-y-6">
+            <div className="order-1 lg:order-2 space-y-4 lg:space-y-6">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center">
                   <Download className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-3xl font-bold text-gray-900">App Testing</h3>
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900">App Testing</h3>
               </div>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-base lg:text-lg text-gray-600 leading-relaxed">
                 Help companies improve their apps by testing and providing valuable feedback.
               </p>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3 lg:gap-4">
                 <div className="bg-white rounded-xl p-4 border border-gray-200">
-                  <div className="text-2xl font-bold text-purple-600 mb-1">250+</div>
+                  <div className="text-xl lg:text-2xl font-bold text-purple-600 mb-1">250+</div>
                   <div className="text-sm text-gray-600">Apps to test</div>
                 </div>
                 <div className="bg-white rounded-xl p-4 border border-gray-200">
-                  <div className="text-2xl font-bold text-purple-600 mb-1">$50</div>
+                  <div className="text-xl lg:text-2xl font-bold text-purple-600 mb-1">$50</div>
                   <div className="text-sm text-gray-600">Average per test</div>
                 </div>
               </div>
@@ -334,24 +338,24 @@ const ManyWaysToEarn: React.FC = () => {
 
         {/* Surveys Section */}
         <div className="mb-12">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="space-y-4 lg:space-y-6">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-12 h-12 bg-indigo-500 rounded-xl flex items-center justify-center">
                   <MessageSquare className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-3xl font-bold text-gray-900">Opinion Surveys</h3>
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900">Opinion Surveys</h3>
               </div>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-base lg:text-lg text-gray-600 leading-relaxed">
                 Share your opinions and influence the next generation of products and services worldwide.
               </p>
               <div className="bg-white rounded-xl p-4 border border-gray-200">
-                <div className="text-2xl font-bold text-indigo-600 mb-1">$2.50</div>
+                <div className="text-xl lg:text-2xl font-bold text-indigo-600 mb-1">$2.50</div>
                 <div className="text-sm text-gray-600">Average earnings per 10-minute survey</div>
               </div>
             </div>
             
-            <div className="bg-white rounded-3xl shadow-xl border border-gray-200 p-8">
+            <div className="bg-white rounded-3xl shadow-xl border border-gray-200 p-6 lg:p-8">
               <div className="mb-6">
                 <h4 className="font-bold text-gray-900 mb-4">Sample Survey Question:</h4>
                 <p className="text-gray-700 mb-4">Which social media platform do you use most frequently?</p>
