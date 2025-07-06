@@ -11,7 +11,8 @@ import {
   DollarSign,
   Clock,
   Users,
-  TrendingUp
+  TrendingUp,
+  Play
 } from 'lucide-react';
 
 const SocialMediaTasks: React.FC = () => {
