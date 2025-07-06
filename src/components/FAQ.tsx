@@ -81,15 +81,15 @@ const FAQ: React.FC = () => {
         </div>
 
         {/* FAQ Items */}
-        <div className="grid md:grid-cols-2 gap-8 items-start">
+        <div className="grid md:grid-cols-2 gap-8">
           {faqData.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300 break-inside-avoid"
+              className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-300 h-fit"
             >
               <button
                 onClick={() => toggleItem(item.id)}
-                className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset"
               >
                 <h3 className="text-lg font-semibold text-gray-900 pr-4">
                   {item.question}
@@ -104,7 +104,7 @@ const FAQ: React.FC = () => {
               </button>
               
               {openItem === item.id && (
-                <div className="px-6 pb-6">
+                <div className="px-6 pb-6 border-t border-gray-100">
                   <p className="text-gray-700 leading-relaxed">
                     {item.answer}
                   </p>
