@@ -40,33 +40,21 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
               Sign In
             </button>
             <button className="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-6 py-2.5 lg:px-8 lg:py-3 rounded-xl hover:from-emerald-600 hover:to-emerald-700 transition-all duration-200 font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-              Start Earning
+              Sign Up
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="lg:hidden bg-white/95 backdrop-blur-md border-t border-gray-200">
-          <div className="px-4 py-4 space-y-3">
-            <button className="block w-full text-left px-3 py-2 text-gray-700 hover:text-emerald-600 font-semibold">
+          {/* Mobile Auth Buttons - Always Visible */}
+          <div className="flex lg:hidden items-center space-x-2">
+            <button className="text-gray-700 hover:text-emerald-600 transition-colors font-semibold text-sm px-3 py-2">
               Sign In
             </button>
-            <button className="block w-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-3 py-3 rounded-xl hover:from-emerald-600 hover:to-emerald-700 transition-all font-bold">
-              Start Earning
+            <button className="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-4 py-2 rounded-lg hover:from-emerald-600 hover:to-emerald-700 transition-all duration-200 font-bold text-sm shadow-lg">
+              Sign Up
             </button>
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 };
