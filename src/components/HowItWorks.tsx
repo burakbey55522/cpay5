@@ -7,6 +7,7 @@ const HowItWorks: React.FC = () => {
       id: 1,
       title: 'Login',
       description: 'Sign up a free account and login.',
+      mobileDescription: 'Sign up free account',
       icon: <UserPlus className="h-4 w-4 sm:h-6 sm:w-6 md:h-8 md:w-8 lg:h-12 lg:w-12" />,
       color: 'from-blue-400 to-blue-600',
       bgColor: 'bg-blue-50',
@@ -16,6 +17,7 @@ const HowItWorks: React.FC = () => {
       id: 2,
       title: 'Earn',
       description: 'Earn coins by browsing, gaming, trying out and sharing options.',
+      mobileDescription: 'Complete simple tasks',
       icon: <Coins className="h-4 w-4 sm:h-6 sm:w-6 md:h-8 md:w-8 lg:h-12 lg:w-12" />,
       color: 'from-orange-400 to-orange-600',
       bgColor: 'bg-orange-50',
@@ -25,6 +27,7 @@ const HowItWorks: React.FC = () => {
       id: 3,
       title: 'Cashout',
       description: 'Exchange collected coins for cash or a variety of gift cards.',
+      mobileDescription: 'Get paid instantly',
       icon: <CreditCard className="h-4 w-4 sm:h-6 sm:w-6 md:h-8 md:w-8 lg:h-12 lg:w-12" />,
       color: 'from-emerald-400 to-emerald-600',
       bgColor: 'bg-emerald-50',
@@ -45,32 +48,32 @@ const HowItWorks: React.FC = () => {
           </p>
         </div>
 
-        {/* Mobile: Horizontal Layout */}
-        <div className="block sm:hidden mb-6">
-          <div className="flex items-start justify-between space-x-2 px-2">
-            {steps.map((step, index) => (
-              <div key={step.id} className="flex-1 text-center">
-                {/* Icon Container */}
-                <div className={`${step.bgColor} rounded-xl p-2 mb-2 mx-auto w-12 h-12 flex items-center justify-center relative`}>
-                  <div className={`bg-gradient-to-r ${step.color} rounded-lg p-1.5 text-white shadow-md`}>
-                    {step.icon}
-                  </div>
-                  {/* Step Number */}
-                  <div className="absolute -top-1 -left-1 w-4 h-4 bg-white rounded-full border border-gray-200 flex items-center justify-center">
-                    <span className="text-xs font-bold text-gray-700">{step.id}</span>
-                  </div>
+        {/* Mobile: Vertical Compact Layout */}
+        <div className="block sm:hidden space-y-4 mb-6">
+          {steps.map((step, index) => (
+            <div key={step.id} className="flex items-center space-x-4 bg-white rounded-xl p-4 shadow-sm border border-gray-200">
+              {/* Icon Container */}
+              <div className={`${step.bgColor} rounded-xl p-3 w-16 h-16 flex items-center justify-center relative flex-shrink-0`}>
+                <div className={`bg-gradient-to-r ${step.color} rounded-lg p-2 text-white shadow-md`}>
+                  {step.icon}
                 </div>
+                {/* Step Number */}
+                <div className="absolute -top-1 -left-1 w-5 h-5 bg-white rounded-full border-2 border-gray-200 flex items-center justify-center">
+                  <span className="text-xs font-bold text-gray-700">{step.id}</span>
+                </div>
+              </div>
 
-                {/* Content */}
-                <h3 className="text-sm font-bold text-gray-900 mb-1">
+              {/* Content */}
+              <div className="flex-1">
+                <h3 className="text-base font-bold text-gray-900 mb-1">
                   {step.title}
                 </h3>
-                <p className="text-xs text-gray-600 leading-tight px-1">
-                  {step.description}
+                <p className="text-sm text-gray-600">
+                  {step.mobileDescription}
                 </p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
 
         {/* Tablet and Desktop: Original Layout */}
