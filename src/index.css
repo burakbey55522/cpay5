@@ -94,5 +94,21 @@ a:focus-visible {
   
   .swiper-slide {
     height: auto;
+    max-width: 140px !important;
+  }
+  
+  .gaming-swiper .swiper-slide {
+    width: auto !important;
+    flex-shrink: 0;
+  }
+  
+  .gaming-swiper {
+    overflow: visible !important;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 640px) {
+  .swiper-slide {
+    max-width: 160px !important;
   }
 }
