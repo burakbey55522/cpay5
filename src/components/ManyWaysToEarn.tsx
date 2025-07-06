@@ -191,7 +191,25 @@ const ManyWaysToEarn: React.FC = () => {
               <Swiper
                 modules={[Autoplay, Navigation]}
                 spaceBetween={20}
-                slidesPerView={2.5}
+                slidesPerView={4.2}
+                breakpoints={{
+                  320: {
+                    slidesPerView: 2.2,
+                    spaceBetween: 15
+                  },
+                  640: {
+                    slidesPerView: 3.2,
+                    spaceBetween: 15
+                  },
+                  768: {
+                    slidesPerView: 4.2,
+                    spaceBetween: 20
+                  },
+                  1024: {
+                    slidesPerView: 4.5,
+                    spaceBetween: 20
+                  }
+                }}
                 autoplay={{
                   delay: 2000,
                   disableOnInteraction: false,
@@ -202,8 +220,8 @@ const ManyWaysToEarn: React.FC = () => {
                 {gameOffers.map((game) => (
                   <SwiperSlide key={game.id}>
                     <div className="group cursor-pointer">
-                      <div className="relative bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300">
-                        <div className="relative aspect-square">
+                      <div className="relative bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300">
+                        <div className="relative aspect-square w-full">
                           <img 
                             src={game.image} 
                             alt={game.title}
@@ -211,17 +229,17 @@ const ManyWaysToEarn: React.FC = () => {
                           />
                           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
                           <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <div className="bg-white/90 backdrop-blur-sm rounded-full p-3">
-                              <Play className="h-6 w-6 text-gray-700" />
+                            <div className="bg-white/90 backdrop-blur-sm rounded-full p-2">
+                              <Play className="h-4 w-4 text-gray-700" />
                             </div>
                           </div>
-                          <div className="absolute top-3 right-3 bg-blue-500 text-white px-2 py-1 rounded-lg text-xs font-bold">
+                          <div className="absolute top-2 right-2 bg-blue-500 text-white px-1.5 py-0.5 rounded text-xs font-bold">
                             {game.category}
                           </div>
                         </div>
-                        <div className="p-4">
-                          <h4 className="font-bold text-gray-900 mb-1 truncate">{game.title}</h4>
-                          <div className="text-lg font-bold text-emerald-600">{game.reward}</div>
+                        <div className="p-3">
+                          <h4 className="font-bold text-gray-900 mb-1 truncate text-sm">{game.title}</h4>
+                          <div className="text-base font-bold text-emerald-600">{game.reward}</div>
                         </div>
                       </div>
                     </div>
