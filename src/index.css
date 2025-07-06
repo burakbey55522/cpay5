@@ -18,6 +18,7 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
+}
 
 @layer utilities {
   .animate-slide {
