@@ -1,13 +1,812 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Task-to-Earn Platform</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <style>
+        /* Custom Styles */
+        html, body {
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .animate-slide {
+            animation: slide 30s linear infinite;
+        }
+        
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        .animate-scroll-left {
+            animation: scroll-left 40s linear infinite;
+        }
+        
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #10b981;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #059669;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        button:focus-visible,
+        a:focus-visible {
+            outline: 2px solid #10b981;
+            outline-offset: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .swiper-wrapper {
+                align-items: stretch;
+            }
+            
+            .swiper-slide {
+                height: auto;
+            }
+        }
+
+        /* Lucide Icons */
+        .lucide {
+            width: 24px;
+            height: 24px;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-white overflow-x-hidden">
+    <!-- Header -->
+    <header class="bg-white/95 backdrop-blur-md shadow-lg border-b border-emerald-100 fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="relative">
+                        <div class="bg-gradient-to-br from-emerald-400 to-emerald-600 p-3 rounded-2xl shadow-lg">
+                            <svg class="h-8 w-8 text-white lucide" viewBox="0 0 24 24">
+                                <line x1="12" x2="12" y1="2" y2="22"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <div class="absolute -top-1 -right-1 w-4 h-4 bg-yellow-400 rounded-full animate-pulse"></div>
+                    </div>
+                    <div>
+                        <span class="text-2xl lg:text-3xl font-black text-gray-900 tracking-tight">TaskEarn</span>
+                        <div class="hidden sm:flex items-center space-x-2 mt-1">
+                            <div class="flex items-center space-x-1 bg-emerald-50 px-2 py-1 rounded-full">
+                                <svg class="h-3 w-3 text-emerald-600 lucide" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                                    <path d="M2 12h20"></path>
+                                </svg>
+                                <span class="text-xs font-bold text-emerald-600">GLOBAL</span>
+                            </div>
+                            <div class="flex items-center space-x-1 bg-blue-50 px-2 py-1 rounded-full">
+                                <svg class="h-3 w-3 text-blue-600 lucide" viewBox="0 0 24 24">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+                                </svg>
+                                <span class="text-xs font-bold text-blue-600">SECURE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desktop Auth Buttons -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <button class="text-gray-700 hover:text-emerald-600 transition-colors font-semibold">
+                        Sign In
+                    </button>
+                    <button class="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-6 py-2.5 lg:px-8 lg:py-3 rounded-xl hover:from-emerald-600 hover:to-emerald-700 transition-all duration-200 font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                        Sign Up
+                    </button>
+                </div>
+
+                <!-- Mobile Auth Buttons -->
+                <div class="flex lg:hidden items-center space-x-2">
+                    <button class="text-gray-700 hover:text-emerald-600 transition-colors font-semibold text-sm px-3 py-2">
+                        Sign In
+                    </button>
+                    <button class="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-4 py-2 rounded-lg hover:from-emerald-600 hover:to-emerald-700 transition-all duration-200 font-bold text-sm shadow-lg">
+                        Sign Up
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-20 bg-gradient-to-br from-emerald-50 via-white to-blue-50 min-h-screen flex items-center relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-40 -right-40 w-80 h-80 bg-emerald-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
+            <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-pulse"></div>
+        </div>
+
+        <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 relative z-10">
+            <div class="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                <!-- Left Column - Content -->
+                <div class="space-y-6 lg:space-y-10 order-1 lg:order-1">
+                    <div class="space-y-4 lg:space-y-6">
+                        <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+                            <div class="flex items-center space-x-1 sm:space-x-2 bg-emerald-100 px-2 py-1 sm:px-3 sm:py-1.5 lg:px-4 lg:py-2 rounded-full">
+                                <svg class="h-5 w-5 text-emerald-600 lucide" viewBox="0 0 24 24">
+                                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                </svg>
+                                <span class="font-bold text-emerald-700 text-xs sm:text-sm lg:text-base">2.1M+ Users</span>
+                            </div>
+                            <div class="flex items-center space-x-1 sm:space-x-2 bg-blue-100 px-2 py-1 sm:px-3 sm:py-1.5 lg:px-4 lg:py-2 rounded-full">
+                                <svg class="h-5 w-5 text-blue-600 lucide" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                                    <path d="M2 12h20"></path>
+                                </svg>
+                                <span class="font-bold text-blue-700 text-xs sm:text-sm lg:text-base">190+ Countries</span>
+                            </div>
+                        </div>
+                        
+                        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 leading-tight">
+                            Earn Money
+                            <span class="bg-gradient-to-r from-emerald-500 to-blue-600 bg-clip-text text-transparent block">
+                                Doing Tasks
+                            </span>
+                        </h1>
+                        
+                        <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed font-medium">
+                            Complete simple tasks and earn real money instantly. 
+                            <span class="text-emerald-600 font-bold"> No experience required.</span>
+                        </p>
+
+                        <!-- Country and Earnings Info -->
+                        <div class="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-3 sm:gap-4 lg:gap-6 py-4">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-6 h-6 sm:w-8 sm:h-8 rounded-full overflow-hidden border-2 border-gray-200">
+                                    <img 
+                                        src="https://www.coinpayu.com/static/images/flags/tr.svg" 
+                                        alt="Turkey Flag"
+                                        class="w-full h-full object-cover"
+                                    />
+                                </div>
+                                <span class="bg-orange-100 text-orange-600 px-2 py-0.5 sm:py-1 rounded-full text-xs font-black">150+</span>
+                                <span class="text-gray-700 font-medium text-xs sm:text-sm lg:text-base">offers in Turkey</span>
+                            </div>
+                            
+                            <div class="flex items-center space-x-2">
+                                <svg class="h-4 w-4 sm:h-5 sm:w-5 text-emerald-600 lucide" viewBox="0 0 24 24">
+                                    <line x1="12" x2="12" y1="2" y2="22"></line>
+                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                </svg>
+                                <span class="text-emerald-600 font-black text-xs sm:text-sm lg:text-lg">Up to $150 per offer</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 lg:gap-6">
+                        <button class="group bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-6 py-3 sm:py-4 lg:px-10 lg:py-5 rounded-2xl hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 font-black text-base sm:text-lg lg:text-xl shadow-2xl hover:shadow-emerald-500/25 transform hover:-translate-y-2 flex items-center justify-center space-x-2 sm:space-x-3">
+                            <svg class="h-5 w-5 sm:h-6 sm:w-6 lucide" viewBox="0 0 24 24">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                            </svg>
+                            <span>Start Earning Now</span>
+                            <svg class="h-5 w-5 sm:h-6 sm:w-6 group-hover:translate-x-1 transition-transform lucide" viewBox="0 0 24 24">
+                                <path d="M5 12h14"></path>
+                                <path d="m12 5 7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Example Task Cards -->
+                    <div class="grid grid-cols-3 sm:grid-cols-3 gap-2 sm:gap-4 lg:gap-6 pt-6 lg:pt-8">
+                        <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group cursor-pointer">
+                            <div class="aspect-square bg-gradient-to-br from-green-400 to-green-600 relative overflow-hidden">
+                                <img 
+                                    src="https://www.coinpayu.com/static/newImg/index/offer2.jpg" 
+                                    alt="Monopoly Go Task"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                                />
+                                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                                <div class="absolute top-1 right-1 sm:top-3 sm:right-3 bg-white/90 backdrop-blur-sm px-1 py-0.5 sm:px-2 sm:py-1 rounded-full">
+                                    <span class="text-xs font-black text-green-600">HOT</span>
+                                </div>
+                            </div>
+                            <div class="p-1.5 sm:p-3 lg:p-4">
+                                <h3 class="font-black text-gray-900 mb-0.5 sm:mb-1 text-xs sm:text-sm lg:text-base truncate">Monopoly Go!</h3>
+                                <p class="text-sm sm:text-lg lg:text-2xl font-black text-emerald-600">$150</p>
+                                <p class="text-xs text-gray-500 font-medium hidden sm:block">Gaming Task</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group cursor-pointer">
+                            <div class="aspect-square bg-gradient-to-br from-pink-400 to-purple-600 relative overflow-hidden">
+                                <img 
+                                    src="https://www.coinpayu.com/static/newImg/index/offer3.png" 
+                                    alt="TikTok Install Task"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                                />
+                                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                                <div class="absolute top-1 right-1 sm:top-3 sm:right-3 bg-white/90 backdrop-blur-sm px-1 py-0.5 sm:px-2 sm:py-1 rounded-full">
+                                    <span class="text-xs font-black text-pink-600">NEW</span>
+                                </div>
+                            </div>
+                            <div class="p-1.5 sm:p-3 lg:p-4">
+                                <h3 class="font-black text-gray-900 mb-0.5 sm:mb-1 text-xs sm:text-sm lg:text-base truncate">TikTok Install</h3>
+                                <p class="text-sm sm:text-lg lg:text-2xl font-black text-emerald-600">$2</p>
+                                <p class="text-xs text-gray-500 font-medium hidden sm:block">App Install</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group cursor-pointer">
+                            <div class="aspect-square bg-gradient-to-br from-gray-600 to-gray-800 relative overflow-hidden">
+                                <img 
+                                    src="https://www.coinpayu.com/static/newImg/index/offer1.jpg" 
+                                    alt="Warpath Game Task"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                                />
+                                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                                <div class="absolute top-1 right-1 sm:top-3 sm:right-3 bg-white/90 backdrop-blur-sm px-1 py-0.5 sm:px-2 sm:py-1 rounded-full">
+                                    <span class="text-xs font-black text-orange-600">TOP</span>
+                                </div>
+                            </div>
+                            <div class="p-1.5 sm:p-3 lg:p-4">
+                                <h3 class="font-black text-gray-900 mb-0.5 sm:mb-1 text-xs sm:text-sm lg:text-base truncate">Warpath: Ace...</h3>
+                                <p class="text-sm sm:text-lg lg:text-2xl font-black text-emerald-600">$85</p>
+                                <p class="text-xs text-gray-500 font-medium hidden sm:block">Strategy Game</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Interactive Task Showcase -->
+                <div class="lg:pl-8 order-2 lg:order-2 mt-8 lg:mt-0">
+                    <div class="bg-white/80 backdrop-blur-lg rounded-3xl shadow-2xl p-6 lg:p-8 border border-white/20">
+                        <div class="text-center mb-6 lg:mb-8">
+                            <h3 class="text-xl sm:text-2xl lg:text-3xl font-black text-gray-900 mb-2">Featured Tasks</h3>
+                            <p class="text-gray-600 font-medium">Choose your earning method</p>
+                        </div>
+                        
+                        <!-- Current Featured Task -->
+                        <div class="mb-6 lg:mb-8">
+                            <div class="bg-gradient-to-r from-red-400 to-red-600 rounded-2xl p-6 text-white transform transition-all duration-500">
+                                <div class="flex items-center space-x-4 mb-4">
+                                    <div class="bg-white/20 p-2 lg:p-3 rounded-xl">
+                                        <svg class="h-6 w-6 lucide" viewBox="0 0 24 24">
+                                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-lg sm:text-xl lg:text-2xl font-black">Watch Videos</h4>
+                                        <p class="text-white/80 font-medium">Entertainment</p>
+                                    </div>
+                                </div>
+                                <p class="text-white/90 mb-4 font-medium">Watch promotional videos and earn instantly</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-lg sm:text-xl lg:text-2xl font-black">$0.25 - $2.00</span>
+                                    <button class="bg-white/20 hover:bg-white/30 px-3 py-1.5 sm:py-2 lg:px-4 lg:py-2 rounded-lg font-bold transition-colors text-sm lg:text-base">
+                                        Start Now
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
+                            <div class="text-center">
+                                <div class="text-xl sm:text-2xl lg:text-3xl font-black text-emerald-600 mb-1">$847,392</div>
+                                <div class="text-sm text-gray-600 font-medium">Paid This Month</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-xl sm:text-2xl lg:text-3xl font-black text-blue-600 mb-1">850+</div>
+                                <div class="text-sm text-gray-600 font-medium">Available Tasks</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Cashout Section -->
+    <section class="py-2 sm:py-3 bg-white border-y border-gray-200 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-emerald-50/50 to-blue-50/50"></div>
+        <div class="relative z-10">
+            <div class="flex items-center justify-center mb-1 lg:mb-2">
+                <div class="flex items-center space-x-2">
+                    <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                    <span class="text-sm font-bold text-gray-700">Live Cashout</span>
+                    <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                </div>
+            </div>
+
+            <div class="overflow-hidden">
+                <div class="flex space-x-3 sm:space-x-4 lg:space-x-8 animate-slide">
+                    <!-- Cashout items will be populated by JavaScript -->
+                    <div id="cashout-container" class="flex space-x-3 sm:space-x-4 lg:space-x-8"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-8 sm:py-12 md:py-16 lg:py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-6 sm:mb-8 md:mb-12 lg:mb-16">
+                <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4">
+                    Getting started is easy
+                </h2>
+                <p class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto px-4">
+                    Start earning money in just three simple steps. No experience required, 
+                    no hidden fees, and instant payouts.
+                </p>
+            </div>
+
+            <!-- Mobile: Vertical Compact Layout -->
+            <div class="block sm:hidden space-y-4 mb-6">
+                <div class="flex items-center space-x-4 bg-white rounded-xl p-4 shadow-sm border border-gray-200">
+                    <div class="bg-blue-50 rounded-xl p-3 w-16 h-16 flex items-center justify-center relative flex-shrink-0">
+                        <div class="bg-gradient-to-r from-blue-400 to-blue-600 rounded-lg p-2 text-white shadow-md">
+                            <svg class="h-4 w-4 lucide" viewBox="0 0 24 24">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <line x1="19" x2="19" y1="8" y2="14"></line>
+                                <line x1="22" x2="16" y1="11" y2="11"></line>
+                            </svg>
+                        </div>
+                        <div class="absolute -top-1 -left-1 w-5 h-5 bg-white rounded-full border-2 border-gray-200 flex items-center justify-center">
+                            <span class="text-xs font-bold text-gray-700">1</span>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Login</h3>
+                        <p class="text-sm text-gray-600">Sign up free account</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-4 bg-white rounded-xl p-4 shadow-sm border border-gray-200">
+                    <div class="bg-orange-50 rounded-xl p-3 w-16 h-16 flex items-center justify-center relative flex-shrink-0">
+                        <div class="bg-gradient-to-r from-orange-400 to-orange-600 rounded-lg p-2 text-white shadow-md">
+                            <svg class="h-4 w-4 lucide" viewBox="0 0 24 24">
+                                <circle cx="8" cy="8" r="6"></circle>
+                                <path d="M18.09 10.37A6 6 0 1 1 10.34 18"></path>
+                                <path d="M7 6h1v4"></path>
+                                <path d="m16.71 13.88.7.71-2.82 2.82"></path>
+                            </svg>
+                        </div>
+                        <div class="absolute -top-1 -left-1 w-5 h-5 bg-white rounded-full border-2 border-gray-200 flex items-center justify-center">
+                            <span class="text-xs font-bold text-gray-700">2</span>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Earn</h3>
+                        <p class="text-sm text-gray-600">Complete simple tasks</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-4 bg-white rounded-xl p-4 shadow-sm border border-gray-200">
+                    <div class="bg-emerald-50 rounded-xl p-3 w-16 h-16 flex items-center justify-center relative flex-shrink-0">
+                        <div class="bg-gradient-to-r from-emerald-400 to-emerald-600 rounded-lg p-2 text-white shadow-md">
+                            <svg class="h-4 w-4 lucide" viewBox="0 0 24 24">
+                                <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                                <line x1="2" x2="22" y1="10" y2="10"></line>
+                            </svg>
+                        </div>
+                        <div class="absolute -top-1 -left-1 w-5 h-5 bg-white rounded-full border-2 border-gray-200 flex items-center justify-center">
+                            <span class="text-xs font-bold text-gray-700">3</span>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Cashout</h3>
+                        <p class="text-sm text-gray-600">Get paid instantly</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desktop: Original Layout -->
+            <div class="hidden sm:grid md:grid-cols-3 gap-6 md:gap-8 lg:gap-12 mb-8 md:mb-12 lg:mb-16">
+                <div class="relative">
+                    <div class="text-center group">
+                        <div class="bg-blue-50 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8 mb-4 md:mb-6 mx-auto w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 flex items-center justify-center relative group-hover:scale-105 transition-transform duration-300">
+                            <div class="bg-gradient-to-r from-blue-400 to-blue-600 rounded-xl md:rounded-2xl p-2 md:p-3 lg:p-4 text-white shadow-lg">
+                                <svg class="h-4 w-4 sm:h-6 sm:w-6 md:h-8 md:w-8 lg:h-12 lg:w-12 lucide" viewBox="0 0 24 24">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <line x1="19" x2="19" y1="8" y2="14"></line>
+                                    <line x1="22" x2="16" y1="11" y2="11"></line>
+                                </svg>
+                            </div>
+                            <div class="absolute -top-1 -right-1 md:-top-2 md:-right-2 text-lg md:text-2xl lg:text-3xl">👤</div>
+                            <div class="absolute -top-1 -left-1 md:-top-2 md:-left-2 lg:-top-3 lg:-left-3 w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 bg-white rounded-full border-2 md:border-2 lg:border-4 border-gray-200 flex items-center justify-center">
+                                <span class="text-xs md:text-sm font-bold text-gray-700">1</span>
+                            </div>
+                        </div>
+                        <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-2 md:mb-4">Login</h3>
+                        <p class="text-sm md:text-base text-gray-600 leading-relaxed max-w-sm mx-auto px-2 md:px-0">Sign up a free account and login.</p>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="text-center group">
+                        <div class="bg-orange-50 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8 mb-4 md:mb-6 mx-auto w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 flex items-center justify-center relative group-hover:scale-105 transition-transform duration-300">
+                            <div class="bg-gradient-to-r from-orange-400 to-orange-600 rounded-xl md:rounded-2xl p-2 md:p-3 lg:p-4 text-white shadow-lg">
+                                <svg class="h-4 w-4 sm:h-6 sm:w-6 md:h-8 md:w-8 lg:h-12 lg:w-12 lucide" viewBox="0 0 24 24">
+                                    <circle cx="8" cy="8" r="6"></circle>
+                                    <path d="M18.09 10.37A6 6 0 1 1 10.34 18"></path>
+                                    <path d="M7 6h1v4"></path>
+                                    <path d="m16.71 13.88.7.71-2.82 2.82"></path>
+                                </svg>
+                            </div>
+                            <div class="absolute -top-1 -right-1 md:-top-2 md:-right-2 text-lg md:text-2xl lg:text-3xl">🎯</div>
+                            <div class="absolute -top-1 -left-1 md:-top-2 md:-left-2 lg:-top-3 lg:-left-3 w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 bg-white rounded-full border-2 md:border-2 lg:border-4 border-gray-200 flex items-center justify-center">
+                                <span class="text-xs md:text-sm font-bold text-gray-700">2</span>
+                            </div>
+                        </div>
+                        <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-2 md:mb-4">Earn</h3>
+                        <p class="text-sm md:text-base text-gray-600 leading-relaxed max-w-sm mx-auto px-2 md:px-0">Earn coins by browsing, gaming, trying out and sharing options.</p>
+                    </div>
+                    <div class="hidden md:block absolute top-8 md:top-16 -right-4 md:-right-6 lg:-right-8">
+                        <svg class="h-6 w-6 md:h-8 md:w-8 text-gray-300 lucide" viewBox="0 0 24 24">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="text-center group">
+                        <div class="bg-emerald-50 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8 mb-4 md:mb-6 mx-auto w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 flex items-center justify-center relative group-hover:scale-105 transition-transform duration-300">
+                            <div class="bg-gradient-to-r from-emerald-400 to-emerald-600 rounded-xl md:rounded-2xl p-2 md:p-3 lg:p-4 text-white shadow-lg">
+                                <svg class="h-4 w-4 sm:h-6 sm:w-6 md:h-8 md:w-8 lg:h-12 lg:w-12 lucide" viewBox="0 0 24 24">
+                                    <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                                    <line x1="2" x2="22" y1="10" y2="10"></line>
+                                </svg>
+                            </div>
+                            <div class="absolute -top-1 -right-1 md:-top-2 md:-right-2 text-lg md:text-2xl lg:text-3xl">💰</div>
+                            <div class="absolute -top-1 -left-1 md:-top-2 md:-left-2 lg:-top-3 lg:-left-3 w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 bg-white rounded-full border-2 md:border-2 lg:border-4 border-gray-200 flex items-center justify-center">
+                                <span class="text-xs md:text-sm font-bold text-gray-700">3</span>
+                            </div>
+                        </div>
+                        <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-2 md:mb-4">Cashout</h3>
+                        <p class="text-sm md:text-base text-gray-600 leading-relaxed max-w-sm mx-auto px-2 md:px-0">Exchange collected coins for cash or a variety of gift cards.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="text-center">
+                <button class="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-3 lg:px-12 lg:py-4 rounded-xl sm:rounded-2xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 font-bold text-sm sm:text-base md:text-lg lg:text-xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center space-x-2 md:space-x-3 mx-auto">
+                    <span>Get started now</span>
+                    <svg class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 lucide" viewBox="0 0 24 24">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 text-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16">
+            <!-- Mobile Layout -->
+            <div class="block md:hidden">
+                <!-- Mobile Grid - 3 columns -->
+                <div class="grid grid-cols-3 gap-4 mb-8">
+                    <!-- About Column -->
+                    <div class="space-y-3">
+                        <h3 class="text-sm font-semibold text-gray-900">About</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-xs text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">FAQ</a></li>
+                            <li><a href="#" class="text-xs text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Support</a></li>
+                            <li><a href="#" class="text-xs text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Privacy Policy</a></li>
+                            <li><a href="#" class="text-xs text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Terms of Service</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Services Column -->
+                    <div class="space-y-3">
+                        <h3 class="text-sm font-semibold text-gray-900">Services</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-xs text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Advertise</a></li>
+                            <li><a href="#" class="text-xs text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Leaderboard</a></li>
+                            <li><a href="#" class="text-xs text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Affiliate</a></li>
+                            <li><a href="#" class="text-xs text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">API</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Info Column -->
+                    <div class="space-y-3">
+                        <h3 class="text-sm font-semibold text-gray-900">Info</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-xs text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Forum</a></li>
+                            <li><a href="#" class="text-xs text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Testimonials</a></li>
+                            <li><a href="#" class="text-xs text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Live Cashout</a></li>
+                            <li><a href="#" class="text-xs text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Success Stories</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Mobile Logo Section -->
+                <div class="text-center mb-6">
+                    <div class="flex items-center justify-center space-x-2 mb-3">
+                        <div class="bg-gradient-to-br from-orange-400 to-orange-600 p-2 rounded-xl shadow-lg">
+                            <svg class="h-6 w-6 text-white lucide" viewBox="0 0 24 24">
+                                <line x1="12" x2="12" y1="2" y2="22"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-gray-900">coinpayu</span>
+                    </div>
+                </div>
+
+                <!-- Mobile Social Media Icons -->
+                <div class="flex justify-center space-x-3 mb-6">
+                    <a href="#" class="w-8 h-8 bg-gray-600 rounded-lg flex items-center justify-center hover:bg-orange-500 transition-all duration-300">
+                        <span class="text-white text-sm">💬</span>
+                    </a>
+                    <a href="#" class="w-8 h-8 bg-gray-600 rounded-lg flex items-center justify-center hover:bg-orange-500 transition-all duration-300">
+                        <span class="text-white text-sm">𝕏</span>
+                    </a>
+                    <a href="#" class="w-8 h-8 bg-gray-600 rounded-lg flex items-center justify-center hover:bg-orange-500 transition-all duration-300">
+                        <span class="text-white text-sm">📱</span>
+                    </a>
+                    <a href="#" class="w-8 h-8 bg-gray-600 rounded-lg flex items-center justify-center hover:bg-orange-500 transition-all duration-300">
+                        <svg class="h-4 w-4 text-white lucide" viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="w-8 h-8 bg-gray-600 rounded-lg flex items-center justify-center hover:bg-orange-500 transition-all duration-300">
+                        <svg class="h-4 w-4 text-white lucide" viewBox="0 0 24 24">
+                            <path d="M2 8a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8Z"></path>
+                            <path d="m14 12-4 2V10l4 2Z"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Mobile App Download -->
+                <div class="text-center mb-6">
+                    <a href="#" class="inline-block hover:opacity-80 transition-opacity">
+                        <img 
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/512px-Google_Play_Store_badge_EN.svg.png" 
+                            alt="Get it on Google Play" 
+                            class="h-10"
+                        />
+                    </a>
+                </div>
+
+                <!-- Mobile Copyright -->
+                <div class="text-center border-t border-gray-400 pt-4">
+                    <div class="text-gray-700 text-xs font-medium">
+                        © 2019-2025 Adgrand Limited. All rights reserved.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desktop Layout -->
+            <div class="hidden md:grid lg:grid-cols-4 md:grid-cols-2 gap-8">
+                <!-- Company Info -->
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-gradient-to-br from-orange-400 to-orange-600 p-3 rounded-2xl shadow-lg">
+                            <svg class="h-8 w-8 text-white lucide" viewBox="0 0 24 24">
+                                <line x1="12" x2="12" y1="2" y2="22"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <span class="text-3xl font-bold text-gray-900">TaskEarn</span>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        The world's leading platform for earning money through simple tasks. 
+                        Join millions of users earning extra income from home.
+                    </p>
+                    
+                    <!-- Social Media Icons -->
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-400 rounded-lg flex items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-300 shadow-sm border border-gray-300">
+                            <svg class="h-5 w-5 text-white lucide" viewBox="0 0 24 24">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-400 rounded-lg flex items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-300 shadow-sm border border-gray-300">
+                            <svg class="h-5 w-5 text-white lucide" viewBox="0 0 24 24">
+                                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-400 rounded-lg flex items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-300 shadow-sm border border-gray-300">
+                            <svg class="h-5 w-5 text-white lucide" viewBox="0 0 24 24">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                <path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-400 rounded-lg flex items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-300 shadow-sm border border-gray-300">
+                            <svg class="h-5 w-5 text-white lucide" viewBox="0 0 24 24">
+                                <path d="M2 8a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8Z"></path>
+                                <path d="m14 12-4 2V10l4 2Z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-400 rounded-lg flex items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-300 shadow-sm border border-gray-300">
+                            <svg class="h-5 w-5 text-white lucide" viewBox="0 0 24 24">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect width="4" height="12" x="2" y="9"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Dark Mode Toggle -->
+                    <div class="flex items-center space-x-2">
+                        <span class="text-2xl">🌙</span>
+                        <span class="text-gray-700">Dark</span>
+                    </div>
+                </div>
+
+                <!-- About Links -->
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold text-gray-900">About</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">About Us</a></li>
+                        <li><a href="#" class="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">FAQ</a></li>
+                        <li><a href="#" class="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Support</a></li>
+                        <li><a href="#" class="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services Links -->
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold text-gray-900">Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Advertise</a></li>
+                        <li><a href="#" class="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Leaderboard</a></li>
+                        <li><a href="#" class="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Affiliate</a></li>
+                        <li><a href="#" class="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">API</a></li>
+                        <li><a href="#" class="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Business</a></li>
+                    </ul>
+                </div>
+
+                <!-- Info Links -->
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold text-gray-900">Info</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Forum</a></li>
+                        <li><a href="#" class="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Testimonials</a></li>
+                        <li><a href="#" class="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Live Cashout</a></li>
+                        <li><a href="#" class="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Success Stories</a></li>
+                        <li><a href="#" class="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Help Center</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Desktop Bottom Section -->
+            <div class="hidden md:block border-t border-gray-400 mt-12 pt-8">
+                <div class="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
+                    <!-- Copyright -->
+                    <div class="text-gray-700 text-sm font-medium">
+                        © 2019-2025 TaskEarn Limited. All rights reserved.
+                    </div>
+
+                    <!-- App Download -->
+                    <div class="flex items-center space-x-4">
+                        <a href="#" class="hover:opacity-80 transition-opacity">
+                            <img 
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/512px-Google_Play_Store_badge_EN.svg.png" 
+                                alt="Get it on Google Play" 
+                                class="h-12"
+                            />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Live Cashout Animation
+        const cashouts = [
+            { username: 'alex_m', amount: '$12.45', country: 'USA', countryCode: 'us', time: '2m ago' },
+            { username: 'sarah_k', amount: '$8.90', country: 'UK', countryCode: 'gb', time: '3m ago' },
+            { username: 'carlos_r', amount: '$15.30', country: 'Spain', countryCode: 'es', time: '5m ago' },
+            { username: 'maria_s', amount: '$7.25', country: 'Brazil', countryCode: 'br', time: '6m ago' },
+            { username: 'yuki_t', amount: '$22.10', country: 'Japan', countryCode: 'jp', time: '8m ago' },
+            { username: 'ahmed_h', amount: '$9.75', country: 'UAE', countryCode: 'ae', time: '10m ago' },
+            { username: 'lisa_w', amount: '$11.60', country: 'Germany', countryCode: 'de', time: '12m ago' },
+            { username: 'raj_p', amount: '$6.40', country: 'India', countryCode: 'in', time: '14m ago' },
+            { username: 'pierre_l', amount: '$18.95', country: 'France', countryCode: 'fr', time: '16m ago' },
+            { username: 'anna_k', amount: '$13.20', country: 'Poland', countryCode: 'pl', time: '18m ago' }
+        ];
+
+        function getFlagUrl(countryCode) {
+            const flagPaths = {
+                'us': 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/320px-Flag_of_the_United_States.svg.png',
+                'gb': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/320px-Flag_of_the_United_Kingdom_%283-5%29.svg.png',
+                'es': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/320px-Flag_of_Spain.svg.png',
+                'br': 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/320px-Flag_of_Brazil.svg.png',
+                'jp': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/320px-Flag_of_Japan.svg.png',
+                'ae': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_United_Arab_Emirates.svg/320px-Flag_of_the_United_Arab_Emirates.svg.png',
+                'de': 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/320px-Flag_of_Germany.svg.png',
+                'in': 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_India.svg/320px-Flag_of_India.svg.png',
+                'fr': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/320px-Flag_of_France.svg.png',
+                'pl': 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Flag_of_Poland.svg/320px-Flag_of_Poland.svg.png'
+            };
+            return flagPaths[countryCode] || flagPaths['us'];
+        }
+
+        function createCashoutElement(cashout, index) {
+            return `
+                <div class="flex-none flex items-center space-x-1.5 sm:space-x-2 lg:space-x-3 bg-white/80 backdrop-blur-sm px-2 py-1 sm:px-3 sm:py-1.5 lg:px-4 lg:py-2 rounded-full border border-gray-200 shadow-sm">
+                    <div class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 rounded-full overflow-hidden border border-gray-200">
+                        <img 
+                            src="${getFlagUrl(cashout.countryCode)}"
+                            alt="${cashout.country} Flag"
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
+                    <span class="text-xs font-medium text-gray-700">${cashout.username}</span>
+                    <span class="text-xs font-bold text-emerald-600">${cashout.amount}</span>
+                    <span class="text-xs text-gray-500">${cashout.time}</span>
+                </div>
+            `;
+        }
+
+        function initializeCashoutAnimation() {
+            const container = document.getElementById('cashout-container');
+            if (!container) return;
+
+            // Create double set for seamless loop
+            const allCashouts = [...cashouts, ...cashouts];
+            
+            container.innerHTML = allCashouts.map((cashout, index) => 
+                createCashoutElement(cashout, index)
+            ).join('');
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeCashoutAnimation();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
 </html>
