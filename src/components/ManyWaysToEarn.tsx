@@ -165,11 +165,11 @@ const ManyWaysToEarn: React.FC = () => {
             </div>
             
             <div className="order-1 lg:order-2 space-y-4 lg:space-y-6 text-center lg:text-left">
-              <div className="flex items-center space-x-3 mb-4">
+              <div className="flex items-center justify-center lg:justify-start space-x-3 mb-4">
                 <div className="w-12 h-12 bg-emerald-500 rounded-xl flex items-center justify-center">
                   <Globe className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 text-center lg:text-left">Website Browsing</h3>
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900">Website Browsing</h3>
               </div>
               <p className="text-base lg:text-lg text-gray-600 leading-relaxed text-center lg:text-left">
                 Earn money by visiting and browsing various websites. Simple, quick, and profitable.
@@ -192,11 +192,11 @@ const ManyWaysToEarn: React.FC = () => {
         <div className="mb-20">
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="space-y-4 lg:space-y-6 order-1 lg:order-1 text-center lg:text-left">
-              <div className="flex items-center space-x-3 mb-4">
+              <div className="flex items-center justify-center lg:justify-start space-x-3 mb-4">
                 <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center">
                   <Gamepad2 className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 text-center lg:text-left">Mobile Gaming</h3>
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900">Mobile Gaming</h3>
               </div>
               <p className="text-base lg:text-lg text-gray-600 leading-relaxed text-center lg:text-left">
                 Play engaging mobile games and earn money by completing in-game objectives and milestones.
@@ -313,11 +313,11 @@ const ManyWaysToEarn: React.FC = () => {
             </div>
             
             <div className="order-1 lg:order-2 space-y-4 lg:space-y-6 w-full text-center lg:text-left">
-              <div className="flex items-center space-x-3 mb-4">
+              <div className="flex items-center justify-center lg:justify-start space-x-3 mb-4">
                 <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center">
                   <Download className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 text-center lg:text-left">App Testing</h3>
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900">App Testing</h3>
               </div>
               <p className="text-base lg:text-lg text-gray-600 leading-relaxed text-center lg:text-left">
                 Help companies improve their apps by testing and providing valuable feedback.
@@ -340,11 +340,11 @@ const ManyWaysToEarn: React.FC = () => {
         <div className="mb-12">
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="space-y-4 lg:space-y-6 order-1 lg:order-1 w-full text-center lg:text-left">
-              <div className="flex items-center space-x-3 mb-4">
+              <div className="flex items-center justify-center lg:justify-start space-x-3 mb-4">
                 <div className="w-12 h-12 bg-indigo-500 rounded-xl flex items-center justify-center">
                   <MessageSquare className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 text-center lg:text-left">Opinion Surveys</h3>
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900">Opinion Surveys</h3>
               </div>
               <p className="text-base lg:text-lg text-gray-600 leading-relaxed text-center lg:text-left">
                 Share your opinions and influence the next generation of products and services worldwide.
