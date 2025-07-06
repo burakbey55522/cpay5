@@ -8,14 +8,10 @@ interface FAQItem {
 }
 
 const FAQ: React.FC = () => {
-  const [openItems, setOpenItems] = useState<number[]>([]);
+  const [openItem, setOpenItem] = useState<number | null>(null);
 
   const toggleItem = (id: number) => {
-    setOpenItems(prev => 
-      prev.includes(id) 
-        ? prev.filter(item => item !== id)
-        : [...prev, id]
-    );
+    setOpenItem(prev => prev === id ? null : id);
   };
 
   const faqData: FAQItem[] = [
@@ -85,11 +81,11 @@ const FAQ: React.FC = () => {
         </div>
 
         {/* FAQ Items */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 items-start">
           {faqData.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300"
+              className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300 h-fit"
             >
               <button
                 onClick={() => toggleItem(item.id)}
@@ -99,7 +95,7 @@ const FAQ: React.FC = () => {
                   {item.question}
                 </h3>
                 <div className="flex-shrink-0">
-                  {openItems.includes(item.id) ? (
+                  {openItem === item.id ? (
                     <ChevronUp className="h-5 w-5 text-gray-500" />
                   ) : (
                     <ChevronDown className="h-5 w-5 text-gray-500" />
@@ -107,7 +103,7 @@ const FAQ: React.FC = () => {
                 </div>
               </button>
               
-              {openItems.includes(item.id) && (
+              {openItem === item.id && (
                 <div className="px-6 pb-6">
                   <p className="text-gray-700 leading-relaxed">
                     {item.answer}
