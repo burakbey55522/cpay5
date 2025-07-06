@@ -278,7 +278,7 @@ const ManyWaysToEarn: React.FC = () => {
               <div className="relative max-w-md mx-auto">
                 {/* Background Circle */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-80 h-80 bg-gradient-to-br from-blue-50 to-purple-50 rounded-full opacity-60"></div>
+                  <div className="w-80 h-80 bg-gradient-to-br from-blue-50 to-purple-50 rounded-full"></div>
                 </div>
                 
                 {/* App Icons Grid */}
@@ -292,17 +292,16 @@ const ManyWaysToEarn: React.FC = () => {
                         animationDuration: '2s'
                       }}
                     >
-                      <div className="relative bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 w-24 h-24 mx-auto group-hover:scale-110">
+                      <div className="relative bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 w-32 h-32 mx-auto group-hover:scale-110">
                         <div className="w-full h-full relative">
                           <img 
                             src={app.image} 
                             alt={app.name}
-                            className="w-full h-full object-contain p-3 group-hover:scale-110 transition-transform duration-300"
+                            className="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-300"
                           />
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 rounded-2xl"></div>
                           <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <div className="bg-white/90 backdrop-blur-sm rounded-full p-2">
-                              <Download className="h-4 w-4 text-gray-700" />
+                              <Download className="h-5 w-5 text-gray-700" />
                             </div>
                           </div>
                         </div>
