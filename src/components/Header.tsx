@@ -1,5 +1,5 @@
 import React from 'react';
-import { DollarSign, Menu, X, Globe, Shield, Users } from 'lucide-react';
+import { DollarSign, Menu, X, Globe, Shield } from 'lucide-react';
 
 interface HeaderProps {
   isMenuOpen: boolean;
@@ -34,22 +34,6 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
             </div>
           </div>
 
-          {/* Live Stats */}
-          <div className="hidden lg:flex items-center space-x-8">
-            <div className="text-center">
-              <div className="text-2xl font-black text-emerald-600">$847K+</div>
-              <div className="text-xs text-gray-500 font-medium">PAID OUT</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-black text-blue-600">2.1M+</div>
-              <div className="text-xs text-gray-500 font-medium">USERS</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-black text-purple-600">850+</div>
-              <div className="text-xs text-gray-500 font-medium">TASKS</div>
-            </div>
-          </div>
-
           {/* Desktop Auth Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <button className="text-gray-700 hover:text-emerald-600 transition-colors font-semibold">
@@ -74,20 +58,6 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
       {isMenuOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200">
           <div className="px-4 py-4 space-y-3">
-            <div className="grid grid-cols-3 gap-4 mb-4">
-              <div className="text-center">
-                <div className="text-lg font-black text-emerald-600">$847K+</div>
-                <div className="text-xs text-gray-500">PAID</div>
-              </div>
-              <div className="text-center">
-                <div className="text-lg font-black text-blue-600">2.1M+</div>
-                <div className="text-xs text-gray-500">USERS</div>
-              </div>
-              <div className="text-center">
-                <div className="text-lg font-black text-purple-600">850+</div>
-                <div className="text-xs text-gray-500">TASKS</div>
-              </div>
-            </div>
             <button className="block w-full text-left px-3 py-2 text-gray-700 hover:text-emerald-600 font-semibold">
               Sign In
             </button>

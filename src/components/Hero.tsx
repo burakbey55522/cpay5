@@ -157,7 +157,7 @@ const Hero: React.FC = () => {
                   <div className="flex items-center space-x-3">
                     <div className="w-8 h-8 rounded-full overflow-hidden border-2 border-gray-200">
                       <img 
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/250px-Flag_of_Turkey.svg.png" 
+                        src="https://www.coinpayu.com/static/images/flags/tr.svg" 
                         alt="Turkey Flag"
                         className="w-full h-full object-cover"
                       />
@@ -179,9 +179,6 @@ const Hero: React.FC = () => {
                   <Zap className="h-6 w-6" />
                   <span>Start Earning Now</span>
                   <ArrowRight className="h-6 w-6 group-hover:translate-x-1 transition-transform" />
-                </button>
-                <button className="border-3 border-emerald-500 text-emerald-600 px-10 py-5 rounded-2xl hover:bg-emerald-50 transition-all duration-300 font-black text-xl">
-                  Watch Demo
                 </button>
               </div>
 
