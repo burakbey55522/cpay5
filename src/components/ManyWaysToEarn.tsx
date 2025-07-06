@@ -274,60 +274,41 @@ const ManyWaysToEarn: React.FC = () => {
         <div className="mb-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
-              {/* Animated App Logos */}
-              <div className="relative">
+              {/* Static App Testing Grid with Background Circle */}
+              <div className="relative max-w-md mx-auto">
                 {/* Background Circle */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-80 h-80 bg-gradient-to-br from-blue-50 to-purple-50 rounded-full opacity-60"></div>
                 </div>
                 
-                {/* Rotating App Icons */}
-                <div className="relative w-80 h-80 mx-auto">
-                  <Swiper
-                    modules={[Autoplay]}
-                    spaceBetween={20}
-                    slidesPerView={4}
-                    centeredSlides={true}
-                    autoplay={{
-                      delay: 1500,
-                      disableOnInteraction: false,
-                    }}
-                    loop={true}
-                    className="app-testing-swiper h-full"
-                  >
-                    {appOffers.map((app, index) => (
-                      <SwiperSlide key={index}>
-                        <div className="group cursor-pointer h-full flex items-center justify-center">
-                          <div className="relative bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 w-16 h-16 sm:w-20 sm:h-20">
-                            <div className="w-full h-full relative">
-                              <img 
-                                src={app.image} 
-                                alt={app.name}
-                                className="w-full h-full object-contain p-2 group-hover:scale-110 transition-transform duration-300"
-                              />
-                              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 rounded-2xl"></div>
-                              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <div className="bg-white/90 backdrop-blur-sm rounded-full p-1">
-                                  <Download className="h-3 w-3 text-gray-700" />
-                                </div>
-                              </div>
+                {/* App Icons Grid */}
+                <div className="relative z-10 grid grid-cols-2 gap-6 p-8">
+                  {appOffers.slice(0, 4).map((app, index) => (
+                    <div 
+                      key={index}
+                      className="group cursor-pointer animate-pulse"
+                      style={{
+                        animationDelay: `${index * 0.5}s`,
+                        animationDuration: '2s'
+                      }}
+                    >
+                      <div className="relative bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 w-24 h-24 mx-auto group-hover:scale-110">
+                        <div className="w-full h-full relative">
+                          <img 
+                            src={app.image} 
+                            alt={app.name}
+                            className="w-full h-full object-contain p-3 group-hover:scale-110 transition-transform duration-300"
+                          />
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 rounded-2xl"></div>
+                          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div className="bg-white/90 backdrop-blur-sm rounded-full p-2">
+                              <Download className="h-4 w-4 text-gray-700" />
                             </div>
                           </div>
                         </div>
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-                </div>
-                
-                {/* Center Content */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-200">
-                    <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mx-auto mb-3">
-                      <Download className="h-6 w-6 text-white" />
+                      </div>
                     </div>
-                    <div className="text-lg font-bold text-gray-900 mb-1">Test & Earn</div>
-                    <div className="text-sm text-gray-600">Up to $50 per app</div>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>

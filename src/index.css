@@ -33,18 +33,6 @@
     }
   }
 
-/* App Testing Swiper Styles */
-.app-testing-swiper .swiper-slide {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.app-testing-swiper {
-  overflow: visible !important;
-}
-}
-
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
