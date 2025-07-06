@@ -151,9 +151,9 @@ const Hero: React.FC = () => {
         </div>
 
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Left Column - Content */}
-            <div className="space-y-6 lg:space-y-10">
+            <div className="space-y-6 lg:space-y-10 order-1 lg:order-1">
               <div className="space-y-4 lg:space-y-6">
                 <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                   <div className="flex items-center space-x-1 sm:space-x-2 bg-emerald-100 px-2 py-1 sm:px-3 sm:py-1.5 lg:px-4 lg:py-2 rounded-full">
@@ -270,7 +270,7 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Right Column - Interactive Task Showcase */}
-            <div className="lg:pl-8 order-first lg:order-last mt-8 lg:mt-0">
+            <div className="lg:pl-8 order-2 lg:order-2 mt-8 lg:mt-0">
               <div className="bg-white/80 backdrop-blur-lg rounded-3xl shadow-2xl p-6 lg:p-8 border border-white/20">
                 <div className="text-center mb-6 lg:mb-8">
                   <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-gray-900 mb-2">Featured Tasks</h3>
