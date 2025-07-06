@@ -21,7 +21,7 @@
 
 @layer utilities {
   .animate-slide {
-    animation: slide 20s linear infinite;
+    animation: slide 30s linear infinite;
   }
   
   @keyframes slide {
@@ -66,13 +66,23 @@ a:focus-visible {
 
 /* Swiper custom styles */
 .gaming-swiper {
-  overflow: visible;
+  overflow: visible !important;
+  padding: 0 !important;
 }
 
 .gaming-swiper .swiper-slide {
-  height: auto;
+  height: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 .gaming-swiper .swiper-wrapper {
-  align-items: stretch;
+  align-items: stretch !important;
+}
+
+/* Ensure proper spacing and layout */
+.gaming-swiper .swiper-slide > div {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
