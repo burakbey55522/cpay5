@@ -3,7 +3,7 @@ import { DollarSign, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Youtube,
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gradient-to-br from-emerald-100 via-emerald-200 to-emerald-300 text-gray-800">
+    <footer className="bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 text-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
           {/* Company Info */}
@@ -21,19 +21,19 @@ const Footer: React.FC = () => {
             
             {/* Social Media Icons */}
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-emerald-400 rounded-lg flex items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-300 shadow-sm border border-emerald-300">
+              <a href="#" className="w-10 h-10 bg-gray-400 rounded-lg flex items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-300 shadow-sm border border-gray-300">
                 <Facebook className="h-5 w-5 text-white" />
               </a>
-              <a href="#" className="w-10 h-10 bg-emerald-400 rounded-lg flex items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-300 shadow-sm border border-emerald-300">
+              <a href="#" className="w-10 h-10 bg-gray-400 rounded-lg flex items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-300 shadow-sm border border-gray-300">
                 <Twitter className="h-5 w-5 text-white" />
               </a>
-              <a href="#" className="w-10 h-10 bg-emerald-400 rounded-lg flex items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-300 shadow-sm border border-emerald-300">
+              <a href="#" className="w-10 h-10 bg-gray-400 rounded-lg flex items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-300 shadow-sm border border-gray-300">
                 <Instagram className="h-5 w-5 text-white" />
               </a>
-              <a href="#" className="w-10 h-10 bg-emerald-400 rounded-lg flex items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-300 shadow-sm border border-emerald-300">
+              <a href="#" className="w-10 h-10 bg-gray-400 rounded-lg flex items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-300 shadow-sm border border-gray-300">
                 <Youtube className="h-5 w-5 text-white" />
               </a>
-              <a href="#" className="w-10 h-10 bg-emerald-400 rounded-lg flex items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-300 shadow-sm border border-emerald-300">
+              <a href="#" className="w-10 h-10 bg-gray-400 rounded-lg flex items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-300 shadow-sm border border-gray-300">
                 <Linkedin className="h-5 w-5 text-white" />
               </a>
             </div>
@@ -83,7 +83,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-emerald-400 mt-12 pt-8">
+        <div className="border-t border-gray-400 mt-12 pt-8">
           <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
             {/* Copyright */}
             <div className="text-gray-700 text-sm font-medium">
