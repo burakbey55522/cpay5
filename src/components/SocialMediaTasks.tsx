@@ -5,8 +5,8 @@ import {
   ThumbsUp, 
   Share2, 
   Heart, 
-  Instagram, 
-  Facebook,
+  Send,
+  Shield,
   ArrowRight,
   DollarSign,
   Clock,
@@ -43,53 +43,53 @@ const SocialMediaTasks: React.FC = () => {
     },
     {
       id: 2,
-      platform: 'Instagram',
-      icon: <Instagram className="h-8 w-8" />,
-      color: 'from-pink-400 to-purple-600',
-      bgColor: 'bg-pink-50',
-      borderColor: 'border-pink-200',
-      description: 'Engage with posts through likes, comments, and follows',
+      platform: 'Telegram',
+      icon: <Send className="h-8 w-8" />,
+      color: 'from-blue-400 to-blue-600',
+      bgColor: 'bg-blue-50',
+      borderColor: 'border-blue-200',
+      description: 'Join channels, groups and engage with Telegram content',
       earnings: '$0.50 - $3.00',
       timeEstimate: '2-5 min',
       tasks: [
-        'Like posts',
-        'Write comments',
-        'Follow accounts',
-        'Share stories'
+        'Join channels',
+        'Join groups',
+        'Share posts',
+        'React to messages'
       ],
       mockup: {
-        type: 'instagram',
+        type: 'telegram',
         content: {
-          username: '@foodie_adventures',
-          image: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=400',
-          likes: 1247,
-          caption: 'Perfect sunset dinner! 🌅✨'
+          channel: 'Tech News Channel',
+          message: 'Breaking: New AI technology breakthrough announced! 🚀',
+          members: '125K',
+          reactions: 847
         }
       }
     },
     {
       id: 3,
-      platform: 'Facebook',
-      icon: <Facebook className="h-8 w-8" />,
-      color: 'from-blue-500 to-blue-700',
-      bgColor: 'bg-blue-50',
-      borderColor: 'border-blue-200',
-      description: 'Interact with posts, pages, and community content',
+      platform: 'Trustpilot',
+      icon: <Shield className="h-8 w-8" />,
+      color: 'from-green-500 to-green-700',
+      bgColor: 'bg-green-50',
+      borderColor: 'border-green-200',
+      description: 'Write honest reviews for businesses and services',
       earnings: '$1.00 - $4.50',
       timeEstimate: '3-8 min',
       tasks: [
-        'Like posts',
-        'Comment on content',
-        'Share articles',
-        'Join groups'
+        'Business reviews',
+        'Service ratings',
+        'Product feedback',
+        'Experience sharing'
       ],
       mockup: {
-        type: 'facebook',
+        type: 'trustpilot',
         content: {
-          page: 'Tech News Daily',
-          post: 'Breaking: New smartphone technology revolutionizes mobile photography',
-          reactions: 342,
-          comments: 89
+          business: 'Online Shopping Store',
+          rating: 4,
+          review: 'Great customer service and fast delivery. The product quality exceeded my expectations. Highly recommend this store!',
+          helpful: 23
         }
       }
     },
@@ -100,14 +100,14 @@ const SocialMediaTasks: React.FC = () => {
       color: 'from-red-500 to-red-700',
       bgColor: 'bg-red-50',
       borderColor: 'border-red-200',
-      description: 'Watch videos, like content, and leave meaningful comments',
+      description: 'Engage with YouTube content through verifiable actions',
       earnings: '$1.50 - $6.00',
       timeEstimate: '5-15 min',
       tasks: [
-        'Watch videos',
         'Like content',
         'Subscribe to channels',
-        'Write comments'
+        'Write comments',
+        'Share videos'
       ],
       mockup: {
         type: 'youtube',
@@ -155,59 +155,75 @@ const SocialMediaTasks: React.FC = () => {
           </div>
         );
       
-      case 'instagram':
+      case 'telegram':
         return (
           <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
-            <div className="p-4 flex items-center space-x-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-pink-400 to-purple-600 rounded-full"></div>
-              <span className="font-semibold text-gray-900">{task.mockup.content.username}</span>
-            </div>
-            <img 
-              src={task.mockup.content.image} 
-              alt="Instagram post" 
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4">
-              <div className="flex items-center space-x-4 mb-3">
-                <Heart className="h-6 w-6 text-red-500" />
-                <MessageCircle className="h-6 w-6 text-gray-600" />
-                <Share2 className="h-6 w-6 text-gray-600" />
+            <div className="p-4 flex items-center justify-between border-b border-gray-200">
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
+                  <Send className="h-5 w-5 text-white" />
+                </div>
+                <div>
+                  <span className="font-semibold text-gray-900">{task.mockup.content.channel}</span>
+                  <p className="text-sm text-gray-500">{task.mockup.content.members} members</p>
+                </div>
               </div>
-              <p className="text-sm font-semibold text-gray-900 mb-1">
-                {task.mockup.content.likes.toLocaleString()} likes
-              </p>
-              <p className="text-sm text-gray-700">{task.mockup.content.caption}</p>
+              <button className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                Join
+              </button>
+            </div>
+            <div className="p-4">
+              <div className="bg-gray-50 rounded-lg p-3 mb-3">
+                <p className="text-gray-800">{task.mockup.content.message}</p>
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-4">
+                  <button className="flex items-center space-x-1 text-gray-600">
+                    <span>👍</span>
+                    <span className="text-sm">{task.mockup.content.reactions}</span>
+                  </button>
+                  <button className="flex items-center space-x-1 text-gray-600">
+                    <MessageCircle className="h-4 w-4" />
+                    <span className="text-sm">Reply</span>
+                  </button>
+                </div>
+                <button className="text-blue-500 text-sm">
+                  <Share2 className="h-4 w-4" />
+                </button>
+              </div>
             </div>
           </div>
         );
       
-      case 'facebook':
+      case 'trustpilot':
         return (
           <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-6">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">
-                T
+              <div className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center">
+                <Shield className="h-5 w-5 text-white" />
               </div>
               <div>
-                <h4 className="font-semibold text-gray-900">{task.mockup.content.page}</h4>
-                <p className="text-sm text-gray-500">2 hours ago</p>
+                <h4 className="font-semibold text-gray-900">{task.mockup.content.business}</h4>
+                <div className="flex items-center space-x-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star 
+                      key={i} 
+                      className={`h-4 w-4 ${i < task.mockup.content.rating ? 'text-green-500 fill-current' : 'text-gray-300'}`} 
+                    />
+                  ))}
+                  <span className="text-sm text-gray-600 ml-1">{task.mockup.content.rating}/5</span>
+                </div>
               </div>
             </div>
-            <p className="text-gray-800 mb-4">{task.mockup.content.post}</p>
-            <div className="flex items-center space-x-6 text-sm text-gray-500">
-              <span>{task.mockup.content.reactions} reactions</span>
-              <span>{task.mockup.content.comments} comments</span>
-            </div>
+            <p className="text-gray-700 text-sm leading-relaxed mb-4">
+              {task.mockup.content.review}
+            </p>
             <div className="mt-4 pt-4 border-t border-gray-200 flex items-center space-x-6">
-              <button className="flex items-center space-x-2 text-gray-600 hover:text-blue-600">
+              <button className="flex items-center space-x-2 text-gray-600 hover:text-green-600">
                 <ThumbsUp className="h-4 w-4" />
-                <span>Like</span>
+                <span>Helpful ({task.mockup.content.helpful})</span>
               </button>
-              <button className="flex items-center space-x-2 text-gray-600 hover:text-blue-600">
-                <MessageCircle className="h-4 w-4" />
-                <span>Comment</span>
-              </button>
-              <button className="flex items-center space-x-2 text-gray-600 hover:text-blue-600">
+              <button className="flex items-center space-x-2 text-gray-600 hover:text-green-600">
                 <Share2 className="h-4 w-4" />
                 <span>Share</span>
               </button>
@@ -226,9 +242,18 @@ const SocialMediaTasks: React.FC = () => {
             <div className="p-4">
               <h4 className="font-semibold text-gray-900 mb-2">{task.mockup.content.title}</h4>
               <p className="text-sm text-gray-600 mb-2">{task.mockup.content.channel}</p>
-              <div className="flex items-center space-x-4 text-sm text-gray-500">
+              <div className="flex items-center space-x-4 text-sm text-gray-500 mb-4">
                 <span>{task.mockup.content.views}</span>
                 <span>{task.mockup.content.likes} likes</span>
+              </div>
+              <div className="flex items-center space-x-4">
+                <button className="flex items-center space-x-2 bg-red-600 text-white px-3 py-1 rounded-full text-sm">
+                  <ThumbsUp className="h-4 w-4" />
+                  <span>Like</span>
+                </button>
+                <button className="flex items-center space-x-2 bg-gray-600 text-white px-3 py-1 rounded-full text-sm">
+                  <span>Subscribe</span>
+                </button>
               </div>
             </div>
           </div>
