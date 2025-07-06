@@ -7,6 +7,7 @@ import SocialMediaTasks from './components/SocialMediaTasks';
 import UserReviews from './components/UserReviews';
 import OurAdvertisers from './components/OurAdvertisers';
 import FAQ from './components/FAQ';
+import Footer from './components/Footer';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,6 +22,7 @@ function App() {
       <UserReviews />
       <OurAdvertisers />
       <FAQ />
+      <Footer />
     </div>
   );
 }
