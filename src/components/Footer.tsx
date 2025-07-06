@@ -38,41 +38,46 @@ const Footer: React.FC = () => {
               </a>
             </div>
 
+            {/* Dark Mode Toggle */}
+            <div className="flex items-center space-x-2">
+              <span className="text-2xl">🌙</span>
+              <span className="text-gray-700">Dark</span>
+            </div>
           </div>
 
           {/* About Links */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-gray-900">About</h3>
-            <ul className="grid grid-cols-2 gap-2">
-              <li><a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium text-sm md:text-base">About Us</a></li>
-              <li><a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium text-sm md:text-base">FAQ</a></li>
-              <li><a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium text-sm md:text-base">Support</a></li>
-              <li><a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium text-sm md:text-base">Privacy Policy</a></li>
-              <li><a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium text-sm md:text-base">Terms of Service</a></li>
+            <ul className="space-y-3">
+              <li><a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">About Us</a></li>
+              <li><a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">FAQ</a></li>
+              <li><a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Support</a></li>
+              <li><a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Privacy Policy</a></li>
+              <li><a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Terms of Service</a></li>
             </ul>
           </div>
 
           {/* Services Links */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-gray-900">Services</h3>
-            <ul className="grid grid-cols-2 gap-2">
-              <li><a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium text-sm md:text-base">Advertise</a></li>
-              <li><a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium text-sm md:text-base">Leaderboard</a></li>
-              <li><a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium text-sm md:text-base">Affiliate</a></li>
-              <li><a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium text-sm md:text-base">API</a></li>
-              <li><a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium text-sm md:text-base">Business</a></li>
+            <ul className="space-y-3">
+              <li><a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Advertise</a></li>
+              <li><a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Leaderboard</a></li>
+              <li><a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Affiliate</a></li>
+              <li><a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">API</a></li>
+              <li><a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Business</a></li>
             </ul>
           </div>
 
           {/* Info Links */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-gray-900">Info</h3>
-            <ul className="grid grid-cols-2 gap-2">
-              <li><a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium text-sm md:text-base">Forum</a></li>
-              <li><a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium text-sm md:text-base">Testimonials</a></li>
-              <li><a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium text-sm md:text-base">Live Cashout</a></li>
-              <li><a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium text-sm md:text-base">Success Stories</a></li>
-              <li><a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium text-sm md:text-base">Help Center</a></li>
+            <ul className="space-y-3">
+              <li><a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Forum</a></li>
+              <li><a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Testimonials</a></li>
+              <li><a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Live Cashout</a></li>
+              <li><a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Success Stories</a></li>
+              <li><a href="#" className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium">Help Center</a></li>
             </ul>
           </div>
         </div>
