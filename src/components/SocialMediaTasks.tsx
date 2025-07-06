@@ -81,7 +81,9 @@ const SocialMediaTasks: React.FC = () => {
         'Business reviews',
         'Service ratings',
         'Product feedback',
-        'Experience sharing'
+        'Experience sharing',
+        'Company ratings',
+        'Quality assessments'
       ],
       mockup: {
         type: 'trustpilot',
@@ -89,7 +91,13 @@ const SocialMediaTasks: React.FC = () => {
           business: 'Online Shopping Store',
           rating: 4,
           review: 'Great customer service and fast delivery. The product quality exceeded my expectations. Highly recommend this store!',
-          helpful: 23
+          helpful: 23,
+          additionalReview: {
+            business: 'Tech Support Service',
+            rating: 5,
+            review: 'Outstanding technical support! They solved my problem quickly and professionally. The team was very knowledgeable and patient.',
+            helpful: 18
+          }
         }
       }
     },
@@ -197,36 +205,73 @@ const SocialMediaTasks: React.FC = () => {
       
       case 'trustpilot':
         return (
-          <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-6">
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center">
-                <Shield className="h-5 w-5 text-white" />
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900">{task.mockup.content.business}</h4>
-                <div className="flex items-center space-x-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star 
-                      key={i} 
-                      className={`h-4 w-4 ${i < task.mockup.content.rating ? 'text-green-500 fill-current' : 'text-gray-300'}`} 
-                    />
-                  ))}
-                  <span className="text-sm text-gray-600 ml-1">{task.mockup.content.rating}/5</span>
+          <div className="space-y-4">
+            {/* First Review */}
+            <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-6">
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center">
+                  <Shield className="h-5 w-5 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900">{task.mockup.content.business}</h4>
+                  <div className="flex items-center space-x-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star 
+                        key={i} 
+                        className={`h-4 w-4 ${i < task.mockup.content.rating ? 'text-green-500 fill-current' : 'text-gray-300'}`} 
+                      />
+                    ))}
+                    <span className="text-sm text-gray-600 ml-1">{task.mockup.content.rating}/5</span>
+                  </div>
                 </div>
               </div>
+              <p className="text-gray-700 text-sm leading-relaxed mb-4">
+                {task.mockup.content.review}
+              </p>
+              <div className="mt-4 pt-4 border-t border-gray-200 flex items-center space-x-6">
+                <button className="flex items-center space-x-2 text-gray-600 hover:text-green-600">
+                  <ThumbsUp className="h-4 w-4" />
+                  <span>Helpful ({task.mockup.content.helpful})</span>
+                </button>
+                <button className="flex items-center space-x-2 text-gray-600 hover:text-green-600">
+                  <Share2 className="h-4 w-4" />
+                  <span>Share</span>
+                </button>
+              </div>
             </div>
-            <p className="text-gray-700 text-sm leading-relaxed mb-4">
-              {task.mockup.content.review}
-            </p>
-            <div className="mt-4 pt-4 border-t border-gray-200 flex items-center space-x-6">
-              <button className="flex items-center space-x-2 text-gray-600 hover:text-green-600">
-                <ThumbsUp className="h-4 w-4" />
-                <span>Helpful ({task.mockup.content.helpful})</span>
-              </button>
-              <button className="flex items-center space-x-2 text-gray-600 hover:text-green-600">
-                <Share2 className="h-4 w-4" />
-                <span>Share</span>
-              </button>
+
+            {/* Second Review */}
+            <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-6">
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center">
+                  <Shield className="h-5 w-5 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900">{task.mockup.content.additionalReview.business}</h4>
+                  <div className="flex items-center space-x-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star 
+                        key={i} 
+                        className={`h-4 w-4 ${i < task.mockup.content.additionalReview.rating ? 'text-green-500 fill-current' : 'text-gray-300'}`} 
+                      />
+                    ))}
+                    <span className="text-sm text-gray-600 ml-1">{task.mockup.content.additionalReview.rating}/5</span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-gray-700 text-sm leading-relaxed mb-4">
+                {task.mockup.content.additionalReview.review}
+              </p>
+              <div className="mt-4 pt-4 border-t border-gray-200 flex items-center space-x-6">
+                <button className="flex items-center space-x-2 text-gray-600 hover:text-green-600">
+                  <ThumbsUp className="h-4 w-4" />
+                  <span>Helpful ({task.mockup.content.additionalReview.helpful})</span>
+                </button>
+                <button className="flex items-center space-x-2 text-gray-600 hover:text-green-600">
+                  <Share2 className="h-4 w-4" />
+                  <span>Share</span>
+                </button>
+              </div>
             </div>
           </div>
         );
@@ -258,6 +303,10 @@ const SocialMediaTasks: React.FC = () => {
                 </button>
                 <button className="flex items-center space-x-2 bg-gray-600 text-white px-3 py-1 rounded-full text-sm">
                   <span>Subscribe</span>
+                </button>
+                <button className="flex items-center space-x-2 bg-blue-600 text-white px-3 py-1 rounded-full text-sm">
+                  <MessageCircle className="h-4 w-4" />
+                  <span>Comment</span>
                 </button>
               </div>
             </div>
