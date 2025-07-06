@@ -7,83 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <style>
-        /* Custom Styles */
-        html, body {
-            overflow-x: hidden;
-            max-width: 100vw;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        .animate-slide {
-            animation: slide 30s linear infinite;
-        }
-        
-        @keyframes slide {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
-        }
-        
-        .animate-scroll-left {
-            animation: scroll-left 40s linear infinite;
-        }
-        
-        @keyframes scroll-left {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #10b981;
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #059669;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        button:focus-visible,
-        a:focus-visible {
-            outline: 2px solid #10b981;
-            outline-offset: 2px;
-        }
-
-        @media (max-width: 768px) {
-            .swiper-wrapper {
-                align-items: stretch;
-            }
-            
-            .swiper-slide {
-                height: auto;
-            }
-        }
-
-        /* Lucide Icons */
-        .lucide {
-            width: 24px;
-            height: 24px;
-            stroke: currentColor;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            fill: none;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body class="min-h-screen bg-white overflow-x-hidden">
     <!-- Header -->
@@ -350,7 +274,6 @@
 
             <div class="overflow-hidden">
                 <div class="flex space-x-3 sm:space-x-4 lg:space-x-8 animate-slide">
-                    <!-- Cashout items will be populated by JavaScript -->
                     <div id="cashout-container" class="flex space-x-3 sm:space-x-4 lg:space-x-8"></div>
                 </div>
             </div>
@@ -510,6 +433,1826 @@
                         <path d="m12 5 7 7-7 7"></path>
                     </svg>
                 </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Many Ways to Earn Section -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-emerald-50/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    Multiple Ways to <span class="text-emerald-600">Earn Money</span>
+                </h2>
+                <p class="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
+                    Choose from various earning methods that fit your lifestyle and preferences
+                </p>
+            </div>
+
+            <!-- Browsing Section -->
+            <div class="mb-20">
+                <div class="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    <div class="order-2 lg:order-1">
+                        <div class="bg-white rounded-3xl shadow-xl border border-gray-200 overflow-hidden max-w-md mx-auto">
+                            <!-- Browser Header -->
+                            <div class="bg-gray-100 px-4 py-3 border-b border-gray-200">
+                                <div class="flex items-center space-x-3">
+                                    <div class="flex space-x-1">
+                                        <div class="w-3 h-3 bg-red-400 rounded-full"></div>
+                                        <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                                        <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+                                    </div>
+                                    <div class="flex-1 bg-white rounded-lg px-3 py-1">
+                                        <span class="text-sm text-gray-500">taskearn.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Browser Content -->
+                            <div class="p-6 lg:p-8 text-center min-h-[280px] flex flex-col justify-center">
+                                <div class="mb-6">
+                                    <div class="w-16 h-16 bg-emerald-100 rounded-full mx-auto flex items-center justify-center mb-3">
+                                        <svg class="h-8 w-8 text-emerald-600 lucide" viewBox="0 0 24 24">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                                            <path d="M2 12h20"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="text-emerald-600 font-bold text-lg">0 visits completed</div>
+                                </div>
+                                
+                                <div class="mb-6">
+                                    <div class="w-20 h-20 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-full mx-auto flex items-center justify-center mb-4">
+                                        <svg class="h-10 w-10 text-emerald-600 lucide" viewBox="0 0 24 24">
+                                            <circle cx="8" cy="8" r="6"></circle>
+                                            <path d="M18.09 10.37A6 6 0 1 1 10.34 18"></path>
+                                            <path d="M7 6h1v4"></path>
+                                            <path d="m16.71 13.88.7.71-2.82 2.82"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <button class="bg-emerald-500 text-white px-6 py-3 rounded-xl font-semibold hover:bg-emerald-600 transition-colors mb-3">
+                                    Start Browsing
+                                </button>
+                                <p class="text-gray-500 text-xs lg:text-sm">Browse websites to earn up to $0.05 per visit</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="order-1 lg:order-2 space-y-4 lg:space-y-6 text-center lg:text-left">
+                        <div class="flex items-center justify-center lg:justify-start space-x-3 mb-4">
+                            <div class="w-12 h-12 bg-emerald-500 rounded-xl flex items-center justify-center">
+                                <svg class="h-6 w-6 text-white lucide" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                                    <path d="M2 12h20"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl lg:text-3xl font-bold text-gray-900">Website Browsing</h3>
+                        </div>
+                        <p class="text-base lg:text-lg text-gray-600 leading-relaxed text-center lg:text-left">
+                            Earn money by visiting and browsing various websites. Simple, quick, and profitable.
+                        </p>
+                        <div class="grid grid-cols-2 gap-3 lg:gap-4">
+                            <div class="bg-white rounded-xl p-4 border border-gray-200">
+                                <div class="text-xl lg:text-2xl font-bold text-emerald-600 mb-1">150+</div>
+                                <div class="text-sm text-gray-600">Active websites</div>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 border border-gray-200">
+                                <div class="text-xl lg:text-2xl font-bold text-emerald-600 mb-1">$0.05</div>
+                                <div class="text-sm text-gray-600">Per website visit</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gaming Section -->
+            <div class="mb-20">
+                <div class="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    <div class="space-y-4 lg:space-y-6 order-1 lg:order-1 text-center lg:text-left">
+                        <div class="flex items-center justify-center lg:justify-start space-x-3 mb-4">
+                            <div class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center">
+                                <svg class="h-6 w-6 text-white lucide" viewBox="0 0 24 24">
+                                    <line x1="6" x2="10" y1="12" y2="12"></line>
+                                    <line x1="8" x2="8" y1="10" y2="14"></line>
+                                    <line x1="15" x2="15" y1="13" y2="13"></line>
+                                    <line x1="18" x2="18" y1="11" y2="15"></line>
+                                    <rect width="20" height="12" x="2" y="6" rx="2"></rect>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl lg:text-3xl font-bold text-gray-900">Mobile Gaming</h3>
+                        </div>
+                        <p class="text-base lg:text-lg text-gray-600 leading-relaxed text-center lg:text-left">
+                            Play engaging mobile games and earn money by completing in-game objectives and milestones.
+                        </p>
+                        <div class="bg-white rounded-xl p-4 border border-gray-200">
+                            <div class="text-xl lg:text-2xl font-bold text-blue-600 mb-1">60+</div>
+                            <div class="text-sm text-gray-600">Games available across all genres</div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative order-2 lg:order-2 w-full">
+                        <div class="swiper gaming-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="group cursor-pointer">
+                                        <div class="relative bg-white rounded-lg sm:rounded-xl shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300">
+                                            <div class="relative aspect-square w-full max-w-[120px] sm:max-w-none mx-auto">
+                                                <img 
+                                                    src="https://www.coinpayu.com/static/newImg/index/offer2.jpg" 
+                                                    alt="Monopoly Go!"
+                                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                                />
+                                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+                                                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                    <div class="bg-white/90 backdrop-blur-sm rounded-full p-2">
+                                                        <svg class="h-4 w-4 text-gray-700 lucide" viewBox="0 0 24 24">
+                                                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="absolute top-1 right-1 sm:top-2 sm:right-2 bg-blue-500 text-white px-1 py-0.5 sm:px-1.5 sm:py-0.5 rounded text-xs font-bold">
+                                                    Strategy
+                                                </div>
+                                            </div>
+                                            <div class="p-2 sm:p-3">
+                                                <h4 class="font-bold text-gray-900 mb-0.5 sm:mb-1 truncate text-xs sm:text-sm">Monopoly Go!</h4>
+                                                <div class="text-sm sm:text-base font-bold text-emerald-600">$150</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="group cursor-pointer">
+                                        <div class="relative bg-white rounded-lg sm:rounded-xl shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300">
+                                            <div class="relative aspect-square w-full max-w-[120px] sm:max-w-none mx-auto">
+                                                <img 
+                                                    src="https://www.coinpayu.com/static/newImg/index/offer4.png" 
+                                                    alt="AFK Journey"
+                                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                                />
+                                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+                                                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                    <div class="bg-white/90 backdrop-blur-sm rounded-full p-2">
+                                                        <svg class="h-4 w-4 text-gray-700 lucide" viewBox="0 0 24 24">
+                                                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="absolute top-1 right-1 sm:top-2 sm:right-2 bg-blue-500 text-white px-1 py-0.5 sm:px-1.5 sm:py-0.5 rounded text-xs font-bold">
+                                                    RPG
+                                                </div>
+                                            </div>
+                                            <div class="p-2 sm:p-3">
+                                                <h4 class="font-bold text-gray-900 mb-0.5 sm:mb-1 truncate text-xs sm:text-sm">AFK Journey</h4>
+                                                <div class="text-sm sm:text-base font-bold text-emerald-600">$85</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="group cursor-pointer">
+                                        <div class="relative bg-white rounded-lg sm:rounded-xl shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300">
+                                            <div class="relative aspect-square w-full max-w-[120px] sm:max-w-none mx-auto">
+                                                <img 
+                                                    src="https://www.coinpayu.com/static/newImg/index/offer5.png" 
+                                                    alt="Mafia City"
+                                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                                />
+                                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+                                                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                    <div class="bg-white/90 backdrop-blur-sm rounded-full p-2">
+                                                        <svg class="h-4 w-4 text-gray-700 lucide" viewBox="0 0 24 24">
+                                                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="absolute top-1 right-1 sm:top-2 sm:right-2 bg-blue-500 text-white px-1 py-0.5 sm:px-1.5 sm:py-0.5 rounded text-xs font-bold">
+                                                    Strategy
+                                                </div>
+                                            </div>
+                                            <div class="p-2 sm:p-3">
+                                                <h4 class="font-bold text-gray-900 mb-0.5 sm:mb-1 truncate text-xs sm:text-sm">Mafia City</h4>
+                                                <div class="text-sm sm:text-base font-bold text-emerald-600">$120</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="group cursor-pointer">
+                                        <div class="relative bg-white rounded-lg sm:rounded-xl shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300">
+                                            <div class="relative aspect-square w-full max-w-[120px] sm:max-w-none mx-auto">
+                                                <img 
+                                                    src="https://www.coinpayu.com/static/newImg/index/offer6.jpg" 
+                                                    alt="Candy Match"
+                                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                                />
+                                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+                                                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                    <div class="bg-white/90 backdrop-blur-sm rounded-full p-2">
+                                                        <svg class="h-4 w-4 text-gray-700 lucide" viewBox="0 0 24 24">
+                                                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="absolute top-1 right-1 sm:top-2 sm:right-2 bg-blue-500 text-white px-1 py-0.5 sm:px-1.5 sm:py-0.5 rounded text-xs font-bold">
+                                                    Puzzle
+                                                </div>
+                                            </div>
+                                            <div class="p-2 sm:p-3">
+                                                <h4 class="font-bold text-gray-900 mb-0.5 sm:mb-1 truncate text-xs sm:text-sm">Candy Match</h4>
+                                                <div class="text-sm sm:text-base font-bold text-emerald-600">$45</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- App Testing Section -->
+            <div class="mb-20">
+                <div class="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    <div class="order-2 lg:order-1 w-full">
+                        <!-- Static App Testing Grid with Background Circle -->
+                        <div class="relative max-w-md mx-auto">
+                            <!-- Background Circle -->
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-64 h-64 lg:w-80 lg:h-80 bg-gradient-to-br from-blue-50 to-purple-50 rounded-full"></div>
+                            </div>
+                            
+                            <!-- App Icons Grid -->
+                            <div class="relative z-10 grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6 p-4 sm:p-6 lg:p-8">
+                                <div class="group cursor-pointer">
+                                    <div class="relative bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 w-32 h-32 lg:w-40 lg:h-40 mx-auto group-hover:scale-105">
+                                        <div class="w-full h-full relative p-3 sm:p-4 lg:p-6">
+                                            <img 
+                                                src="https://www.coinpayu.com/static/newImg/index/trying_alibaba.png" 
+                                                alt="Alibaba"
+                                                class="w-full h-full object-contain"
+                                            />
+                                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90">
+                                                <div class="bg-white/90 backdrop-blur-sm rounded-full p-2">
+                                                    <svg class="h-5 w-5 text-gray-700 lucide" viewBox="0 0 24 24">
+                                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                                        <polyline points="7,10 12,15 17,10"></polyline>
+                                                        <line x1="12" x2="12" y1="15" y2="3"></line>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="group cursor-pointer">
+                                    <div class="relative bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 w-32 h-32 lg:w-40 lg:h-40 mx-auto group-hover:scale-105">
+                                        <div class="w-full h-full relative p-3 sm:p-4 lg:p-6">
+                                            <img 
+                                                src="https://www.coinpayu.com/static/newImg/index/trying_tiktok.png" 
+                                                alt="TikTok"
+                                                class="w-full h-full object-contain"
+                                            />
+                                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90">
+                                                <div class="bg-white/90 backdrop-blur-sm rounded-full p-2">
+                                                    <svg class="h-5 w-5 text-gray-700 lucide" viewBox="0 0 24 24">
+                                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                                        <polyline points="7,10 12,15 17,10"></polyline>
+                                                        <line x1="12" x2="12" y1="15" y2="3"></line>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="group cursor-pointer">
+                                    <div class="relative bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 w-32 h-32 lg:w-40 lg:h-40 mx-auto group-hover:scale-105">
+                                        <div class="w-full h-full relative p-3 sm:p-4 lg:p-6">
+                                            <img 
+                                                src="https://www.coinpayu.com/static/newImg/index/trying_coinbase.png" 
+                                                alt="Coinbase"
+                                                class="w-full h-full object-contain"
+                                            />
+                                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90">
+                                                <div class="bg-white/90 backdrop-blur-sm rounded-full p-2">
+                                                    <svg class="h-5 w-5 text-gray-700 lucide" viewBox="0 0 24 24">
+                                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                                        <polyline points="7,10 12,15 17,10"></polyline>
+                                                        <line x1="12" x2="12" y1="15" y2="3"></line>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="group cursor-pointer">
+                                    <div class="relative bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 w-32 h-32 lg:w-40 lg:h-40 mx-auto group-hover:scale-105">
+                                        <div class="w-full h-full relative p-3 sm:p-4 lg:p-6">
+                                            <img 
+                                                src="https://www.coinpayu.com/static/newImg/index/trying_campaign.png" 
+                                                alt="Campaign"
+                                                class="w-full h-full object-contain"
+                                            />
+                                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90">
+                                                <div class="bg-white/90 backdrop-blur-sm rounded-full p-2">
+                                                    <svg class="h-5 w-5 text-gray-700 lucide" viewBox="0 0 24 24">
+                                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                                        <polyline points="7,10 12,15 17,10"></polyline>
+                                                        <line x1="12" x2="12" y1="15" y2="3"></line>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="order-1 lg:order-2 space-y-4 lg:space-y-6 w-full text-center lg:text-left">
+                        <div class="flex items-center justify-center lg:justify-start space-x-3 mb-4">
+                            <div class="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center">
+                                <svg class="h-6 w-6 text-white lucide" viewBox="0 0 24 24">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7,10 12,15 17,10"></polyline>
+                                    <line x1="12" x2="12" y1="15" y2="3"></line>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl lg:text-3xl font-bold text-gray-900">App Testing</h3>
+                        </div>
+                        <p class="text-base lg:text-lg text-gray-600 leading-relaxed text-center lg:text-left">
+                            Help companies improve their apps by testing and providing valuable feedback.
+                        </p>
+                        <div class="grid grid-cols-2 gap-3 lg:gap-4">
+                            <div class="bg-white rounded-xl p-4 border border-gray-200">
+                                <div class="text-xl lg:text-2xl font-bold text-purple-600 mb-1">250+</div>
+                                <div class="text-sm text-gray-600">Apps to test</div>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 border border-gray-200">
+                                <div class="text-xl lg:text-2xl font-bold text-purple-600 mb-1">$50</div>
+                                <div class="text-sm text-gray-600">Average per test</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Surveys Section -->
+            <div class="mb-12">
+                <div class="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    <div class="space-y-4 lg:space-y-6 order-1 lg:order-1 w-full text-center lg:text-left">
+                        <div class="flex items-center justify-center lg:justify-start space-x-3 mb-4">
+                            <div class="w-12 h-12 bg-indigo-500 rounded-xl flex items-center justify-center">
+                                <svg class="h-6 w-6 text-white lucide" viewBox="0 0 24 24">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl lg:text-3xl font-bold text-gray-900">Opinion Surveys</h3>
+                        </div>
+                        <p class="text-base lg:text-lg text-gray-600 leading-relaxed text-center lg:text-left">
+                            Share your opinions and influence the next generation of products and services worldwide.
+                        </p>
+                        <div class="bg-white rounded-xl p-4 border border-gray-200">
+                            <div class="text-xl lg:text-2xl font-bold text-indigo-600 mb-1">$2.50</div>
+                            <div class="text-sm text-gray-600">Average earnings per 10-minute survey</div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl sm:rounded-3xl shadow-xl border border-gray-200 p-4 sm:p-6 lg:p-8 order-2 lg:order-2 w-full">
+                        <div class="mb-6">
+                            <h4 class="font-bold text-gray-900 mb-4">Sample Survey Question:</h4>
+                            <p class="text-gray-700 mb-4">Which social media platform do you use most frequently?</p>
+                            <div class="space-y-3">
+                                <label class="flex items-center space-x-3 cursor-pointer">
+                                    <input type="radio" name="survey" class="w-4 h-4 text-indigo-600" />
+                                    <span class="text-gray-700">Instagram</span>
+                                </label>
+                                <label class="flex items-center space-x-3 cursor-pointer">
+                                    <input type="radio" name="survey" class="w-4 h-4 text-indigo-600" />
+                                    <span class="text-gray-700">TikTok</span>
+                                </label>
+                                <label class="flex items-center space-x-3 cursor-pointer">
+                                    <input type="radio" name="survey" class="w-4 h-4 text-indigo-600" />
+                                    <span class="text-gray-700">Twitter/X</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="border-t border-gray-200 pt-6">
+                            <h5 class="font-semibold text-gray-900 mb-3">Available Surveys:</h5>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-2">
+                                        <svg class="h-4 w-4 text-gray-400 lucide" viewBox="0 0 24 24">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <polyline points="12,6 12,12 16,14"></polyline>
+                                        </svg>
+                                        <span class="text-sm text-gray-600">~5 min</span>
+                                    </div>
+                                    <div class="flex space-x-1">
+                                        <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                        </svg>
+                                        <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                        </svg>
+                                        <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                        </svg>
+                                        <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                        </svg>
+                                        <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-2">
+                                        <svg class="h-4 w-4 text-gray-400 lucide" viewBox="0 0 24 24">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <polyline points="12,6 12,12 16,14"></polyline>
+                                        </svg>
+                                        <span class="text-sm text-gray-600">~8 min</span>
+                                    </div>
+                                    <div class="flex space-x-1">
+                                        <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                        </svg>
+                                        <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                        </svg>
+                                        <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                        </svg>
+                                        <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                        </svg>
+                                        <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-2">
+                                        <svg class="h-4 w-4 text-gray-400 lucide" viewBox="0 0 24 24">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <polyline points="12,6 12,12 16,14"></polyline>
+                                        </svg>
+                                        <span class="text-sm text-gray-600">~12 min</span>
+                                    </div>
+                                    <div class="flex space-x-1">
+                                        <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                        </svg>
+                                        <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                        </svg>
+                                        <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                        </svg>
+                                        <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                        </svg>
+                                        <svg class="h-4 w-4 text-gray-300 lucide" viewBox="0 0 24 24">
+                                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Tasks Section -->
+    <section class="py-20 bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    Social Media <span class="text-indigo-600">Tasks</span>
+                </h2>
+                <p class="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
+                    Earn money by engaging with social media content across popular platforms. 
+                    Help businesses grow their online presence while earning real cash.
+                </p>
+            </div>
+
+            <!-- Tasks Grid -->
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
+                <!-- Google Reviews Task -->
+                <div class="space-y-6 lg:space-y-8">
+                    <!-- Task Info -->
+                    <div class="bg-yellow-50 rounded-2xl p-6 lg:p-8 border-2 border-yellow-200">
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div class="bg-gradient-to-r from-yellow-400 to-orange-500 p-4 rounded-2xl text-white">
+                                <svg class="h-8 w-8 lucide" viewBox="0 0 24 24">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl lg:text-2xl font-bold text-gray-900">Google Reviews</h3>
+                                <p class="text-gray-600">Write authentic reviews for businesses and services</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3 lg:gap-4 mb-6">
+                            <div class="bg-white rounded-xl p-4 border border-gray-200">
+                                <div class="flex items-center space-x-2 mb-2">
+                                    <svg class="h-5 w-5 text-emerald-500 lucide" viewBox="0 0 24 24">
+                                        <line x1="12" x2="12" y1="2" y2="22"></line>
+                                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                    </svg>
+                                    <span class="font-bold text-emerald-600 text-sm md:text-base whitespace-nowrap">$2.50 - $8.00</span>
+                                </div>
+                                <p class="text-xs md:text-sm text-gray-600 whitespace-nowrap">Per task</p>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 border border-gray-200">
+                                <div class="flex items-center space-x-2 mb-2">
+                                    <svg class="h-5 w-5 text-blue-500 lucide" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12,6 12,12 16,14"></polyline>
+                                    </svg>
+                                    <span class="font-bold text-blue-600 text-sm md:text-base whitespace-nowrap">5-10 min</span>
+                                </div>
+                                <p class="text-xs md:text-sm text-gray-600 whitespace-nowrap">Time needed</p>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h4 class="font-semibold text-gray-900 mb-3">Available Tasks:</h4>
+                            <div class="grid grid-cols-2 md:grid-cols-1 gap-2">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                                    <span class="text-sm text-gray-700">Restaurant reviews</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                                    <span class="text-sm text-gray-700">Hotel experiences</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                                    <span class="text-sm text-gray-700">Product feedback</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                                    <span class="text-sm text-gray-700">Service ratings</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white py-3 px-4 lg:px-6 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2">
+                            <span>Start Google Reviews Tasks</span>
+                            <svg class="h-5 w-5 lucide" viewBox="0 0 24 24">
+                                <path d="M5 12h14"></path>
+                                <path d="m12 5 7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Platform Mockup -->
+                    <div class="lg:mt-0">
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-6">
+                            <div class="flex items-center space-x-3 mb-4">
+                                <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">
+                                    G
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Delicious Pizza Restaurant</h4>
+                                    <div class="flex items-center space-x-1">
+                                        <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                        </svg>
+                                        <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                        </svg>
+                                        <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                        </svg>
+                                        <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                        </svg>
+                                        <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 text-sm leading-relaxed">
+                                Amazing pizza with fresh ingredients! The service was excellent and the atmosphere was perfect for a family dinner. Highly recommended!
+                            </p>
+                            <div class="mt-4 flex items-center space-x-4 text-sm text-gray-500">
+                                <button class="flex items-center space-x-1 hover:text-blue-600">
+                                    <svg class="h-4 w-4 lucide" viewBox="0 0 24 24">
+                                        <path d="M7 10v12"></path>
+                                        <path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h0a3.13 3.13 0 0 1 3 3.88Z"></path>
+                                    </svg>
+                                    <span>Helpful</span>
+                                </button>
+                                <button class="flex items-center space-x-1 hover:text-blue-600">
+                                    <svg class="h-4 w-4 lucide" viewBox="0 0 24 24">
+                                        <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+                                        <polyline points="16,6 12,2 8,6"></polyline>
+                                        <line x1="12" x2="12" y1="2" y2="15"></line>
+                                    </svg>
+                                    <span>Share</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Telegram Task -->
+                <div class="space-y-6 lg:space-y-8">
+                    <!-- Task Info -->
+                    <div class="bg-blue-50 rounded-2xl p-6 lg:p-8 border-2 border-blue-200">
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div class="bg-gradient-to-r from-blue-400 to-blue-600 p-4 rounded-2xl text-white">
+                                <svg class="h-8 w-8 lucide" viewBox="0 0 24 24">
+                                    <path d="m22 2-7 20-4-9-9-4Z"></path>
+                                    <path d="M22 2 11 13"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl lg:text-2xl font-bold text-gray-900">Telegram</h3>
+                                <p class="text-gray-600">Join channels, groups and engage with Telegram content</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3 lg:gap-4 mb-6">
+                            <div class="bg-white rounded-xl p-4 border border-gray-200">
+                                <div class="flex items-center space-x-2 mb-2">
+                                    <svg class="h-5 w-5 text-emerald-500 lucide" viewBox="0 0 24 24">
+                                        <line x1="12" x2="12" y1="2" y2="22"></line>
+                                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                    </svg>
+                                    <span class="font-bold text-emerald-600 text-sm md:text-base whitespace-nowrap">$0.50 - $3.00</span>
+                                </div>
+                                <p class="text-xs md:text-sm text-gray-600 whitespace-nowrap">Per task</p>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 border border-gray-200">
+                                <div class="flex items-center space-x-2 mb-2">
+                                    <svg class="h-5 w-5 text-blue-500 lucide" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12,6 12,12 16,14"></polyline>
+                                    </svg>
+                                    <span class="font-bold text-blue-600 text-sm md:text-base whitespace-nowrap">2-5 min</span>
+                                </div>
+                                <p class="text-xs md:text-sm text-gray-600 whitespace-nowrap">Time needed</p>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h4 class="font-semibold text-gray-900 mb-3">Available Tasks:</h4>
+                            <div class="grid grid-cols-2 md:grid-cols-1 gap-2">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                                    <span class="text-sm text-gray-700">Join channels</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                                    <span class="text-sm text-gray-700">Join groups</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                                    <span class="text-sm text-gray-700">Share posts</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                                    <span class="text-sm text-gray-700">React to messages</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="w-full bg-gradient-to-r from-blue-400 to-blue-600 text-white py-3 px-4 lg:px-6 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2">
+                            <span>Start Telegram Tasks</span>
+                            <svg class="h-5 w-5 lucide" viewBox="0 0 24 24">
+                                <path d="M5 12h14"></path>
+                                <path d="m12 5 7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Platform Mockup -->
+                    <div class="lg:mt-0">
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+                            <div class="p-4 flex items-center justify-between border-b border-gray-200">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
+                                        <svg class="h-5 w-5 text-white lucide" viewBox="0 0 24 24">
+                                            <path d="m22 2-7 20-4-9-9-4Z"></path>
+                                            <path d="M22 2 11 13"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <span class="font-semibold text-gray-900">Tech News Channel</span>
+                                        <p class="text-sm text-gray-500">125K members</p>
+                                    </div>
+                                </div>
+                                <button class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                    Join
+                                </button>
+                            </div>
+                            <div class="p-4">
+                                <div class="bg-gray-50 rounded-lg p-3 mb-3">
+                                    <p class="text-gray-800">Breaking: New AI technology breakthrough announced! 🚀</p>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-4">
+                                        <button class="flex items-center space-x-1 text-gray-600">
+                                            <span>👍</span>
+                                            <span class="text-sm">847</span>
+                                        </button>
+                                        <button class="flex items-center space-x-1 text-gray-600">
+                                            <svg class="h-4 w-4 lucide" viewBox="0 0 24 24">
+                                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                            </svg>
+                                            <span class="text-sm">Reply</span>
+                                        </button>
+                                    </div>
+                                    <button class="text-blue-500 text-sm">
+                                        <svg class="h-4 w-4 lucide" viewBox="0 0 24 24">
+                                            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+                                            <polyline points="16,6 12,2 8,6"></polyline>
+                                            <line x1="12" x2="12" y1="2" y2="15"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trustpilot Task -->
+                <div class="space-y-6 lg:space-y-8">
+                    <!-- Task Info -->
+                    <div class="bg-green-50 rounded-2xl p-6 lg:p-8 border-2 border-green-200">
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div class="bg-gradient-to-r from-green-500 to-green-700 p-4 rounded-2xl text-white">
+                                <svg class="h-8 w-8 lucide" viewBox="0 0 24 24">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl lg:text-2xl font-bold text-gray-900">Trustpilot</h3>
+                                <p class="text-gray-600">Write honest reviews for businesses and services</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3 lg:gap-4 mb-6">
+                            <div class="bg-white rounded-xl p-4 border border-gray-200">
+                                <div class="flex items-center space-x-2 mb-2">
+                                    <svg class="h-5 w-5 text-emerald-500 lucide" viewBox="0 0 24 24">
+                                        <line x1="12" x2="12" y1="2" y2="22"></line>
+                                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                    </svg>
+                                    <span class="font-bold text-emerald-600 text-sm md:text-base whitespace-nowrap">$1.00 - $4.50</span>
+                                </div>
+                                <p class="text-xs md:text-sm text-gray-600 whitespace-nowrap">Per task</p>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 border border-gray-200">
+                                <div class="flex items-center space-x-2 mb-2">
+                                    <svg class="h-5 w-5 text-blue-500 lucide" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12,6 12,12 16,14"></polyline>
+                                    </svg>
+                                    <span class="font-bold text-blue-600 text-sm md:text-base whitespace-nowrap">3-8 min</span>
+                                </div>
+                                <p class="text-xs md:text-sm text-gray-600 whitespace-nowrap">Time needed</p>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h4 class="font-semibold text-gray-900 mb-3">Available Tasks:</h4>
+                            <div class="grid grid-cols-2 md:grid-cols-1 gap-2">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                                    <span class="text-sm text-gray-700">Business reviews</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                                    <span class="text-sm text-gray-700">Service ratings</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                                    <span class="text-sm text-gray-700">Product feedback</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                                    <span class="text-sm text-gray-700">Experience sharing</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                                    <span class="text-sm text-gray-700">Company ratings</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                                    <span class="text-sm text-gray-700">Quality assessments</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="w-full bg-gradient-to-r from-green-500 to-green-700 text-white py-3 px-4 lg:px-6 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2">
+                            <span>Start Trustpilot Tasks</span>
+                            <svg class="h-5 w-5 lucide" viewBox="0 0 24 24">
+                                <path d="M5 12h14"></path>
+                                <path d="m12 5 7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Platform Mockup -->
+                    <div class="lg:mt-0">
+                        <div class="space-y-4">
+                            <!-- First Review -->
+                            <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-6">
+                                <div class="flex items-center space-x-3 mb-4">
+                                    <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center">
+                                        <svg class="h-5 w-5 text-white lucide" viewBox="0 0 24 24">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">Online Shopping Store</h4>
+                                        <div class="flex items-center space-x-1">
+                                            <svg class="h-4 w-4 text-green-500 fill-current lucide" viewBox="0 0 24 24">
+                                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                            </svg>
+                                            <svg class="h-4 w-4 text-green-500 fill-current lucide" viewBox="0 0 24 24">
+                                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                            </svg>
+                                            <svg class="h-4 w-4 text-green-500 fill-current lucide" viewBox="0 0 24 24">
+                                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                            </svg>
+                                            <svg class="h-4 w-4 text-green-500 fill-current lucide" viewBox="0 0 24 24">
+                                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                            </svg>
+                                            <svg class="h-4 w-4 text-gray-300 lucide" viewBox="0 0 24 24">
+                                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                                            </svg>
+                                            <span class="text-sm text-gray-600 ml-1">4/5</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-gray-700 text-sm leading-relaxed mb-4">
+                                    Great customer service and fast delivery. The product quality exceeded my expectations. Highly recommend this store!
+                                </p>
+                                <div class="mt-4 pt-4 border-t border-gray-200 flex items-center space-x-6">
+                                    <button class="flex items-center space-x-2 text-gray-600 hover:text-green-600">
+                                        <svg class="h-4 w-4 lucide" viewBox="0 0 24 24">
+                                            <path d="M7 10v12"></path>
+                                            <path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h0a3.13 3.13 0 0 1 3 3.88Z"></path>
+                                        </svg>
+                                        <span>Helpful (23)</span>
+                                    </button>
+                                    <button class="flex items-center space-x-2 text-gray-600 hover:text-green-600">
+                                        <svg class="h-4 w-4 lucide" viewBox="0 0 24 24">
+                                            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+                                            <polyline points="16,6 12,2 8,6"></polyline>
+                                            <line x1="12" x2="12" y1="2" y2="15"></line>
+                                        </svg>
+                                        <span>Share</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- YouTube Task -->
+                <div class="space-y-6 lg:space-y-8">
+                    <!-- Task Info -->
+                    <div class="bg-red-50 rounded-2xl p-6 lg:p-8 border-2 border-red-200">
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div class="bg-gradient-to-r from-red-500 to-red-700 p-4 rounded-2xl text-white">
+                                <svg class="h-8 w-8 lucide" viewBox="0 0 24 24">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl lg:text-2xl font-bold text-gray-900">YouTube</h3>
+                                <p class="text-gray-600">Engage with YouTube content through verifiable actions</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3 lg:gap-4 mb-6">
+                            <div class="bg-white rounded-xl p-4 border border-gray-200">
+                                <div class="flex items-center space-x-2 mb-2">
+                                    <svg class="h-5 w-5 text-emerald-500 lucide" viewBox="0 0 24 24">
+                                        <line x1="12" x2="12" y1="2" y2="22"></line>
+                                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                    </svg>
+                                    <span class="font-bold text-emerald-600 text-sm md:text-base whitespace-nowrap">$1.50 - $6.00</span>
+                                </div>
+                                <p class="text-xs md:text-sm text-gray-600 whitespace-nowrap">Per task</p>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 border border-gray-200">
+                                <div class="flex items-center space-x-2 mb-2">
+                                    <svg class="h-5 w-5 text-blue-500 lucide" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12,6 12,12 16,14"></polyline>
+                                    </svg>
+                                    <span class="font-bold text-blue-600 text-sm md:text-base whitespace-nowrap">5-15 min</span>
+                                </div>
+                                <p class="text-xs md:text-sm text-gray-600 whitespace-nowrap">Time needed</p>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h4 class="font-semibold text-gray-900 mb-3">Available Tasks:</h4>
+                            <div class="grid grid-cols-2 md:grid-cols-1 gap-2">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                                    <span class="text-sm text-gray-700">Like content</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                                    <span class="text-sm text-gray-700">Subscribe to channels</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                                    <span class="text-sm text-gray-700">Write comments</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                                    <span class="text-sm text-gray-700">Share videos</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="w-full bg-gradient-to-r from-red-500 to-red-700 text-white py-3 px-4 lg:px-6 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2">
+                            <span>Start YouTube Tasks</span>
+                            <svg class="h-5 w-5 lucide" viewBox="0 0 24 24">
+                                <path d="M5 12h14"></path>
+                                <path d="m12 5 7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Platform Mockup -->
+                    <div class="lg:mt-0">
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+                            <div class="aspect-video bg-gray-900 flex items-center justify-center">
+                                <div class="text-center text-white">
+                                    <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                        <svg class="h-8 w-8 text-white ml-1 lucide" viewBox="0 0 24 24">
+                                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                        </svg>
+                                    </div>
+                                    <p class="text-sm">Sample Task Video</p>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-semibold text-gray-900 mb-2">Sample Task Video</h4>
+                                <p class="text-sm text-gray-600 mb-2">TaskEarn Official</p>
+                                <div class="flex items-center space-x-4 text-sm text-gray-500 mb-4">
+                                    <span>Watch and engage</span>
+                                    <span>Earn money for actions</span>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <button class="flex items-center space-x-2 bg-red-600 text-white px-3 py-1 rounded-full text-sm">
+                                        <svg class="h-4 w-4 lucide" viewBox="0 0 24 24">
+                                            <path d="M7 10v12"></path>
+                                            <path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h0a3.13 3.13 0 0 1 3 3.88Z"></path>
+                                        </svg>
+                                        <span>Like</span>
+                                    </button>
+                                    <button class="flex items-center space-x-2 bg-gray-600 text-white px-3 py-1 rounded-full text-sm">
+                                        <span>Subscribe</span>
+                                    </button>
+                                    <button class="flex items-center space-x-2 bg-blue-600 text-white px-3 py-1 rounded-full text-sm">
+                                        <svg class="h-4 w-4 lucide" viewBox="0 0 24 24">
+                                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                        </svg>
+                                        <span>Comment</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Reviews Section -->
+    <section class="py-20 bg-gradient-to-br from-orange-50 via-white to-yellow-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    See what our <span class="text-orange-500">members say</span>
+                </h2>
+                
+                <!-- Trustpilot-style Rating -->
+                <div class="flex items-center justify-center space-x-2 mb-6">
+                    <div class="flex space-x-1">
+                        <svg class="h-6 w-6 text-green-500 fill-current lucide" viewBox="0 0 24 24">
+                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                        </svg>
+                        <svg class="h-6 w-6 text-green-500 fill-current lucide" viewBox="0 0 24 24">
+                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                        </svg>
+                        <svg class="h-6 w-6 text-green-500 fill-current lucide" viewBox="0 0 24 24">
+                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                        </svg>
+                        <svg class="h-6 w-6 text-green-500 fill-current lucide" viewBox="0 0 24 24">
+                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                        </svg>
+                        <svg class="h-6 w-6 text-green-500 fill-current lucide" viewBox="0 0 24 24">
+                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                        </svg>
+                    </div>
+                    <span class="text-lg font-semibold text-gray-900">Score: 4.9</span>
+                    <span class="text-gray-600">|</span>
+                    <span class="text-gray-600">7,228 Reviews</span>
+                </div>
+
+                <p class="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
+                    Join thousands of satisfied users earning money daily with TaskEarn
+                </p>
+            </div>
+
+            <!-- Reviews Grid - 6 Reviews -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
+                <!-- Review 1 -->
+                <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 lg:p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-gray-200">
+                                <img 
+                                    src="https://www.coinpayu.com/static/images/flags/tr.svg"
+                                    alt="Turkey Flag"
+                                    class="w-full h-full object-cover"
+                                />
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-900">Semanur7474</div>
+                                <div class="text-xs lg:text-sm text-gray-500">Turkey</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-1 bg-green-100 px-1.5 py-0.5 lg:px-2 lg:py-1 rounded-full">
+                            <svg class="h-4 w-4 text-green-600 lucide" viewBox="0 0 24 24">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+                            </svg>
+                            <span class="text-xs font-medium text-green-600">Verified</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="flex space-x-1">
+                            <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                        </div>
+                        <span class="text-sm font-medium text-gray-600">5/5</span>
+                    </div>
+
+                    <p class="text-gray-700 leading-relaxed text-sm lg:text-base">
+                        Since I started using the TaskEarn website and I'm very satisfied with it. Besides it is a trusty website it can also help beginners to start earning by just doing simple tasks and it also provides them some passive income.
+                    </p>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 lg:p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-gray-200">
+                                <img 
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/320px-Flag_of_the_United_States.svg.png"
+                                    alt="USA Flag"
+                                    class="w-full h-full object-cover"
+                                />
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-900">bankai3</div>
+                                <div class="text-xs lg:text-sm text-gray-500">USA</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-1 bg-green-100 px-1.5 py-0.5 lg:px-2 lg:py-1 rounded-full">
+                            <svg class="h-4 w-4 text-green-600 lucide" viewBox="0 0 24 24">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+                            </svg>
+                            <span class="text-xs font-medium text-green-600">Verified</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="flex space-x-1">
+                            <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                        </div>
+                        <span class="text-sm font-medium text-gray-600">5/5</span>
+                    </div>
+
+                    <p class="text-gray-700 leading-relaxed text-sm lg:text-base">
+                        I like this paid link: TaskEarn.com, I will always recommend it, it meets all your payments without delay and in the time they tell you it is an excellent page and very easy to handle.
+                    </p>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 lg:p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-gray-200">
+                                <img 
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/320px-Flag_of_Germany.svg.png"
+                                    alt="Germany Flag"
+                                    class="w-full h-full object-cover"
+                                />
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-900">alfonz</div>
+                                <div class="text-xs lg:text-sm text-gray-500">Germany</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-1 bg-green-100 px-1.5 py-0.5 lg:px-2 lg:py-1 rounded-full">
+                            <svg class="h-4 w-4 text-green-600 lucide" viewBox="0 0 24 24">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+                            </svg>
+                            <span class="text-xs font-medium text-green-600">Verified</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="flex space-x-1">
+                            <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                        </div>
+                        <span class="text-sm font-medium text-gray-600">5/5</span>
+                    </div>
+
+                    <p class="text-gray-700 leading-relaxed text-sm lg:text-base">
+                        Using CPU since 12/22, sometimes withdrawal requests fail in pending state but in the end all payments were processed correct and in 3/4 cases within 5 - 10 Minutes. Received over 700usd since sign up - from offer earnings and daily contest rewards.
+                    </p>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 lg:p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-gray-200">
+                                <img 
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/320px-Flag_of_Germany.svg.png"
+                                    alt="Germany Flag"
+                                    class="w-full h-full object-cover"
+                                />
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-900">kingkay47</div>
+                                <div class="text-xs lg:text-sm text-gray-500">Germany</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-1 bg-green-100 px-1.5 py-0.5 lg:px-2 lg:py-1 rounded-full">
+                            <svg class="h-4 w-4 text-green-600 lucide" viewBox="0 0 24 24">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+                            </svg>
+                            <span class="text-xs font-medium text-green-600">Verified</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="flex space-x-1">
+                            <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                        </div>
+                        <span class="text-sm font-medium text-gray-600">5/5</span>
+                    </div>
+
+                    <p class="text-gray-700 leading-relaxed text-sm lg:text-base">
+                        My first withdrawals and they in no doubt really pays.. a very legit site even on holidays they pay you.. attached here with the payment i got from them. cheers and more power TaskEarn.
+                    </p>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 lg:p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-gray-200">
+                                <img 
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/320px-Flag_of_Brazil.svg.png"
+                                    alt="Brazil Flag"
+                                    class="w-full h-full object-cover"
+                                />
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-900">maria_santos</div>
+                                <div class="text-xs lg:text-sm text-gray-500">Brazil</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-1 bg-green-100 px-1.5 py-0.5 lg:px-2 lg:py-1 rounded-full">
+                            <svg class="h-4 w-4 text-green-600 lucide" viewBox="0 0 24 24">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+                            </svg>
+                            <span class="text-xs font-medium text-green-600">Verified</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="flex space-x-1">
+                            <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                        </div>
+                        <span class="text-sm font-medium text-gray-600">5/5</span>
+                    </div>
+
+                    <p class="text-gray-700 leading-relaxed text-sm lg:text-base">
+                        TaskEarn has been amazing for earning extra income. The tasks are simple and payments are always on time. I've earned over $500 in just 3 months!
+                    </p>
+                </div>
+
+                <!-- Review 6 -->
+                <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 lg:p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-gray-200">
+                                <img 
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/320px-Flag_of_Canada_%28Pantone%29.svg.png"
+                                    alt="Canada Flag"
+                                    class="w-full h-full object-cover"
+                                />
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-900">alex_chen</div>
+                                <div class="text-xs lg:text-sm text-gray-500">Canada</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-1 bg-green-100 px-1.5 py-0.5 lg:px-2 lg:py-1 rounded-full">
+                            <svg class="h-4 w-4 text-green-600 lucide" viewBox="0 0 24 24">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+                            </svg>
+                            <span class="text-xs font-medium text-green-600">Verified</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="flex space-x-1">
+                            <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            <svg class="h-4 w-4 text-yellow-400 fill-current lucide" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                        </div>
+                        <span class="text-sm font-medium text-gray-600">5/5</span>
+                    </div>
+
+                    <p class="text-gray-700 leading-relaxed text-sm lg:text-base">
+                        Fast withdrawals and great customer support. I received my payment within 24 hours every time. Highly recommend this platform for anyone looking to earn money online.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Advertisers Section -->
+    <section class="py-16 bg-gray-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-12">
+                <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
+                    Our <span class="text-emerald-600">Advertisers</span>
+                </h2>
+                <p class="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
+                    Trusted by leading global brands and companies worldwide
+                </p>
+            </div>
+
+            <!-- Infinite Scrolling Logos -->
+            <div class="relative">
+                <!-- Gradient overlays for smooth fade effect -->
+                <div class="absolute left-0 top-0 w-10 lg:w-20 h-full bg-gradient-to-r from-gray-50 to-transparent z-10"></div>
+                <div class="absolute right-0 top-0 w-10 lg:w-20 h-full bg-gradient-to-l from-gray-50 to-transparent z-10"></div>
+                
+                <div class="flex overflow-hidden">
+                    <div class="flex animate-scroll-left space-x-8 lg:space-x-16 items-center">
+                        <!-- First set of logos -->
+                        <div class="flex-shrink-0 w-32 h-16 lg:w-48 lg:h-24 flex items-center justify-center bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-all duration-300 group hover:scale-105">
+                            <img
+                                src="https://www.coinpayu.com/static/newImg/index/advertiser/bitfufu_2.svg"
+                                alt="BitFuFu logo"
+                                class="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 p-2 lg:p-4"
+                            />
+                        </div>
+                        
+                        <div class="flex-shrink-0 w-32 h-16 lg:w-48 lg:h-24 flex items-center justify-center bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-all duration-300 group hover:scale-105">
+                            <img
+                                src="https://www.coinpayu.com/static/newImg/index/advertiser/bybit_1.svg"
+                                alt="Bybit logo"
+                                class="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 p-2 lg:p-4"
+                            />
+                        </div>
+                        
+                        <div class="flex-shrink-0 w-32 h-16 lg:w-48 lg:h-24 flex items-center justify-center bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-all duration-300 group hover:scale-105">
+                            <img
+                                src="https://www.coinpayu.com/static/newImg/index/advertiser/etoro_2.svg"
+                                alt="eToro logo"
+                                class="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 p-2 lg:p-4"
+                            />
+                        </div>
+                        
+                        <div class="flex-shrink-0 w-32 h-16 lg:w-48 lg:h-24 flex items-center justify-center bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-all duration-300 group hover:scale-105">
+                            <img
+                                src="https://www.coinpayu.com/static/newImg/index/advertiser/hbomax_2.svg"
+                                alt="HBO Max logo"
+                                class="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 p-2 lg:p-4"
+                            />
+                        </div>
+                        
+                        <div class="flex-shrink-0 w-32 h-16 lg:w-48 lg:h-24 flex items-center justify-center bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-all duration-300 group hover:scale-105">
+                            <img
+                                src="https://www.coinpayu.com/static/newImg/index/advertiser/indoex_2.svg"
+                                alt="Indoex logo"
+                                class="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 p-2 lg:p-4"
+                            />
+                        </div>
+                        
+                        <div class="flex-shrink-0 w-32 h-16 lg:w-48 lg:h-24 flex items-center justify-center bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-all duration-300 group hover:scale-105">
+                            <img
+                                src="https://www.coinpayu.com/static/newImg/index/advertiser/stormgain_2.svg"
+                                alt="StormGain logo"
+                                class="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 p-2 lg:p-4"
+                            />
+                        </div>
+                        
+                        <div class="flex-shrink-0 w-32 h-16 lg:w-48 lg:h-24 flex items-center justify-center bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-all duration-300 group hover:scale-105">
+                            <img
+                                src="https://www.coinpayu.com/static/newImg/index/advertiser/tiktok_2.svg"
+                                alt="TikTok logo"
+                                class="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 p-2 lg:p-4"
+                            />
+                        </div>
+                        
+                        <!-- Duplicate set for seamless loop -->
+                        <div class="flex-shrink-0 w-32 h-16 lg:w-48 lg:h-24 flex items-center justify-center bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-all duration-300 group hover:scale-105">
+                            <img
+                                src="https://www.coinpayu.com/static/newImg/index/advertiser/bitfufu_2.svg"
+                                alt="BitFuFu logo"
+                                class="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 p-2 lg:p-4"
+                            />
+                        </div>
+                        
+                        <div class="flex-shrink-0 w-32 h-16 lg:w-48 lg:h-24 flex items-center justify-center bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-all duration-300 group hover:scale-105">
+                            <img
+                                src="https://www.coinpayu.com/static/newImg/index/advertiser/bybit_1.svg"
+                                alt="Bybit logo"
+                                class="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 p-2 lg:p-4"
+                            />
+                        </div>
+                        
+                        <div class="flex-shrink-0 w-32 h-16 lg:w-48 lg:h-24 flex items-center justify-center bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-all duration-300 group hover:scale-105">
+                            <img
+                                src="https://www.coinpayu.com/static/newImg/index/advertiser/etoro_2.svg"
+                                alt="eToro logo"
+                                class="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 p-2 lg:p-4"
+                            />
+                        </div>
+                        
+                        <div class="flex-shrink-0 w-32 h-16 lg:w-48 lg:h-24 flex items-center justify-center bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-all duration-300 group hover:scale-105">
+                            <img
+                                src="https://www.coinpayu.com/static/newImg/index/advertiser/hbomax_2.svg"
+                                alt="HBO Max logo"
+                                class="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 p-2 lg:p-4"
+                            />
+                        </div>
+                        
+                        <div class="flex-shrink-0 w-32 h-16 lg:w-48 lg:h-24 flex items-center justify-center bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-all duration-300 group hover:scale-105">
+                            <img
+                                src="https://www.coinpayu.com/static/newImg/index/advertiser/indoex_2.svg"
+                                alt="Indoex logo"
+                                class="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 p-2 lg:p-4"
+                            />
+                        </div>
+                        
+                        <div class="flex-shrink-0 w-32 h-16 lg:w-48 lg:h-24 flex items-center justify-center bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-all duration-300 group hover:scale-105">
+                            <img
+                                src="https://www.coinpayu.com/static/newImg/index/advertiser/stormgain_2.svg"
+                                alt="StormGain logo"
+                                class="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 p-2 lg:p-4"
+                            />
+                        </div>
+                        
+                        <div class="flex-shrink-0 w-32 h-16 lg:w-48 lg:h-24 flex items-center justify-center bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-all duration-300 group hover:scale-105">
+                            <img
+                                src="https://www.coinpayu.com/static/newImg/index/advertiser/tiktok_2.svg"
+                                alt="TikTok logo"
+                                class="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 p-2 lg:p-4"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    Frequently Asked <span class="text-blue-600">Questions</span>
+                </h2>
+                <p class="text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
+                    Everything you need to know about earning money with TaskEarn
+                </p>
+            </div>
+
+            <!-- FAQ Items -->
+            <div class="flex flex-col lg:flex-row gap-6 lg:gap-8">
+                <!-- Left Column -->
+                <div class="flex-1 space-y-6">
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300">
+                        <button class="w-full px-4 py-4 lg:px-6 lg:py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleFAQ(1)">
+                            <h3 class="text-base lg:text-lg font-semibold text-gray-900 pr-4">
+                                How do I start earning money on TaskEarn?
+                            </h3>
+                            <div class="flex-shrink-0">
+                                <svg id="faq-icon-1" class="h-5 w-5 text-gray-500 lucide" viewBox="0 0 24 24">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </div>
+                        </button>
+                        
+                        <div id="faq-content-1" class="hidden px-4 pb-4 lg:px-6 lg:pb-6">
+                            <p class="text-gray-700 leading-relaxed text-sm lg:text-base">
+                                Getting started is simple! Just create a free account, verify your email, and you can immediately start browsing available tasks. Choose from watching videos, testing apps, completing surveys, or social media tasks. Most users earn their first money within the first hour of joining.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300">
+                        <button class="w-full px-4 py-4 lg:px-6 lg:py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleFAQ(3)">
+                            <h3 class="text-base lg:text-lg font-semibold text-gray-900 pr-4">
+                                When and how do I get paid?
+                            </h3>
+                            <div class="flex-shrink-0">
+                                <svg id="faq-icon-3" class="h-5 w-5 text-gray-500 lucide" viewBox="0 0 24 24">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </div>
+                        </button>
+                        
+                        <div id="faq-content-3" class="hidden px-4 pb-4 lg:px-6 lg:pb-6">
+                            <p class="text-gray-700 leading-relaxed text-sm lg:text-base">
+                                We offer instant payouts! Once you complete a task and it's verified, your earnings are immediately available for withdrawal. You can cash out via PayPal, bank transfer, cryptocurrency, or gift cards. Minimum withdrawal is just $1.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 5 -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300">
+                        <button class="w-full px-4 py-4 lg:px-6 lg:py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleFAQ(5)">
+                            <h3 class="text-base lg:text-lg font-semibold text-gray-900 pr-4">
+                                What types of tasks are available?
+                            </h3>
+                            <div class="flex-shrink-0">
+                                <svg id="faq-icon-5" class="h-5 w-5 text-gray-500 lucide" viewBox="0 0 24 24">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </div>
+                        </button>
+                        
+                        <div id="faq-content-5" class="hidden px-4 pb-4 lg:px-6 lg:pb-6">
+                            <p class="text-gray-700 leading-relaxed text-sm lg:text-base">
+                                We offer diverse earning opportunities: mobile gaming (highest paying), app testing, website browsing, social media engagement, surveys, content creation, and product reviews. New tasks are added daily, so there's always something new to try.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 7 -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300">
+                        <button class="w-full px-4 py-4 lg:px-6 lg:py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleFAQ(7)">
+                            <h3 class="text-base lg:text-lg font-semibold text-gray-900 pr-4">
+                                Can I use TaskEarn on my mobile device?
+                            </h3>
+                            <div class="flex-shrink-0">
+                                <svg id="faq-icon-7" class="h-5 w-5 text-gray-500 lucide" viewBox="0 0 24 24">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </div>
+                        </button>
+                        
+                        <div id="faq-content-7" class="hidden px-4 pb-4 lg:px-6 lg:pb-6">
+                            <p class="text-gray-700 leading-relaxed text-sm lg:text-base">
+                                Yes! TaskEarn works perfectly on all devices - smartphones, tablets, and computers. Many of our highest-paying tasks are actually mobile games, so having a smartphone can increase your earning potential significantly.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 9 -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300">
+                        <button class="w-full px-4 py-4 lg:px-6 lg:py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleFAQ(9)">
+                            <h3 class="text-base lg:text-lg font-semibold text-gray-900 pr-4">
+                                How long does it take to complete tasks?
+                            </h3>
+                            <div class="flex-shrink-0">
+                                <svg id="faq-icon-9" class="h-5 w-5 text-gray-500 lucide" viewBox="0 0 24 24">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </div>
+                        </button>
+                        
+                        <div id="faq-content-9" class="hidden px-4 pb-4 lg:px-6 lg:pb-6">
+                            <p class="text-gray-700 leading-relaxed text-sm lg:text-base">
+                                Task duration varies widely. Quick tasks like watching videos take 30 seconds to 5 minutes. Surveys typically take 10-30 minutes. Gaming tasks can range from 30 minutes to several days depending on the objectives. You can always see the estimated time before starting.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="flex-1 space-y-6 hidden lg:block">
+                    <!-- FAQ Item 2 -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300">
+                        <button class="w-full px-4 py-4 lg:px-6 lg:py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleFAQ(2)">
+                            <h3 class="text-base lg:text-lg font-semibold text-gray-900 pr-4">
+                                How much money can I earn per day?
+                            </h3>
+                            <div class="flex-shrink-0">
+                                <svg id="faq-icon-2" class="h-5 w-5 text-gray-500 lucide" viewBox="0 0 24 24">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </div>
+                        </button>
+                        
+                        <div id="faq-content-2" class="hidden px-4 pb-4 lg:px-6 lg:pb-6">
+                            <p class="text-gray-700 leading-relaxed text-sm lg:text-base">
+                                Earnings vary based on the tasks you choose and time invested. On average, users earn $5-50 per day. High-value gaming tasks can pay $50-150 each, while quick tasks like watching videos pay $0.25-2.00. The more time you invest, the more you can earn.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300">
+                        <button class="w-full px-4 py-4 lg:px-6 lg:py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleFAQ(4)">
+                            <h3 class="text-base lg:text-lg font-semibold text-gray-900 pr-4">
+                                Is TaskEarn really free to join?
+                            </h3>
+                            <div class="flex-shrink-0">
+                                <svg id="faq-icon-4" class="h-5 w-5 text-gray-500 lucide" viewBox="0 0 24 24">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </div>
+                        </button>
+                        
+                        <div id="faq-content-4" class="hidden px-4 pb-4 lg:px-6 lg:pb-6">
+                            <p class="text-gray-700 leading-relaxed text-sm lg:text-base">
+                                Yes, absolutely! TaskEarn is 100% free to join and use. We never charge any fees, membership costs, or hidden charges. You only earn money - never spend it. We make money when our advertisers pay us for completed tasks, and we share that revenue with you.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 6 -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300">
+                        <button class="w-full px-4 py-4 lg:px-6 lg:py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleFAQ(6)">
+                            <h3 class="text-base lg:text-lg font-semibold text-gray-900 pr-4">
+                                Is my personal information safe?
+                            </h3>
+                            <div class="flex-shrink-0">
+                                <svg id="faq-icon-6" class="h-5 w-5 text-gray-500 lucide" viewBox="0 0 24 24">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </div>
+                        </button>
+                        
+                        <div id="faq-content-6" class="hidden px-4 pb-4 lg:px-6 lg:pb-6">
+                            <p class="text-gray-700 leading-relaxed text-sm lg:text-base">
+                                Your security is our top priority. We use bank-level SSL encryption, never share your personal data with third parties, and are fully GDPR compliant. We only collect information necessary for task completion and payments. Your privacy is guaranteed.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 8 -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300">
+                        <button class="w-full px-4 py-4 lg:px-6 lg:py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleFAQ(8)">
+                            <h3 class="text-base lg:text-lg font-semibold text-gray-900 pr-4">
+                                What countries is TaskEarn available in?
+                            </h3>
+                            <div class="flex-shrink-0">
+                                <svg id="faq-icon-8" class="h-5 w-5 text-gray-500 lucide" viewBox="0 0 24 24">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </div>
+                        </button>
+                        
+                        <div id="faq-content-8" class="hidden px-4 pb-4 lg:px-6 lg:pb-6">
+                            <p class="text-gray-700 leading-relaxed text-sm lg:text-base">
+                                TaskEarn is available in 190+ countries worldwide! We have tasks suitable for users from almost every country. Some premium tasks may be region-specific, but there are always earning opportunities available regardless of your location.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 10 -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300">
+                        <button class="w-full px-4 py-4 lg:px-6 lg:py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleFAQ(10)">
+                            <h3 class="text-base lg:text-lg font-semibold text-gray-900 pr-4">
+                                What if I have problems with a task or payment?
+                            </h3>
+                            <div class="flex-shrink-0">
+                                <svg id="faq-icon-10" class="h-5 w-5 text-gray-500 lucide" viewBox="0 0 24 24">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </div>
+                        </button>
+                        
+                        <div id="faq-content-10" class="hidden px-4 pb-4 lg:px-6 lg:pb-6">
+                            <p class="text-gray-700 leading-relaxed text-sm lg:text-base">
+                                Our customer support team is available 24/7 to help you. Contact us through live chat, email, or our support ticket system. We typically respond within 1 hour and resolve most issues within 24 hours. Your satisfaction is guaranteed.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobile: Show all FAQ items in single column -->
+                <div class="lg:hidden space-y-6">
+                    <!-- FAQ Item 2 -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300">
+                        <button class="w-full px-4 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleFAQ(2)">
+                            <h3 class="text-base font-semibold text-gray-900 pr-4">
+                                How much money can I earn per day?
+                            </h3>
+                            <div class="flex-shrink-0">
+                                <svg id="faq-icon-2" class="h-5 w-5 text-gray-500 lucide" viewBox="0 0 24 24">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </div>
+                        </button>
+                        
+                        <div id="faq-content-2" class="hidden px-4 pb-4">
+                            <p class="text-gray-700 leading-relaxed text-sm">
+                                Earnings vary based on the tasks you choose and time invested. On average, users earn $5-50 per day. High-value gaming tasks can pay $50-150 each, while quick tasks like watching videos pay $0.25-2.00. The more time you invest, the more you can earn.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300">
+                        <button class="w-full px-4 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleFAQ(4)">
+                            <h3 class="text-base font-semibold text-gray-900 pr-4">
+                                Is TaskEarn really free to join?
+                            </h3>
+                            <div class="flex-shrink-0">
+                                <svg id="faq-icon-4" class="h-5 w-5 text-gray-500 lucide" viewBox="0 0 24 24">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </div>
+                        </button>
+                        
+                        <div id="faq-content-4" class="hidden px-4 pb-4">
+                            <p class="text-gray-700 leading-relaxed text-sm">
+                                Yes, absolutely! TaskEarn is 100% free to join and use. We never charge any fees, membership costs, or hidden charges. You only earn money - never spend it. We make money when our advertisers pay us for completed tasks, and we share that revenue with you.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 6 -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300">
+                        <button class="w-full px-4 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleFAQ(6)">
+                            <h3 class="text-base font-semibold text-gray-900 pr-4">
+                                Is my personal information safe?
+                            </h3>
+                            <div class="flex-shrink-0">
+                                <svg id="faq-icon-6" class="h-5 w-5 text-gray-500 lucide" viewBox="0 0 24 24">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </div>
+                        </button>
+                        
+                        <div id="faq-content-6" class="hidden px-4 pb-4">
+                            <p class="text-gray-700 leading-relaxed text-sm">
+                                Your security is our top priority. We use bank-level SSL encryption, never share your personal data with third parties, and are fully GDPR compliant. We only collect information necessary for task completion and payments. Your privacy is guaranteed.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 8 -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300">
+                        <button class="w-full px-4 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleFAQ(8)">
+                            <h3 class="text-base font-semibold text-gray-900 pr-4">
+                                What countries is TaskEarn available in?
+                            </h3>
+                            <div class="flex-shrink-0">
+                                <svg id="faq-icon-8" class="h-5 w-5 text-gray-500 lucide" viewBox="0 0 24 24">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </div>
+                        </button>
+                        
+                        <div id="faq-content-8" class="hidden px-4 pb-4">
+                            <p class="text-gray-700 leading-relaxed text-sm">
+                                TaskEarn is available in 190+ countries worldwide! We have tasks suitable for users from almost every country. Some premium tasks may be region-specific, but there are always earning opportunities available regardless of your location.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 10 -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300">
+                        <button class="w-full px-4 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleFAQ(10)">
+                            <h3 class="text-base font-semibold text-gray-900 pr-4">
+                                What if I have problems with a task or payment?
+                            </h3>
+                            <div class="flex-shrink-0">
+                                <svg id="faq-icon-10" class="h-5 w-5 text-gray-500 lucide" viewBox="0 0 24 24">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </div>
+                        </button>
+                        
+                        <div id="faq-content-10" class="hidden px-4 pb-4">
+                            <p class="text-gray-700 leading-relaxed text-sm">
+                                Our customer support team is available 24/7 to help you. Contact us through live chat, email, or our support ticket system. We typically respond within 1 hour and resolve most issues within 24 hours. Your satisfaction is guaranteed.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -730,83 +2473,56 @@
         </div>
     </footer>
 
+    <script src="assets/script.js"></script>
     <script>
-        // Live Cashout Animation
-        const cashouts = [
-            { username: 'alex_m', amount: '$12.45', country: 'USA', countryCode: 'us', time: '2m ago' },
-            { username: 'sarah_k', amount: '$8.90', country: 'UK', countryCode: 'gb', time: '3m ago' },
-            { username: 'carlos_r', amount: '$15.30', country: 'Spain', countryCode: 'es', time: '5m ago' },
-            { username: 'maria_s', amount: '$7.25', country: 'Brazil', countryCode: 'br', time: '6m ago' },
-            { username: 'yuki_t', amount: '$22.10', country: 'Japan', countryCode: 'jp', time: '8m ago' },
-            { username: 'ahmed_h', amount: '$9.75', country: 'UAE', countryCode: 'ae', time: '10m ago' },
-            { username: 'lisa_w', amount: '$11.60', country: 'Germany', countryCode: 'de', time: '12m ago' },
-            { username: 'raj_p', amount: '$6.40', country: 'India', countryCode: 'in', time: '14m ago' },
-            { username: 'pierre_l', amount: '$18.95', country: 'France', countryCode: 'fr', time: '16m ago' },
-            { username: 'anna_k', amount: '$13.20', country: 'Poland', countryCode: 'pl', time: '18m ago' }
-        ];
-
-        function getFlagUrl(countryCode) {
-            const flagPaths = {
-                'us': 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/320px-Flag_of_the_United_States.svg.png',
-                'gb': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/320px-Flag_of_the_United_Kingdom_%283-5%29.svg.png',
-                'es': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/320px-Flag_of_Spain.svg.png',
-                'br': 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/320px-Flag_of_Brazil.svg.png',
-                'jp': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/320px-Flag_of_Japan.svg.png',
-                'ae': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_United_Arab_Emirates.svg/320px-Flag_of_the_United_Arab_Emirates.svg.png',
-                'de': 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/320px-Flag_of_Germany.svg.png',
-                'in': 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_India.svg/320px-Flag_of_India.svg.png',
-                'fr': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/320px-Flag_of_France.svg.png',
-                'pl': 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Flag_of_Poland.svg/320px-Flag_of_Poland.svg.png'
-            };
-            return flagPaths[countryCode] || flagPaths['us'];
-        }
-
-        function createCashoutElement(cashout, index) {
-            return `
-                <div class="flex-none flex items-center space-x-1.5 sm:space-x-2 lg:space-x-3 bg-white/80 backdrop-blur-sm px-2 py-1 sm:px-3 sm:py-1.5 lg:px-4 lg:py-2 rounded-full border border-gray-200 shadow-sm">
-                    <div class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 rounded-full overflow-hidden border border-gray-200">
-                        <img 
-                            src="${getFlagUrl(cashout.countryCode)}"
-                            alt="${cashout.country} Flag"
-                            class="w-full h-full object-cover"
-                        />
-                    </div>
-                    <span class="text-xs font-medium text-gray-700">${cashout.username}</span>
-                    <span class="text-xs font-bold text-emerald-600">${cashout.amount}</span>
-                    <span class="text-xs text-gray-500">${cashout.time}</span>
-                </div>
-            `;
-        }
-
-        function initializeCashoutAnimation() {
-            const container = document.getElementById('cashout-container');
-            if (!container) return;
-
-            // Create double set for seamless loop
-            const allCashouts = [...cashouts, ...cashouts];
-            
-            container.innerHTML = allCashouts.map((cashout, index) => 
-                createCashoutElement(cashout, index)
-            ).join('');
-        }
-
-        // Initialize on page load
+        // Initialize Swiper for gaming section
         document.addEventListener('DOMContentLoaded', function() {
-            initializeCashoutAnimation();
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
+            new Swiper('.gaming-swiper', {
+                spaceBetween: 20,
+                slidesPerView: 4.2,
+                breakpoints: {
+                    320: {
+                        slidesPerView: 2.2,
+                        spaceBetween: 12
+                    },
+                    480: {
+                        slidesPerView: 2.5,
+                        spaceBetween: 15
+                    },
+                    640: {
+                        slidesPerView: 3.2,
+                        spaceBetween: 15
+                    },
+                    768: {
+                        slidesPerView: 3.5,
+                        spaceBetween: 20
+                    },
+                    1024: {
+                        slidesPerView: 4.2,
+                        spaceBetween: 20
+                    }
+                },
+                autoplay: {
+                    delay: 2000,
+                    disableOnInteraction: false,
+                },
+                loop: true
             });
         });
+
+        // FAQ Toggle Function
+        function toggleFAQ(id) {
+            const content = document.getElementById(`faq-content-${id}`);
+            const icon = document.getElementById(`faq-icon-${id}`);
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.innerHTML = '<path d="m18 15-6-6-6 6"></path>';
+            } else {
+                content.classList.add('hidden');
+                icon.innerHTML = '<path d="m6 9 6 6 6-6"></path>';
+            }
+        }
     </script>
 </body>
 </html>
