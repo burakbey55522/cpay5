@@ -1,13 +1,586 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Global Task-to-Earn Platform</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskEarn - Para Kazanma Platformu</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="1" x2="12" y2="23"></line>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                        <div class="logo-pulse"></div>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-title">TaskEarn</span>
+                        <div class="logo-badges">
+                            <div class="badge badge-global">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                </svg>
+                                <span>GLOBAL</span>
+                            </div>
+                            <div class="badge badge-secure">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                </svg>
+                                <span>SECURE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="nav-desktop">
+                    <button class="btn-secondary">Giriş Yap</button>
+                    <button class="btn-primary">Para Kazanmaya Başla</button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <button class="btn-secondary mobile-btn">Giriş Yap</button>
+                <button class="btn-primary mobile-btn">Para Kazanmaya Başla</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-circle hero-circle-1"></div>
+            <div class="hero-circle hero-circle-2"></div>
+            <div class="hero-circle hero-circle-3"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <!-- Left Column -->
+                <div class="hero-left">
+                    <div class="hero-badges">
+                        <div class="hero-badge">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                                <polyline points="17 6 23 6 23 12"></polyline>
+                            </svg>
+                            <span>2.1M+ Aktif Kullanıcı</span>
+                        </div>
+                        <div class="hero-badge">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                            <span>190+ Ülke</span>
+                        </div>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Para Kazan
+                        <span class="hero-title-gradient">Görev Yaparak</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Basit görevleri tamamlayarak anında gerçek para kazanın. 
+                        <span class="highlight">Deneyim gerekmez.</span>
+                    </p>
+
+                    <div class="hero-info">
+                        <div class="country-info">
+                            <img src="https://www.coinpayu.com/static/images/flags/tr.svg" alt="Türkiye" class="flag">
+                            <span class="count">150+</span>
+                            <span>Türkiye'de mevcut teklif</span>
+                        </div>
+                        <div class="earning-info">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                            <span>Teklif başına $150'ye kadar kazanın</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-cta">
+                        <button class="btn-primary btn-large">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                            </svg>
+                            <span>Şimdi Kazanmaya Başla</span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Task Examples -->
+                    <div class="task-examples">
+                        <div class="task-card">
+                            <div class="task-image">
+                                <img src="https://www.coinpayu.com/static/newImg/index/offer2.jpg" alt="Monopoly Go">
+                                <div class="task-overlay">
+                                    <span class="task-badge">HOT</span>
+                                </div>
+                            </div>
+                            <div class="task-info">
+                                <h4>Monopoly Go!</h4>
+                                <p class="task-price">$150</p>
+                                <span class="task-category">Oyun Görevi</span>
+                            </div>
+                        </div>
+
+                        <div class="task-card">
+                            <div class="task-image">
+                                <img src="https://www.coinpayu.com/static/newImg/index/offer3.png" alt="TikTok">
+                                <div class="task-overlay">
+                                    <span class="task-badge">YENİ</span>
+                                </div>
+                            </div>
+                            <div class="task-info">
+                                <h4>TikTok Kurulum</h4>
+                                <p class="task-price">$2</p>
+                                <span class="task-category">Uygulama</span>
+                            </div>
+                        </div>
+
+                        <div class="task-card">
+                            <div class="task-image">
+                                <img src="https://www.coinpayu.com/static/newImg/index/offer1.jpg" alt="Warpath">
+                                <div class="task-overlay">
+                                    <span class="task-badge">TOP</span>
+                                </div>
+                            </div>
+                            <div class="task-info">
+                                <h4>Warpath: Ace...</h4>
+                                <p class="task-price">$85</p>
+                                <span class="task-category">Strateji</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="hero-right">
+                    <div class="featured-tasks">
+                        <div class="featured-header">
+                            <h3>Öne Çıkan Görevler</h3>
+                            <p>Kazanma yönteminizi seçin</p>
+                        </div>
+
+                        <div class="current-task" id="currentTask">
+                            <!-- Dynamic content will be inserted here -->
+                        </div>
+
+                        <div class="task-grid" id="taskGrid">
+                            <!-- Task grid items will be inserted here -->
+                        </div>
+
+                        <div class="stats-grid">
+                            <div class="stat">
+                                <div class="stat-value">$847,392</div>
+                                <div class="stat-label">Bu Ay Ödenen</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">850+</div>
+                                <div class="stat-label">Mevcut Görev</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Cashout Ticker -->
+    <section class="live-cashout">
+        <div class="live-cashout-header">
+            <div class="pulse-dot"></div>
+            <span>Canlı Ödeme</span>
+            <div class="pulse-dot"></div>
+        </div>
+        <div class="cashout-ticker" id="cashoutTicker">
+            <!-- Cashout items will be inserted here -->
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>Başlamak Çok Kolay</h2>
+                <p>Sadece üç basit adımda para kazanmaya başlayın. Deneyim gerekmez, gizli ücret yok ve anında ödemeler.</p>
+            </div>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-icon">
+                        <div class="step-number">1</div>
+                        <div class="step-illustration">👤</div>
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3>Giriş</h3>
+                    <p>Ücretsiz hesap oluşturun ve giriş yapın.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-icon">
+                        <div class="step-number">2</div>
+                        <div class="step-illustration">🎯</div>
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="8" cy="8" r="6"></circle>
+                            <path d="M18.09 10.37A6 6 0 1 1 10.37 18.09"></path>
+                            <path d="M12 2v10l3-3"></path>
+                        </svg>
+                    </div>
+                    <h3>Kazan</h3>
+                    <p>Göz atma, oyun oynama, deneme ve paylaşma seçenekleriyle coin kazanın.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-icon">
+                        <div class="step-number">3</div>
+                        <div class="step-illustration">💰</div>
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                            <line x1="1" y1="10" x2="23" y2="10"></line>
+                        </svg>
+                    </div>
+                    <h3>Çek</h3>
+                    <p>Toplanan coinleri nakit veya çeşitli hediye kartlarıyla değiştirin.</p>
+                </div>
+            </div>
+
+            <div class="cta-center">
+                <button class="btn-primary btn-large">
+                    <span>Şimdi Başla</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Many Ways to Earn -->
+    <section class="many-ways">
+        <div class="container">
+            <div class="section-header">
+                <h2>Kazanmanın Birçok Yolu</h2>
+                <p>Yaşam tarzınıza ve tercihlerinize uygun çeşitli kazanma yöntemlerinden seçim yapın</p>
+            </div>
+
+            <!-- Browsing Section -->
+            <div class="earning-method">
+                <div class="method-content">
+                    <div class="method-info">
+                        <div class="method-header">
+                            <div class="method-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                </svg>
+                            </div>
+                            <h3>Web Sitesi Gezintisi</h3>
+                        </div>
+                        <p>Çeşitli web sitelerini ziyaret ederek ve göz atarak para kazanın. Basit, hızlı ve karlı.</p>
+                        <div class="method-stats">
+                            <div class="stat-box">
+                                <div class="stat-value">150+</div>
+                                <div class="stat-label">Aktif web sitesi</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-value">$0.05</div>
+                                <div class="stat-label">Site ziyareti başına</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="method-demo">
+                        <div class="browser-mockup">
+                            <div class="browser-header">
+                                <div class="browser-controls">
+                                    <div class="control red"></div>
+                                    <div class="control yellow"></div>
+                                    <div class="control green"></div>
+                                </div>
+                                <div class="browser-url">taskearn.com</div>
+                            </div>
+                            <div class="browser-content">
+                                <div class="browser-icon">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                    </svg>
+                                </div>
+                                <div class="visit-count">0 ziyaret tamamlandı</div>
+                                <div class="coin-icon">
+                                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="8" cy="8" r="6"></circle>
+                                        <path d="M18.09 10.37A6 6 0 1 1 10.37 18.09"></path>
+                                        <path d="M12 2v10l3-3"></path>
+                                    </svg>
+                                </div>
+                                <button class="btn-primary">Gezinmeye Başla</button>
+                                <p>Ziyaret başına $0.05'e kadar kazanmak için web sitelerini gezin</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gaming Section -->
+            <div class="earning-method">
+                <div class="method-content reverse">
+                    <div class="method-info">
+                        <div class="method-header">
+                            <div class="method-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="6" y="2" width="12" height="20" rx="2"></rect>
+                                    <circle cx="12" cy="18" r="2"></circle>
+                                </svg>
+                            </div>
+                            <h3>Mobil Oyunlar</h3>
+                        </div>
+                        <p>Eğlenceli mobil oyunlar oynayın ve oyun içi hedefleri ve kilometre taşlarını tamamlayarak para kazanın.</p>
+                        <div class="method-stats">
+                            <div class="stat-box">
+                                <div class="stat-value">60+</div>
+                                <div class="stat-label">Tüm türlerde mevcut oyun</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="method-demo">
+                        <div class="game-slider" id="gameSlider">
+                            <!-- Game items will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- App Testing Section -->
+            <div class="earning-method">
+                <div class="method-content">
+                    <div class="method-info">
+                        <div class="method-header">
+                            <div class="method-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                            </div>
+                            <h3>Uygulama Testi</h3>
+                        </div>
+                        <p>Şirketlerin uygulamalarını test ederek ve değerli geri bildirim sağlayarak geliştirmelerine yardımcı olun.</p>
+                        <div class="method-stats">
+                            <div class="stat-box">
+                                <div class="stat-value">250+</div>
+                                <div class="stat-label">Test edilecek uygulama</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-value">$50</div>
+                                <div class="stat-label">Test başına ortalama</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="method-demo">
+                        <div class="app-grid">
+                            <div class="app-item">
+                                <img src="https://www.coinpayu.com/static/newImg/index/trying_alibaba.png" alt="Alibaba">
+                            </div>
+                            <div class="app-item">
+                                <img src="https://www.coinpayu.com/static/newImg/index/trying_tiktok.png" alt="TikTok">
+                            </div>
+                            <div class="app-item">
+                                <img src="https://www.coinpayu.com/static/newImg/index/trying_coinbase.png" alt="Coinbase">
+                            </div>
+                            <div class="app-item">
+                                <img src="https://www.coinpayu.com/static/newImg/index/trying_campaign.png" alt="Campaign">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Surveys Section -->
+            <div class="earning-method">
+                <div class="method-content reverse">
+                    <div class="method-info">
+                        <div class="method-header">
+                            <div class="method-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                            </div>
+                            <h3>Anket Görüşleri</h3>
+                        </div>
+                        <p>Görüşlerinizi paylaşın ve dünya çapında yeni nesil ürün ve hizmetleri etkileyın.</p>
+                        <div class="method-stats">
+                            <div class="stat-box">
+                                <div class="stat-value">$2.50</div>
+                                <div class="stat-label">10 dakikalık anket başına ortalama kazanç</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="method-demo">
+                        <div class="survey-mockup">
+                            <h4>Örnek Anket Sorusu:</h4>
+                            <p>En sık hangi sosyal medya platformunu kullanıyorsunuz?</p>
+                            <div class="survey-options">
+                                <label>
+                                    <input type="radio" name="survey">
+                                    <span>Instagram</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="survey">
+                                    <span>TikTok</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="survey">
+                                    <span>Twitter/X</span>
+                                </label>
+                            </div>
+                            <div class="survey-list">
+                                <h5>Mevcut Anketler:</h5>
+                                <div class="survey-item">
+                                    <span>~5 dk</span>
+                                    <div class="stars">★★★★★</div>
+                                </div>
+                                <div class="survey-item">
+                                    <span>~8 dk</span>
+                                    <div class="stars">★★★★★</div>
+                                </div>
+                                <div class="survey-item">
+                                    <span>~12 dk</span>
+                                    <div class="stars">★★★★☆</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <span>TaskEarn</span>
+                    </div>
+                    <p>Basit görevler aracılığıyla para kazanmak için dünyanın önde gelen platformu. Evden ekstra gelir elde eden milyonlarca kullanıcıya katılın.</p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <path d="M2 3l10 8 10-8"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- About Links -->
+                <div class="footer-section">
+                    <h3>Hakkında</h3>
+                    <ul>
+                        <li><a href="#">Hakkımızda</a></li>
+                        <li><a href="#">SSS</a></li>
+                        <li><a href="#">Destek</a></li>
+                        <li><a href="#">Gizlilik Politikası</a></li>
+                        <li><a href="#">Hizmet Şartları</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services Links -->
+                <div class="footer-section">
+                    <h3>Hizmetler</h3>
+                    <ul>
+                        <li><a href="#">Reklam Ver</a></li>
+                        <li><a href="#">Liderlik Tablosu</a></li>
+                        <li><a href="#">Ortaklık</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">İş</a></li>
+                    </ul>
+                </div>
+
+                <!-- Info Links -->
+                <div class="footer-section">
+                    <h3>Bilgi</h3>
+                    <ul>
+                        <li><a href="#">Forum</a></li>
+                        <li><a href="#">Referanslar</a></li>
+                        <li><a href="#">Canlı Ödeme</a></li>
+                        <li><a href="#">Başarı Hikayeleri</a></li>
+                        <li><a href="#">Yardım Merkezi</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    © 2019-2025 TaskEarn Limited. Tüm hakları saklıdır.
+                </div>
+                <div class="footer-app">
+                    <a href="#" class="app-download">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/512px-Google_Play_Store_badge_EN.svg.png" alt="Google Play'den İndir">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
 </html>
