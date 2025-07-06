@@ -367,7 +367,7 @@ const SocialMediaTasks: React.FC = () => {
 
                 <div className="mb-6">
                   <h4 className="font-semibold text-gray-900 mb-3">Available Tasks:</h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  <div className="grid grid-cols-1 gap-2">
                     {task.tasks.map((taskType, idx) => (
                       <div key={idx} className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>

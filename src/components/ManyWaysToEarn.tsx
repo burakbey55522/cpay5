@@ -214,23 +214,23 @@ const ManyWaysToEarn: React.FC = () => {
                 slidesPerView={4.2}
                 breakpoints={{
                   320: {
-                    slidesPerView: 1.5,
+                    slidesPerView: 1.2,
                     spaceBetween: 15
                   },
                   480: {
-                    slidesPerView: 2.2,
+                    slidesPerView: 1.8,
                     spaceBetween: 15
                   },
                   640: {
-                    slidesPerView: 3.2,
+                    slidesPerView: 2.5,
                     spaceBetween: 15
                   },
                   768: {
-                    slidesPerView: 4.2,
+                    slidesPerView: 3.2,
                     spaceBetween: 20
                   },
                   1024: {
-                    slidesPerView: 4.5,
+                    slidesPerView: 4.2,
                     spaceBetween: 20
                   }
                 }}
