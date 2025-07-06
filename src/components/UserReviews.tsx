@@ -155,49 +155,6 @@ const UserReviews: React.FC = () => {
           ))}
         </div>
 
-        {/* Stats Section */}
-        <div className="bg-white rounded-3xl shadow-xl border border-gray-200 p-8 mb-12">
-          <div className="grid md:grid-cols-4 gap-6">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-emerald-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Users className="h-8 w-8 text-white" />
-              </div>
-              <div className="text-2xl font-bold text-gray-900 mb-1">2.1M+</div>
-              <div className="text-sm text-gray-600">Happy members</div>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Star className="h-8 w-8 text-white" />
-              </div>
-              <div className="text-2xl font-bold text-gray-900 mb-1">4.9/5</div>
-              <div className="text-sm text-gray-600">Average rating</div>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <TrendingUp className="h-8 w-8 text-white" />
-              </div>
-              <div className="text-2xl font-bold text-gray-900 mb-1">7,228</div>
-              <div className="text-sm text-gray-600">Total reviews</div>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Clock className="h-8 w-8 text-white" />
-              </div>
-              <div className="text-2xl font-bold text-gray-900 mb-1">24h</div>
-              <div className="text-sm text-gray-600">Average payout time</div>
-            </div>
-          </div>
-        </div>
-
-        {/* CTA Button */}
-        <div className="text-center">
-          <button className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-12 py-4 rounded-2xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 font-bold text-xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
-            Join them right now
-          </button>
-        </div>
       </div>
     </section>
   );
