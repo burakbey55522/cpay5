@@ -352,16 +352,16 @@ const SocialMediaTasks: React.FC = () => {
                   <div className="bg-white rounded-xl p-4 border border-gray-200">
                     <div className="flex items-center space-x-2 mb-2">
                       <DollarSign className="h-5 w-5 text-emerald-500" />
-                      <span className="font-bold text-emerald-600">{task.earnings}</span>
+                      <span className="font-bold text-emerald-600 text-sm md:text-base whitespace-nowrap">{task.earnings}</span>
                     </div>
-                    <p className="text-sm text-gray-600">Per task</p>
+                    <p className="text-xs md:text-sm text-gray-600 whitespace-nowrap">Per task</p>
                   </div>
                   <div className="bg-white rounded-xl p-4 border border-gray-200">
                     <div className="flex items-center space-x-2 mb-2">
                       <Clock className="h-5 w-5 text-blue-500" />
-                      <span className="font-bold text-blue-600">{task.timeEstimate}</span>
+                      <span className="font-bold text-blue-600 text-sm md:text-base whitespace-nowrap">{task.timeEstimate}</span>
                     </div>
-                    <p className="text-sm text-gray-600">Time needed</p>
+                    <p className="text-xs md:text-sm text-gray-600 whitespace-nowrap">Time needed</p>
                   </div>
                 </div>
 
