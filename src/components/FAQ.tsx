@@ -85,7 +85,7 @@ const FAQ: React.FC = () => {
         </div>
 
         {/* FAQ Items */}
-        <div className="space-y-4">
+        <div className="grid md:grid-cols-2 gap-6">
           {faqData.map((item) => (
             <div
               key={item.id}
