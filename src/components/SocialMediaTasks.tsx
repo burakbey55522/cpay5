@@ -391,47 +391,6 @@ const SocialMediaTasks: React.FC = () => {
           ))}
         </div>
 
-        {/* Stats Section */}
-        <div className="bg-white rounded-3xl shadow-xl border border-gray-200 p-8">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">Social Media Impact</h3>
-            <p className="text-gray-600">Help businesses grow while earning money</p>
-          </div>
-          
-          <div className="grid md:grid-cols-4 gap-6">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Users className="h-8 w-8 text-white" />
-              </div>
-              <div className="text-2xl font-bold text-gray-900 mb-1">2.1M+</div>
-              <div className="text-sm text-gray-600">Active social users</div>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-emerald-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <DollarSign className="h-8 w-8 text-white" />
-              </div>
-              <div className="text-2xl font-bold text-gray-900 mb-1">$485K</div>
-              <div className="text-sm text-gray-600">Paid for social tasks</div>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <TrendingUp className="h-8 w-8 text-white" />
-              </div>
-              <div className="text-2xl font-bold text-gray-900 mb-1">850+</div>
-              <div className="text-sm text-gray-600">Daily social tasks</div>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Star className="h-8 w-8 text-white" />
-              </div>
-              <div className="text-2xl font-bold text-gray-900 mb-1">4.9/5</div>
-              <div className="text-sm text-gray-600">User satisfaction</div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
